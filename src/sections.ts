@@ -90,7 +90,7 @@ export function renderNav(): string {
 
 function heroMascot(): string {
   return `
-  <svg viewBox="0 0 440 440" class="w-full max-w-md" role="img" aria-label="Drei bunte Würfel liegen locker gestreut">
+  <svg viewBox="0 0 440 440" class="w-36 sm:w-52 md:w-64 lg:w-full lg:max-w-md" role="img" aria-label="Drei bunte Würfel liegen locker gestreut">
     <g class="die-float-b">
       <rect x="24" y="236" width="150" height="150" rx="32" fill="var(--color-teal)" transform="rotate(10 99 311)" />
       <g fill="var(--color-ink-deep)" transform="rotate(10 99 311)">
@@ -124,16 +124,16 @@ function heroMascot(): string {
 
 export function renderHero(): string {
   return `
-  <section id="home" class="relative flex min-h-[100dvh] items-center overflow-hidden pt-16">
-    <div class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 px-6 py-16 lg:grid-cols-2 lg:gap-8 lg:py-0">
+  <section id="home" class="relative flex min-h-[100dvh] items-start lg:items-center overflow-hidden pt-16">
+    <div class="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-6 px-6 py-8 lg:grid-cols-2 lg:gap-8 lg:py-0">
       <div class="order-2 lg:order-1">
-        <h1 class="text-balance font-display text-5xl font-bold leading-[1.05] tracking-tight text-paper md:text-6xl lg:text-7xl">
+        <h1 class="text-balance font-display text-4xl font-bold leading-[1.05] tracking-tight text-paper sm:text-5xl md:text-6xl lg:text-7xl">
           Würfle dein Glück.<br />Wähle dein Spiel.
         </h1>
-        <p class="mt-6 max-w-[46ch] text-balance text-lg leading-relaxed text-muted">
+        <p class="mt-5 max-w-[46ch] text-balance text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
           Über 180 Brettspiele, handgemachte Drinks und ein Team, das dir in zwei Minuten das perfekte Spiel für den Abend findet.
         </p>
-        <div class="mt-8 flex flex-wrap items-center gap-4">
+        <div class="mt-6 flex flex-wrap items-center gap-4 sm:mt-8">
           <a
             href="#kontakt"
             class="pressable inline-flex items-center gap-2 rounded-pill bg-coral px-6 py-3.5 font-semibold text-ink-deep transition-colors hover:bg-coral-rich"
