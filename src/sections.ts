@@ -12,25 +12,21 @@ import {
 } from './content'
 
 const tintStyles = {
-  coral: {
-    card: 'bg-coral/12 border-coral/25',
-    chip: 'bg-coral text-ink-deep',
-    text: 'text-coral-pale',
+  brand: {
+    card: 'bg-brand/12 border-brand/25',
+    chip: 'bg-brand text-ink-deep',
   },
-  teal: {
-    card: 'bg-teal/12 border-teal/25',
-    chip: 'bg-teal text-ink-deep',
-    text: 'text-teal-pale',
+  sage: {
+    card: 'bg-sage/12 border-sage/25',
+    chip: 'bg-sage text-ink-deep',
   },
-  gold: {
-    card: 'bg-gold/12 border-gold/25',
-    chip: 'bg-gold text-ink-deep',
-    text: 'text-gold',
+  tan: {
+    card: 'bg-tan/12 border-tan/25',
+    chip: 'bg-tan text-ink-deep',
   },
   surface: {
     card: 'bg-surface border-hairline',
     chip: 'bg-paper/10 text-paper',
-    text: 'text-muted',
   },
 } as const
 
@@ -46,16 +42,16 @@ export function renderNav(): string {
   <header id="site-header" data-reveal-skip class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
       <a href="#home" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight text-paper">
-        <span class="flex size-8 items-center justify-center rounded-card-sm bg-coral text-ink-deep">
+        <span class="flex size-8 items-center justify-center rounded-card-sm bg-brand text-ink-deep">
           ${icon('dice-five', 'size-4')}
         </span>
-        Alea<span class="text-coral">.</span>
+        Alea<span class="text-brand">.</span>
       </a>
       <nav class="hidden items-center gap-8 lg:flex">${links}</nav>
       <div class="flex items-center gap-3">
         <a
           href="#kontakt"
-          class="pressable hidden items-center gap-2 rounded-pill bg-coral px-5 py-2.5 text-sm font-semibold text-ink-deep transition-colors hover:bg-coral-rich lg:inline-flex"
+          class="pressable hidden items-center gap-2 rounded-pill bg-brand px-5 py-2.5 text-sm font-semibold text-ink-deep transition-colors hover:bg-brand-rich lg:inline-flex"
         >
           Tisch reservieren
         </a>
@@ -81,7 +77,7 @@ export function renderNav(): string {
             `<a href="${item.href}" class="rounded-input px-3 py-2.5 text-sm font-medium text-paper hover:bg-surface-2">${item.label}</a>`,
         )
         .join('')}
-      <a href="#kontakt" class="pressable mt-2 rounded-pill bg-coral px-4 py-2.5 text-center text-sm font-semibold text-ink-deep">
+      <a href="#kontakt" class="pressable mt-2 rounded-pill bg-brand px-4 py-2.5 text-center text-sm font-semibold text-ink-deep">
         Tisch reservieren
       </a>
     </nav>
@@ -92,7 +88,7 @@ function heroMascot(): string {
   return `
   <svg viewBox="0 0 440 440" class="w-36 sm:w-52 md:w-64 lg:w-full lg:max-w-md" role="img" aria-label="Drei bunte Würfel liegen locker gestreut">
     <g class="die-float-b">
-      <rect x="24" y="236" width="150" height="150" rx="32" fill="var(--color-teal)" transform="rotate(10 99 311)" />
+      <rect x="24" y="236" width="150" height="150" rx="32" fill="var(--color-sage)" transform="rotate(10 99 311)" />
       <g fill="var(--color-ink-deep)" transform="rotate(10 99 311)">
         <circle cx="61" cy="273" r="10.5" />
         <circle cx="99" cy="311" r="10.5" />
@@ -100,14 +96,14 @@ function heroMascot(): string {
       </g>
     </g>
     <g class="die-float-c">
-      <rect x="296" y="34" width="104" height="104" rx="24" fill="var(--color-gold)" transform="rotate(6 348 86)" />
+      <rect x="296" y="34" width="104" height="104" rx="24" fill="var(--color-tan)" transform="rotate(6 348 86)" />
       <g fill="var(--color-ink-deep)" transform="rotate(6 348 86)">
         <circle cx="324" cy="62" r="8" />
         <circle cx="372" cy="110" r="8" />
       </g>
     </g>
     <g class="die-float-a">
-      <rect x="96" y="76" width="232" height="232" rx="46" fill="var(--color-coral)" transform="rotate(-8 212 192)" />
+      <rect x="96" y="76" width="232" height="232" rx="46" fill="var(--color-brand)" transform="rotate(-8 212 192)" />
       <g fill="var(--color-ink-deep)" transform="rotate(-8 212 192)">
         <circle cx="146" cy="126" r="16.5" />
         <circle cx="278" cy="126" r="16.5" />
@@ -117,8 +113,8 @@ function heroMascot(): string {
       </g>
     </g>
     <circle class="twinkle" cx="52" cy="90" r="5" fill="var(--color-paper)" style="animation-delay:.2s" />
-    <circle class="twinkle" cx="392" cy="220" r="4" fill="var(--color-gold)" style="animation-delay:.9s" />
-    <circle class="twinkle" cx="220" cy="24" r="4" fill="var(--color-teal)" style="animation-delay:1.5s" />
+    <circle class="twinkle" cx="392" cy="220" r="4" fill="var(--color-tan)" style="animation-delay:.9s" />
+    <circle class="twinkle" cx="220" cy="24" r="4" fill="var(--color-sage)" style="animation-delay:1.5s" />
   </svg>`
 }
 
@@ -136,7 +132,7 @@ export function renderHero(): string {
         <div class="mt-6 flex flex-wrap items-center gap-4 sm:mt-8">
           <a
             href="#kontakt"
-            class="pressable inline-flex items-center gap-2 rounded-pill bg-coral px-6 py-3.5 font-semibold text-ink-deep transition-colors hover:bg-coral-rich"
+            class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-ink-deep transition-colors hover:bg-brand-rich"
           >
             Tisch reservieren
             ${icon('arrow-right', 'size-4')}
@@ -165,7 +161,7 @@ export function renderFactsStrip(): string {
         .map(
           (fact) => `
         <li class="flex items-center gap-2 text-sm text-muted">
-          <span class="text-coral">${icon(fact.icon, 'size-4')}</span>
+          <span class="text-brand">${icon(fact.icon, 'size-4')}</span>
           ${fact.label}
         </li>`,
         )
@@ -191,7 +187,7 @@ export function renderKonzept(): string {
             .map(
               (step, i) => `
             <li class="flex gap-4">
-              <span class="flex size-8 shrink-0 items-center justify-center rounded-pill bg-coral/15 font-display text-sm font-bold text-coral">
+              <span class="flex size-8 shrink-0 items-center justify-center rounded-pill bg-brand font-display text-sm font-bold text-paper">
                 ${i + 1}
               </span>
               <div>
@@ -240,7 +236,7 @@ export function renderSpiele(): string {
   return `
   <section id="spiele" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
     <div data-reveal class="max-w-[54ch]">
-      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-coral">Spielregal</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-tan">Spielregal</p>
       <h2 class="mt-3 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
         Für jede Laune ein Spiel
       </h2>
@@ -287,7 +283,7 @@ export function renderEssenTrinken(): string {
             .map(
               (item) => `
             <li class="inline-flex items-center gap-2 rounded-pill border border-hairline bg-surface px-4 py-2 text-sm text-paper">
-              <span class="text-teal">${icon(item.icon, 'size-4')}</span>
+              <span class="text-sage">${icon(item.icon, 'size-4')}</span>
               ${item.label}
             </li>`,
             )
@@ -304,7 +300,7 @@ export function renderEvents(): string {
       (event) => `
     <div class="flex w-[280px] shrink-0 flex-col gap-5 rounded-card border border-hairline bg-surface p-6 sm:w-[320px]">
       <div class="flex items-center justify-between">
-        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-coral/15 text-coral">
+        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-brand/15 text-brand">
           ${icon(event.icon, 'size-5')}
         </span>
         <span class="rounded-pill bg-paper/10 px-3 py-1 text-xs font-semibold text-muted">${event.day}</span>
@@ -348,24 +344,24 @@ export function renderKontakt(): string {
   <section id="kontakt" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
     <div data-reveal class="grid grid-cols-1 gap-5 lg:grid-cols-2">
       <div class="rounded-card border border-hairline bg-surface p-8">
-        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-teal/15 text-teal">
+        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-sage/15 text-sage">
           ${icon('clock', 'size-5')}
         </span>
         <h3 class="mt-5 font-display text-xl font-semibold text-paper">Öffnungszeiten</h3>
         <div class="mt-4">${hoursRows}</div>
       </div>
       <div class="rounded-card border border-hairline bg-surface p-8">
-        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-coral/15 text-coral">
+        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-brand/15 text-brand">
           ${icon('map-pin', 'size-5')}
         </span>
         <h3 class="mt-5 font-display text-xl font-semibold text-paper">So findet ihr uns</h3>
         <p class="mt-4 text-sm leading-relaxed text-paper">${contact.address}</p>
         <p class="mt-1 text-sm leading-relaxed text-muted">${contact.hint}</p>
         <div class="mt-6 flex flex-col gap-3">
-          <a href="${contact.phoneHref}" class="flex items-center gap-2 text-sm text-paper hover:text-coral">
+          <a href="${contact.phoneHref}" class="flex items-center gap-2 text-sm text-paper hover:text-brand-pale">
             ${icon('phone', 'size-4')} ${contact.phone}
           </a>
-          <a href="${contact.mailHref}" class="flex items-center gap-2 text-sm text-paper hover:text-coral">
+          <a href="${contact.mailHref}" class="flex items-center gap-2 text-sm text-paper hover:text-brand-pale">
             ${icon('envelope-simple', 'size-4')} ${contact.email}
           </a>
         </div>
@@ -382,7 +378,7 @@ export function renderKontakt(): string {
       <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
         <a
           href="${contact.mailHref}"
-          class="pressable inline-flex items-center gap-2 rounded-pill bg-coral px-6 py-3.5 font-semibold text-ink-deep transition-colors hover:bg-coral-rich"
+          class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-ink-deep transition-colors hover:bg-brand-rich"
         >
           Tisch reservieren
           ${icon('arrow-right', 'size-4')}
@@ -403,7 +399,7 @@ export function renderStimmen(): string {
     .map(
       (t) => `
     <figure data-reveal class="flex flex-col justify-between gap-6 rounded-card border border-hairline bg-surface p-7">
-      <div class="flex gap-1 text-gold">
+      <div class="flex gap-1 text-tan">
         ${icon('star', 'size-4')}${icon('star', 'size-4')}${icon('star', 'size-4')}${icon('star', 'size-4')}${icon('star', 'size-4')}
       </div>
       <blockquote class="text-balance leading-relaxed text-paper">&ldquo;${t.quote}&rdquo;</blockquote>
@@ -428,7 +424,7 @@ export function renderStimmen(): string {
   return `
   <section class="mx-auto max-w-7xl px-6 py-24 md:py-32">
     <div data-reveal class="max-w-[54ch]">
-      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-teal">Stimmen aus der Bar</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sage">Stimmen aus der Bar</p>
       <h2 class="mt-3 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
         Das sagen unsere Gäste
       </h2>
@@ -444,10 +440,10 @@ export function renderFooter(): string {
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <a href="#home" class="flex items-center gap-2 font-display text-lg font-bold text-paper">
-          <span class="flex size-8 items-center justify-center rounded-card-sm bg-coral text-ink-deep">
+          <span class="flex size-8 items-center justify-center rounded-card-sm bg-brand text-ink-deep">
             ${icon('dice-five', 'size-4')}
           </span>
-          Alea<span class="text-coral">.</span>
+          Alea<span class="text-brand">.</span>
         </a>
         <p class="mt-4 max-w-[28ch] text-sm leading-relaxed text-muted">
           Die Spielbar, in der jeder Abend anders gewürfelt wird.

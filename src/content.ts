@@ -23,27 +23,27 @@ export const gameCategories: {
   title: string
   desc: string
   icon: IconName
-  tint: 'coral' | 'teal' | 'gold' | 'surface'
+  tint: 'brand' | 'sage' | 'tan' | 'surface'
   featured?: boolean
 }[] = [
   {
     title: 'Strategie & Vielspieler',
     desc: 'Von Siedler-Klassikern bis zu modernen Euro-Games mit Tiefgang und langem Nachhall.',
     icon: 'dice-five',
-    tint: 'coral',
+    tint: 'brand',
     featured: true,
   },
   {
     title: 'Party & Casual',
     desc: 'Schnell erklärt, laut gelacht — perfekt für große Runden.',
     icon: 'sparkle',
-    tint: 'teal',
+    tint: 'sage',
   },
   {
     title: 'Klassiker & Familie',
     desc: 'Kniffel, Rommé & Co. für den entspannten Abend.',
     icon: 'cards',
-    tint: 'gold',
+    tint: 'tan',
   },
   {
     title: 'Kooperativ & Rätsel',

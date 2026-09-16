@@ -8,26 +8,30 @@
 @import "@fontsource/plus-jakarta-sans/600.css";
 
 @theme {
-  --color-ink: oklch(16% 0.032 262);
-  --color-ink-deep: oklch(10% 0.028 262);
-  --color-surface: oklch(21% 0.032 262);
-  --color-surface-2: oklch(26% 0.032 262);
+  /* Warm near-black, tuned to the real Alea Spielbar mark's charcoal (#231F20) instead of a cool navy. */
+  --color-ink: oklch(15% 0.012 45);
+  --color-ink-deep: oklch(9% 0.01 45);
+  --color-surface: oklch(20% 0.014 45);
+  --color-surface-2: oklch(25% 0.014 45);
   --color-hairline: oklch(100% 0 0 / 0.08);
 
-  --color-coral: oklch(70% 0.19 35);
-  --color-coral-rich: oklch(60% 0.2 32);
-  --color-coral-pale: oklch(85% 0.09 40);
+  /* Primary accent: the brand's actual logo red (#BE151A), lifted slightly for UI vibrancy. */
+  --color-brand: oklch(54% 0.19 27);
+  --color-brand-rich: oklch(46% 0.2 25);
+  --color-brand-pale: oklch(80% 0.1 30);
 
-  --color-teal: oklch(74% 0.12 190);
-  --color-teal-rich: oklch(58% 0.11 190);
-  --color-teal-pale: oklch(88% 0.06 190);
+  /* Secondary tint: the theme's sage green swatch, saturated up from its pale source for use as an accent. */
+  --color-sage: oklch(74% 0.115 140);
+  --color-sage-rich: oklch(60% 0.11 140);
+  --color-sage-pale: oklch(88% 0.06 138);
 
-  --color-gold: oklch(80% 0.15 85);
-  --color-gold-rich: oklch(70% 0.16 78);
+  /* Tertiary tint: the theme's warm tan swatch, same treatment. */
+  --color-tan: oklch(78% 0.125 72);
+  --color-tan-rich: oklch(68% 0.13 68);
 
-  --color-paper: oklch(95% 0.008 262);
-  --color-muted: oklch(75% 0.014 262);
-  --color-faint: oklch(62% 0.016 262);
+  --color-paper: oklch(95% 0.006 60);
+  --color-muted: oklch(75% 0.012 60);
+  --color-faint: oklch(63% 0.014 60);
 
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
@@ -70,12 +74,12 @@ body {
 }
 
 ::selection {
-  background-color: var(--color-coral);
+  background-color: var(--color-brand);
   color: var(--color-ink-deep);
 }
 
 :focus-visible {
-  outline: 2px solid var(--color-gold);
+  outline: 2px solid var(--color-tan);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -87,8 +91,8 @@ body {
 /* Felt-table texture: a very quiet radial vignette + grain, never a purple/AI gradient */
 .bg-felt {
   background-image:
-    radial-gradient(ellipse 80% 60% at 15% -10%, oklch(70% 0.19 35 / 0.14), transparent 60%),
-    radial-gradient(ellipse 70% 50% at 100% 10%, oklch(74% 0.12 190 / 0.12), transparent 60%),
+    radial-gradient(ellipse 80% 60% at 15% -10%, oklch(54% 0.19 27 / 0.14), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 10%, oklch(74% 0.115 140 / 0.12), transparent 60%),
     linear-gradient(var(--color-ink), var(--color-ink));
 }
 
