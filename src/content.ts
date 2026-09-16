@@ -10,7 +10,7 @@ export const nav = [
 export const quickFacts: { icon: IconName; label: string }[] = [
   { icon: 'cards', label: '180+ Spiele im Regal' },
   { icon: 'users-three', label: '2–12 Spieler pro Tisch' },
-  { icon: 'clock', label: 'Di–So ab 16 Uhr geöffnet' },
+  { icon: 'clock', label: 'Di–So geöffnet, Montag Ruhetag' },
 ]
 
 export const steps: { title: string; desc: string }[] = [
@@ -86,42 +86,53 @@ export const events: { day: string; title: string; desc: string; icon: IconName 
   },
 ]
 
+/** Real opening hours (alea-spielbar.ch/location-oeffnungszeiten), grouped by identical hours. */
 export const hours: { days: string; time: string }[] = [
-  { days: 'Di – Do', time: '16:00 – 00:00' },
-  { days: 'Fr – Sa', time: '14:00 – 02:00' },
-  { days: 'So', time: '14:00 – 22:00' },
-  { days: 'Montag', time: 'Ruhetag' },
+  { days: 'Di, Do, Fr', time: '16:00 – 23:00' },
+  { days: 'Mi, Sa', time: '13:00 – 23:00' },
+  { days: 'So', time: '13:00 – 20:00' },
+  { days: 'Montag', time: 'Geschlossen' },
 ]
 
-export const testimonials: { quote: string; name: string; role: string; seed: string }[] = [
+/**
+ * The bar's two bookable back rooms (alea-spielbar.ch/reservation). The main floor needs no
+ * reservation; these are the actual cases where booking ahead matters, and double as the
+ * "Anliegen" options in the contact/reservation form.
+ */
+export const rooms: { id: string; name: string; desc: string }[] = [
   {
-    quote:
-      'Wir kamen für ein Bier und blieben für Azul. Das Team erklärt Regeln, ohne dass es nach Schule klingt.',
-    name: 'Mira K.',
-    role: 'Stammgast seit 2019',
-    seed: 'alea-guest-mira',
+    id: 'hauptbereich',
+    name: 'Tisch im Hauptbereich',
+    desc: 'Meist ohne Reservation möglich — an Wochenenden oder mit großen Gruppen lieber kurz anfragen.',
   },
   {
-    quote:
-      'Beste Location für unseren wöchentlichen Spieleabend. Immer ein Tisch frei, immer ein Geheimtipp parat.',
-    name: 'Jonas T.',
-    role: 'Spieleabend-Organisator',
-    seed: 'alea-guest-jonas',
+    id: 'hobbithoehle',
+    name: 'Spielraum „Hobbithöhle“',
+    desc: '10 m², ein Tisch für bis zu 8 Personen. CHF 10 / Stunde. Beliebt für Pen-&-Paper-Runden.',
   },
   {
-    quote: 'Als Erstbesucherin war ich in fünf Minuten mittendrin. Kein Spiel wurde mir zu kompliziert erklärt.',
-    name: 'Lea B.',
-    role: 'Erstbesucherin',
-    seed: 'alea-guest-lea',
+    id: 'drachenhoehle',
+    name: 'Spielraum „Drachenhöhle“',
+    desc: '23 m², zwei Tische für bis zu 20 Personen. CHF 20 / Stunde.',
+  },
+  {
+    id: 'allgemein',
+    name: 'Allgemeine Frage',
+    desc: 'Nichts davon trifft es? Schreibt uns einfach, worum es geht.',
   },
 ]
 
 export const contact = {
-  address: 'Würfelgasse 7, 04109 Leipzig',
-  hint: 'Zwei Minuten von der Tramhaltestelle Augustusplatz.',
-  phone: '+49 341 22 33 010',
-  phoneHref: 'tel:+493412233010',
-  email: 'hallo@alea-spielbar.de',
-  mailHref:
-    'mailto:hallo@alea-spielbar.de?subject=Tischreservierung&body=Hallo%20Alea-Team%2C%0A%0Aich%20m%C3%B6chte%20gerne%20einen%20Tisch%20reservieren%3A%0ADatum%3A%20%0AUhrzeit%3A%20%0APersonenanzahl%3A%20%0A%0AViele%20Gr%C3%BC%C3%9Fe',
+  company: 'Alea Spielbar AG',
+  address: 'Zschokkestrasse 1, 8037 Zürich',
+  hint: 'Bushaltestelle Rosengartenstrasse (33/72/83), 3 Min. ab Bahnhof Hardbrücke.',
+  email: 'info@alea-spielbar.ch',
+  mailHref: 'mailto:info@alea-spielbar.ch',
+  instagramHref: 'https://www.instagram.com/alea.spielbar/',
+  discordHref: 'https://alea-spielbar.ch/discord',
+  /** No API key needed — Google's plain q= embed format, centered on the real address. */
+  mapsEmbedSrc: 'https://www.google.com/maps?q=Alea+Spielbar%2C+Zschokkestrasse+1%2C+8037+Z%C3%BCrich&z=16&output=embed',
+  /** The bar's real Google Maps place page — used for both "get directions" and "write a review". */
+  mapsPlaceHref:
+    'https://www.google.com/maps/place/Alea+Spielbar/@47.3953408,8.5257188,19z/data=!4m6!3m5!1s0x47900b0064bb47cb:0x353368f86edaab5b!8m2!3d47.3953408!4d8.5257188!16s%2Fg%2F11xh1dvwtj',
 }

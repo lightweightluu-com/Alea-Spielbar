@@ -1,6 +1,7 @@
 import './style.css'
 import { animate } from 'motion'
 import {
+  renderBewertung,
   renderEssenTrinken,
   renderEvents,
   renderFactsStrip,
@@ -10,8 +11,10 @@ import {
   renderKontakt,
   renderNav,
   renderSpiele,
-  renderStimmen,
 } from './sections'
+import { contact, rooms } from './content'
+
+const THEME_KEY = 'alea-theme'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
 
@@ -24,8 +27,8 @@ app.innerHTML = [
   renderSpiele(),
   renderEssenTrinken(),
   renderEvents(),
-  renderStimmen(),
   renderKontakt(),
+  renderBewertung(),
   '</main>',
   renderFooter(),
 ].join('')
@@ -33,12 +36,44 @@ app.innerHTML = [
 const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
 const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
+setupThemeToggle()
 setupMobileNav()
 setupHeaderScrollState()
 setupScrollReveal()
+setupReservationForm()
 if (!prefersReducedMotion && hasFinePointer) {
   setupMagneticCta()
   setupDiceGreeting()
+}
+
+/** Reads/writes the persisted theme choice. Default is light; index.html's inline head script already applied a stored 'dark' before first paint, so this only wires the toggle going forward. */
+function setupThemeToggle(): void {
+  const toggle = document.querySelector<HTMLButtonElement>('#theme-toggle')
+  if (!toggle) return
+
+  const sunIcon = toggle.querySelector('.theme-icon-light')
+  const moonIcon = toggle.querySelector('.theme-icon-dark')
+
+  const applyIcons = (dark: boolean) => {
+    sunIcon?.classList.toggle('hidden', dark)
+    moonIcon?.classList.toggle('hidden', !dark)
+    toggle.setAttribute('aria-pressed', String(dark))
+    toggle.setAttribute('aria-label', dark ? 'Zu hellem Farbschema wechseln' : 'Zu dunklem Farbschema wechseln')
+  }
+
+  applyIcons(document.documentElement.getAttribute('data-theme') === 'dark')
+
+  toggle.addEventListener('click', () => {
+    const dark = document.documentElement.getAttribute('data-theme') === 'dark'
+    const next = dark ? 'light' : 'dark'
+    document.documentElement.setAttribute('data-theme', next)
+    try {
+      localStorage.setItem(THEME_KEY, next)
+    } catch {
+      // Private browsing / storage disabled — theme just won't persist across visits.
+    }
+    applyIcons(next === 'dark')
+  })
 }
 
 function setupMobileNav(): void {
@@ -101,7 +136,7 @@ function setupScrollReveal(): void {
 
 /** Subtle magnetic pull on the hero's primary CTA — a decorative, once-per-page touch. */
 function setupMagneticCta(): void {
-  const cta = document.querySelector<HTMLAnchorElement>('#home a[href="#kontakt"]')
+  const cta = document.querySelector<HTMLAnchorElement>('#home a[href="#reservieren"]')
   if (!cta) return
 
   const strength = 14
@@ -135,5 +170,66 @@ function setupDiceGreeting(): void {
       () => heroDie.classList.replace('die-greet', 'die-float-a'),
       { once: true },
     )
+  })
+}
+
+/**
+ * The reservation/contact form has no backend, so "submitting" it means opening the visitor's
+ * own email client with a prefilled mailto: — the same no-backend pattern the form's helper text
+ * promises. We still run real client-side validation first so the mailto only fires on valid input.
+ */
+function setupReservationForm(): void {
+  const form = document.querySelector<HTMLFormElement>('#reservation-form')
+  const anliegenSelect = document.querySelector<HTMLSelectElement>('#rf-anliegen')
+  const anliegenHint = document.querySelector<HTMLParagraphElement>('#rf-anliegen-hint')
+  const status = document.querySelector<HTMLParagraphElement>('#rf-status')
+  if (!form || !anliegenSelect || !anliegenHint || !status) return
+
+  const defaultStatus = status.textContent ?? ''
+
+  const updateHint = () => {
+    const room = rooms.find((r) => r.id === anliegenSelect.value)
+    anliegenHint.textContent = room?.desc ?? ''
+  }
+  updateHint()
+  anliegenSelect.addEventListener('change', updateHint)
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    if (!form.reportValidity()) {
+      status.textContent = 'Bitte füllt Name, E-Mail und Nachricht aus.'
+      return
+    }
+
+    const data = new FormData(form)
+    const name = String(data.get('name') ?? '').trim()
+    const email = String(data.get('email') ?? '').trim()
+    const anliegenId = String(data.get('anliegen') ?? '')
+    const anliegenLabel = rooms.find((r) => r.id === anliegenId)?.name ?? anliegenId
+    const date = String(data.get('date') ?? '').trim()
+    const time = String(data.get('time') ?? '').trim()
+    const people = String(data.get('people') ?? '').trim()
+    const message = String(data.get('message') ?? '').trim()
+
+    const bodyLines = [
+      `Anliegen: ${anliegenLabel}`,
+      date && `Datum: ${date}`,
+      time && `Uhrzeit: ${time}`,
+      people && `Personenzahl: ${people}`,
+      '',
+      message,
+      '',
+      `— ${name} (${email})`,
+    ].filter((line): line is string => Boolean(line) || line === '')
+
+    const subject = `Anfrage über die Website: ${anliegenLabel}`
+    const mailto = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
+
+    window.location.href = mailto
+    status.textContent = 'E-Mail-Programm geöffnet — bitte dort noch auf „Senden" tippen.'
+    window.setTimeout(() => {
+      status.textContent = defaultStatus
+    }, 6000)
   })
 }

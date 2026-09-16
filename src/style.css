@@ -8,30 +8,28 @@
 @import "@fontsource/plus-jakarta-sans/600.css";
 
 @theme {
-  /* Warm near-black, tuned to the real Alea Spielbar mark's charcoal (#231F20) instead of a cool navy. */
-  --color-ink: oklch(15% 0.012 45);
-  --color-ink-deep: oklch(9% 0.01 45);
-  --color-surface: oklch(20% 0.014 45);
-  --color-surface-2: oklch(25% 0.014 45);
-  --color-hairline: oklch(100% 0 0 / 0.08);
+  /*
+   * Theme-INVARIANT tokens. These are fill/pictogram colors: a button or a chip
+   * looks right on either a light or a dark page, so they don't flip per theme.
+   * Only page-relative tokens (surfaces, body text, accent-as-text) do — see the
+   * `:root` / `[data-theme="dark"]` blocks below, which override a subset of
+   * these same custom properties.
+   */
 
   /* Primary accent: the brand's actual logo red (#BE151A), lifted slightly for UI vibrancy. */
   --color-brand: oklch(54% 0.19 27);
   --color-brand-rich: oklch(46% 0.2 25);
-  --color-brand-pale: oklch(80% 0.1 30);
 
   /* Secondary tint: the theme's sage green swatch, saturated up from its pale source for use as an accent. */
   --color-sage: oklch(74% 0.115 140);
-  --color-sage-rich: oklch(60% 0.11 140);
-  --color-sage-pale: oklch(88% 0.06 138);
 
   /* Tertiary tint: the theme's warm tan swatch, same treatment. */
   --color-tan: oklch(78% 0.125 72);
-  --color-tan-rich: oklch(68% 0.13 68);
 
-  --color-paper: oklch(95% 0.006 60);
-  --color-muted: oklch(75% 0.012 60);
-  --color-faint: oklch(63% 0.014 60);
+  /* Always-dark, for icon glyphs sitting on a solid accent fill (dice pips, chip icons). */
+  --color-ink-deep: oklch(9% 0.01 45);
+  /* Always-light, for button labels sitting on a solid accent fill. */
+  --color-on-accent: oklch(97% 0.012 60);
 
   --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
   --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
@@ -43,11 +41,47 @@
 
   --ease-out-strong: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-strong: cubic-bezier(0.65, 0, 0.35, 1);
+
+  /*
+   * Page-relative tokens: LIGHT values (the default theme). Declared inside
+   * @theme so Tailwind still generates the bg-ink/text-paper/etc. utilities,
+   * and re-declared verbatim on :root below so the cascade also carries them
+   * (Tailwind's @theme output lives on :root, so this is technically the same
+   * rule — kept explicit here for anyone reading the theme block top to bottom).
+   */
+  --color-ink: oklch(97% 0.006 60);
+  --color-surface: oklch(93% 0.009 55);
+  --color-surface-2: oklch(88% 0.011 55);
+  --color-hairline: oklch(20% 0.01 45 / 0.14);
+  --color-paper: oklch(18% 0.014 50);
+  --color-muted: oklch(38% 0.014 50);
+  --color-faint: oklch(48% 0.014 50);
+  --color-brand-text: oklch(42% 0.19 27);
+  --color-sage-text: oklch(40% 0.115 140);
+  --color-tan-text: oklch(40% 0.125 72);
+}
+
+/* Dark theme: the original palette, now opt-in via a [data-theme="dark"] attribute on <html>. */
+:root[data-theme="dark"] {
+  --color-ink: oklch(15% 0.012 45);
+  --color-surface: oklch(20% 0.014 45);
+  --color-surface-2: oklch(25% 0.014 45);
+  --color-hairline: oklch(100% 0 0 / 0.08);
+  --color-paper: oklch(95% 0.006 60);
+  --color-muted: oklch(75% 0.012 60);
+  --color-faint: oklch(63% 0.014 60);
+  --color-brand-text: oklch(66% 0.19 27);
+  --color-sage-text: oklch(62% 0.115 140);
+  --color-tan-text: oklch(62% 0.125 72);
 }
 
 html {
-  color-scheme: dark;
+  color-scheme: light;
   scroll-behavior: smooth;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -73,9 +107,25 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Smooth cross-fade when the theme toggle flips [data-theme], without hijacking hover/press transitions. */
+body,
+body * {
+  transition:
+    background-color 260ms var(--ease-out-strong),
+    border-color 260ms var(--ease-out-strong),
+    color 260ms var(--ease-out-strong),
+    fill 260ms var(--ease-out-strong);
+}
+@media (prefers-reduced-motion: reduce) {
+  body,
+  body * {
+    transition: none;
+  }
+}
+
 ::selection {
   background-color: var(--color-brand);
-  color: var(--color-ink-deep);
+  color: var(--color-on-accent);
 }
 
 :focus-visible {
@@ -90,6 +140,12 @@ body {
 
 /* Felt-table texture: a very quiet radial vignette + grain, never a purple/AI gradient */
 .bg-felt {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% -10%, oklch(54% 0.19 27 / 0.07), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 10%, oklch(74% 0.115 140 / 0.06), transparent 60%),
+    linear-gradient(var(--color-ink), var(--color-ink));
+}
+:root[data-theme="dark"] .bg-felt {
   background-image:
     radial-gradient(ellipse 80% 60% at 15% -10%, oklch(54% 0.19 27 / 0.14), transparent 60%),
     radial-gradient(ellipse 70% 50% at 100% 10%, oklch(74% 0.115 140 / 0.12), transparent 60%),
@@ -127,6 +183,27 @@ body {
 }
 .pressable:active {
   transform: scale(0.97);
+}
+
+/* Reservation/contact form fields */
+.form-input {
+  width: 100%;
+  border-radius: var(--radius-input);
+  border: 1px solid var(--color-hairline);
+  background-color: var(--color-ink);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.9375rem;
+  color: var(--color-paper);
+}
+.form-input::placeholder {
+  color: var(--color-faint);
+}
+.form-input:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 1px;
+}
+.form-input:user-invalid {
+  border-color: var(--color-brand);
 }
 
 /* Scroll-snap pills for the game library list */

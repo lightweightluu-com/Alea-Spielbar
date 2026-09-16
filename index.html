@@ -4,12 +4,25 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#14151f" />
+    <meta name="theme-color" content="#f8f4f1" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#100a07" media="(prefers-color-scheme: dark)" />
     <meta
       name="description"
-      content="Alea Spielbar: über 180 Brettspiele, handgemachte Drinks und ein Team, das dir in Minuten das perfekte Spiel für den Abend findet."
+      content="Alea Spielbar Zürich: über 180 Brettspiele, handgemachte Drinks und ein Team, das dir in Minuten das perfekte Spiel für den Abend findet."
     />
     <title>Alea Spielbar — Würfle dein Glück, wähle dein Spiel</title>
+    <script>
+      // Applies a saved 'dark' preference before first paint, so there's no flash of the
+      // (default) light theme. Runs synchronously and inline — a deferred module script
+      // would run after the first frame is already painted.
+      try {
+        if (localStorage.getItem('alea-theme') === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'dark')
+        }
+      } catch (_) {
+        // Private browsing / storage disabled — falls back to the light default.
+      }
+    </script>
   </head>
   <body class="bg-felt">
     <div id="app"></div>

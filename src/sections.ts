@@ -1,15 +1,5 @@
 import { icon } from './icons'
-import {
-  contact,
-  events,
-  gameCategories,
-  hours,
-  menuHighlights,
-  nav,
-  quickFacts,
-  steps,
-  testimonials,
-} from './content'
+import { contact, events, gameCategories, hours, menuHighlights, nav, quickFacts, rooms, steps } from './content'
 
 const tintStyles = {
   brand: {
@@ -30,6 +20,20 @@ const tintStyles = {
   },
 } as const
 
+function themeToggleButton(): string {
+  return `
+  <button
+    id="theme-toggle"
+    type="button"
+    aria-label="Zu dunklem Farbschema wechseln"
+    aria-pressed="false"
+    class="pressable inline-flex size-10 items-center justify-center rounded-pill border border-hairline text-paper"
+  >
+    ${icon('sun', 'size-[18px] theme-icon-light')}
+    ${icon('moon-stars', 'hidden size-[18px] theme-icon-dark')}
+  </button>`
+}
+
 export function renderNav(): string {
   const links = nav
     .map(
@@ -45,13 +49,14 @@ export function renderNav(): string {
         <span class="flex size-8 items-center justify-center rounded-card-sm bg-brand text-ink-deep">
           ${icon('dice-five', 'size-4')}
         </span>
-        Alea<span class="text-brand">.</span>
+        Alea<span class="text-brand-text">.</span>
       </a>
       <nav class="hidden items-center gap-8 lg:flex">${links}</nav>
       <div class="flex items-center gap-3">
+        ${themeToggleButton()}
         <a
-          href="#kontakt"
-          class="pressable hidden items-center gap-2 rounded-pill bg-brand px-5 py-2.5 text-sm font-semibold text-ink-deep transition-colors hover:bg-brand-rich lg:inline-flex"
+          href="#reservieren"
+          class="pressable hidden items-center gap-2 rounded-pill bg-brand px-5 py-2.5 text-sm font-semibold text-on-accent transition-colors hover:bg-brand-rich lg:inline-flex"
         >
           Tisch reservieren
         </a>
@@ -77,7 +82,7 @@ export function renderNav(): string {
             `<a href="${item.href}" class="rounded-input px-3 py-2.5 text-sm font-medium text-paper hover:bg-surface-2">${item.label}</a>`,
         )
         .join('')}
-      <a href="#kontakt" class="pressable mt-2 rounded-pill bg-brand px-4 py-2.5 text-center text-sm font-semibold text-ink-deep">
+      <a href="#reservieren" class="pressable mt-2 rounded-pill bg-brand px-4 py-2.5 text-center text-sm font-semibold text-on-accent">
         Tisch reservieren
       </a>
     </nav>
@@ -131,8 +136,8 @@ export function renderHero(): string {
         </p>
         <div class="mt-6 flex flex-wrap items-center gap-4 sm:mt-8">
           <a
-            href="#kontakt"
-            class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-ink-deep transition-colors hover:bg-brand-rich"
+            href="#reservieren"
+            class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-on-accent transition-colors hover:bg-brand-rich"
           >
             Tisch reservieren
             ${icon('arrow-right', 'size-4')}
@@ -161,7 +166,7 @@ export function renderFactsStrip(): string {
         .map(
           (fact) => `
         <li class="flex items-center gap-2 text-sm text-muted">
-          <span class="text-brand">${icon(fact.icon, 'size-4')}</span>
+          <span class="text-brand-text">${icon(fact.icon, 'size-4')}</span>
           ${fact.label}
         </li>`,
         )
@@ -187,7 +192,7 @@ export function renderKonzept(): string {
             .map(
               (step, i) => `
             <li class="flex gap-4">
-              <span class="flex size-8 shrink-0 items-center justify-center rounded-pill bg-brand font-display text-sm font-bold text-paper">
+              <span class="flex size-8 shrink-0 items-center justify-center rounded-pill bg-brand font-display text-sm font-bold text-on-accent">
                 ${i + 1}
               </span>
               <div>
@@ -236,7 +241,7 @@ export function renderSpiele(): string {
   return `
   <section id="spiele" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
     <div data-reveal class="max-w-[54ch]">
-      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-tan">Spielregal</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-tan-text">Spielregal</p>
       <h2 class="mt-3 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
         Für jede Laune ein Spiel
       </h2>
@@ -283,7 +288,7 @@ export function renderEssenTrinken(): string {
             .map(
               (item) => `
             <li class="inline-flex items-center gap-2 rounded-pill border border-hairline bg-surface px-4 py-2 text-sm text-paper">
-              <span class="text-sage">${icon(item.icon, 'size-4')}</span>
+              <span class="text-sage-text">${icon(item.icon, 'size-4')}</span>
               ${item.label}
             </li>`,
             )
@@ -300,7 +305,7 @@ export function renderEvents(): string {
       (event) => `
     <div class="flex w-[280px] shrink-0 flex-col gap-5 rounded-card border border-hairline bg-surface p-6 sm:w-[320px]">
       <div class="flex items-center justify-between">
-        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-brand/15 text-brand">
+        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-brand/15 text-brand-text">
           ${icon(event.icon, 'size-5')}
         </span>
         <span class="rounded-pill bg-paper/10 px-3 py-1 text-xs font-semibold text-muted">${event.day}</span>
@@ -329,6 +334,82 @@ export function renderEvents(): string {
   </section>`
 }
 
+function reservationForm(): string {
+  const options = rooms.map((r) => `<option value="${r.id}">${r.name}</option>`).join('')
+  const hints = rooms.map((r) => `<span data-anliegen-hint="${r.id}" class="hidden">${r.desc}</span>`).join('')
+
+  return `
+  <div id="reservieren" data-reveal class="rounded-card border border-hairline bg-surface p-8 md:p-10">
+    <h3 class="font-display text-2xl font-semibold text-paper">Tisch reservieren oder kontaktieren</h3>
+    <p class="mt-2 max-w-[54ch] text-sm leading-relaxed text-muted">
+      Der Hauptbereich läuft meist ohne Reservation. Für die beiden Spielräume oder alles andere: einfach absenden —
+      das öffnet dein E-Mail-Programm mit einer vorausgefüllten Nachricht an uns.
+    </p>
+
+    <form id="reservation-form" novalidate class="mt-8">
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+        <div class="flex flex-col gap-2">
+          <label for="rf-name" class="text-sm font-medium text-paper">Dein Name</label>
+          <input id="rf-name" name="name" type="text" required autocomplete="name" class="form-input" />
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="rf-email" class="text-sm font-medium text-paper">Deine E-Mail-Adresse</label>
+          <input id="rf-email" name="email" type="email" required autocomplete="email" class="form-input" />
+        </div>
+        <div class="flex flex-col gap-2 sm:col-span-2">
+          <label for="rf-anliegen" class="text-sm font-medium text-paper">Anliegen</label>
+          <select id="rf-anliegen" name="anliegen" class="form-input">
+            ${options}
+          </select>
+          <p id="rf-anliegen-hint" class="text-xs text-muted"></p>
+          <span class="hidden" id="rf-anliegen-hints">${hints}</span>
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="rf-date" class="text-sm font-medium text-paper">Datum <span class="text-faint">(optional)</span></label>
+          <input id="rf-date" name="date" type="date" class="form-input" />
+        </div>
+        <div class="flex flex-col gap-2">
+          <label for="rf-time" class="text-sm font-medium text-paper">Uhrzeit <span class="text-faint">(optional)</span></label>
+          <input id="rf-time" name="time" type="time" class="form-input" />
+        </div>
+        <div class="flex flex-col gap-2 sm:col-span-2">
+          <label for="rf-people" class="text-sm font-medium text-paper">Personenzahl <span class="text-faint">(optional)</span></label>
+          <input id="rf-people" name="people" type="number" min="1" max="40" placeholder="z. B. 6" class="form-input" />
+        </div>
+        <div class="flex flex-col gap-2 sm:col-span-2">
+          <label for="rf-message" class="text-sm font-medium text-paper">Deine Nachricht</label>
+          <textarea id="rf-message" name="message" rows="4" required class="form-input resize-none"></textarea>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center gap-4">
+        <button
+          type="submit"
+          class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-on-accent transition-colors hover:bg-brand-rich"
+        >
+          Absenden
+          ${icon('arrow-right', 'size-4')}
+        </button>
+        <p id="rf-status" role="status" aria-live="polite" class="text-sm text-muted">
+          Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht an ${contact.email}.
+        </p>
+      </div>
+    </form>
+
+    <div class="mt-8 flex flex-wrap gap-3 border-t border-hairline pt-6">
+      <a href="${contact.mailHref}" class="pressable inline-flex items-center gap-2 rounded-pill border border-hairline px-4 py-2 text-sm font-medium text-paper hover:bg-surface-2">
+        ${icon('envelope-simple', 'size-4')} ${contact.email}
+      </a>
+      <a href="${contact.discordHref}" target="_blank" rel="noopener noreferrer" class="pressable inline-flex items-center gap-2 rounded-pill border border-hairline px-4 py-2 text-sm font-medium text-paper hover:bg-surface-2">
+        ${icon('discord-logo', 'size-4')} Discord
+      </a>
+      <a href="${contact.instagramHref}" target="_blank" rel="noopener noreferrer" class="pressable inline-flex items-center gap-2 rounded-pill border border-hairline px-4 py-2 text-sm font-medium text-paper hover:bg-surface-2">
+        ${icon('instagram-logo', 'size-4')} Instagram
+      </a>
+    </div>
+  </div>`
+}
+
 export function renderKontakt(): string {
   const hoursRows = hours
     .map(
@@ -342,94 +423,78 @@ export function renderKontakt(): string {
 
   return `
   <section id="kontakt" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
-    <div data-reveal class="grid grid-cols-1 gap-5 lg:grid-cols-2">
+    <div data-reveal class="max-w-[54ch]">
+      <h2 class="text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
+        Kontakt &amp; Reservation
+      </h2>
+    </div>
+
+    <div data-reveal class="mt-10 grid grid-cols-1 gap-5 lg:grid-cols-2">
       <div class="rounded-card border border-hairline bg-surface p-8">
-        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-sage/15 text-sage">
+        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-sage/15 text-sage-text">
           ${icon('clock', 'size-5')}
         </span>
         <h3 class="mt-5 font-display text-xl font-semibold text-paper">Öffnungszeiten</h3>
         <div class="mt-4">${hoursRows}</div>
       </div>
       <div class="rounded-card border border-hairline bg-surface p-8">
-        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-brand/15 text-brand">
+        <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-brand/15 text-brand-text">
           ${icon('map-pin', 'size-5')}
         </span>
         <h3 class="mt-5 font-display text-xl font-semibold text-paper">So findet ihr uns</h3>
         <p class="mt-4 text-sm leading-relaxed text-paper">${contact.address}</p>
         <p class="mt-1 text-sm leading-relaxed text-muted">${contact.hint}</p>
-        <div class="mt-6 flex flex-col gap-3">
-          <a href="${contact.phoneHref}" class="flex items-center gap-2 text-sm text-paper hover:text-brand-pale">
-            ${icon('phone', 'size-4')} ${contact.phone}
-          </a>
-          <a href="${contact.mailHref}" class="flex items-center gap-2 text-sm text-paper hover:text-brand-pale">
-            ${icon('envelope-simple', 'size-4')} ${contact.email}
-          </a>
+        <div class="mt-5 overflow-hidden rounded-card-sm border border-hairline">
+          <iframe
+            src="${contact.mapsEmbedSrc}"
+            width="100%"
+            height="220"
+            style="border:0; display:block"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Karte: Alea Spielbar, ${contact.address}"
+          ></iframe>
         </div>
+        <a
+          href="${contact.mapsPlaceHref}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pressable mt-4 inline-flex items-center gap-2 text-sm font-semibold text-brand-text hover:underline"
+        >
+          ${icon('navigation-arrow', 'size-4')} Route planen
+        </a>
       </div>
     </div>
 
-    <div data-reveal class="mt-16 rounded-card border border-hairline bg-felt bg-surface p-10 text-center md:p-16">
-      <h2 class="text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
-        Bereit zu würfeln?
-      </h2>
-      <p class="mx-auto mt-4 max-w-[42ch] text-balance leading-relaxed text-muted">
-        Schreibt uns Datum, Uhrzeit und Personenzahl — wir antworten meist innerhalb weniger Stunden.
-      </p>
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="${contact.mailHref}"
-          class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-ink-deep transition-colors hover:bg-brand-rich"
-        >
-          Tisch reservieren
-          ${icon('arrow-right', 'size-4')}
-        </a>
-        <a
-          href="${contact.phoneHref}"
-          class="pressable inline-flex items-center gap-2 rounded-pill border border-hairline px-6 py-3.5 font-semibold text-paper transition-colors hover:border-paper/30"
-        >
-          ${icon('phone', 'size-4')} ${contact.phone}
-        </a>
-      </div>
-    </div>
+    <div class="mt-5">${reservationForm()}</div>
   </section>`
 }
 
-export function renderStimmen(): string {
-  const cards = testimonials
-    .map(
-      (t) => `
-    <figure data-reveal class="flex flex-col justify-between gap-6 rounded-card border border-hairline bg-surface p-7">
-      <div class="flex gap-1 text-tan">
-        ${icon('star', 'size-4')}${icon('star', 'size-4')}${icon('star', 'size-4')}${icon('star', 'size-4')}${icon('star', 'size-4')}
-      </div>
-      <blockquote class="text-balance leading-relaxed text-paper">&ldquo;${t.quote}&rdquo;</blockquote>
-      <figcaption class="flex items-center gap-3">
-        <img
-          src="https://picsum.photos/seed/${t.seed}/96/96"
-          alt=""
-          width="48"
-          height="48"
-          loading="lazy"
-          class="size-12 rounded-pill object-cover"
-        />
-        <div>
-          <p class="text-sm font-semibold text-paper">${t.name}</p>
-          <p class="text-xs text-faint">${t.role}</p>
-        </div>
-      </figcaption>
-    </figure>`,
-    )
-    .join('')
-
+export function renderBewertung(): string {
   return `
   <section class="mx-auto max-w-7xl px-6 py-24 md:py-32">
-    <div data-reveal class="max-w-[54ch]">
-      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-sage">Stimmen aus der Bar</p>
-      <h2 class="mt-3 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
-        Das sagen unsere Gäste
+    <div data-reveal class="rounded-card border border-hairline bg-felt bg-surface p-10 text-center md:p-16">
+      <span class="mx-auto flex size-14 items-center justify-center rounded-pill bg-brand/12 text-brand-text">
+        ${icon('google-logo', 'size-6')}
+      </span>
+      <h2 class="mt-6 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
+        Wie war euer Abend?
       </h2>
+      <p class="mx-auto mt-4 max-w-[46ch] text-balance leading-relaxed text-muted">
+        Eine ehrliche Bewertung auf Google hilft anderen Spielefans, uns zu finden — und uns, noch besser zu werden.
+        Der Link führt direkt zu unserem echten Google-Profil.
+      </p>
+      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="${contact.mapsPlaceHref}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-on-accent transition-colors hover:bg-brand-rich"
+        >
+          ${icon('google-logo', 'size-4')} Bewertung auf Google schreiben
+        </a>
+      </div>
     </div>
-    <div class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3">${cards}</div>
   </section>`
 }
 
@@ -443,17 +508,17 @@ export function renderFooter(): string {
           <span class="flex size-8 items-center justify-center rounded-card-sm bg-brand text-ink-deep">
             ${icon('dice-five', 'size-4')}
           </span>
-          Alea<span class="text-brand">.</span>
+          Alea<span class="text-brand-text">.</span>
         </a>
         <p class="mt-4 max-w-[28ch] text-sm leading-relaxed text-muted">
           Die Spielbar, in der jeder Abend anders gewürfelt wird.
         </p>
         <div class="mt-5 flex gap-3">
-          <a href="#" aria-label="Alea Spielbar auf Instagram" class="flex size-9 items-center justify-center rounded-pill border border-hairline text-muted hover:text-paper">
+          <a href="${contact.instagramHref}" target="_blank" rel="noopener noreferrer" aria-label="Alea Spielbar auf Instagram" class="flex size-9 items-center justify-center rounded-pill border border-hairline text-muted hover:text-paper">
             ${icon('instagram-logo', 'size-4')}
           </a>
-          <a href="#" aria-label="Alea Spielbar auf Facebook" class="flex size-9 items-center justify-center rounded-pill border border-hairline text-muted hover:text-paper">
-            ${icon('facebook-logo', 'size-4')}
+          <a href="${contact.discordHref}" target="_blank" rel="noopener noreferrer" aria-label="Alea Spielbar auf Discord" class="flex size-9 items-center justify-center rounded-pill border border-hairline text-muted hover:text-paper">
+            ${icon('discord-logo', 'size-4')}
           </a>
         </div>
       </div>
@@ -473,13 +538,12 @@ export function renderFooter(): string {
         <h4 class="text-sm font-semibold text-paper">Kontakt</h4>
         <ul class="mt-4 flex flex-col gap-3 text-sm text-muted">
           <li>${contact.address}</li>
-          <li><a href="${contact.phoneHref}" class="hover:text-paper">${contact.phone}</a></li>
           <li><a href="${contact.mailHref}" class="hover:text-paper">${contact.email}</a></li>
         </ul>
       </div>
     </div>
     <div class="border-t border-hairline px-6 py-6 text-center text-xs text-faint">
-      © ${year} Alea Spielbar · Leipzig
+      © ${year} ${contact.company} · Zürich
     </div>
   </footer>`
 }
