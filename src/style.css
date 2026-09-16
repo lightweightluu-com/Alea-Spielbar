@@ -1,0 +1,239 @@
+@import "tailwindcss";
+@import "@fontsource/outfit/500.css";
+@import "@fontsource/outfit/600.css";
+@import "@fontsource/outfit/700.css";
+@import "@fontsource/outfit/800.css";
+@import "@fontsource/plus-jakarta-sans/400.css";
+@import "@fontsource/plus-jakarta-sans/500.css";
+@import "@fontsource/plus-jakarta-sans/600.css";
+
+@theme {
+  --color-ink: oklch(16% 0.032 262);
+  --color-ink-deep: oklch(10% 0.028 262);
+  --color-surface: oklch(21% 0.032 262);
+  --color-surface-2: oklch(26% 0.032 262);
+  --color-hairline: oklch(100% 0 0 / 0.08);
+
+  --color-coral: oklch(70% 0.19 35);
+  --color-coral-rich: oklch(60% 0.2 32);
+  --color-coral-pale: oklch(85% 0.09 40);
+
+  --color-teal: oklch(74% 0.12 190);
+  --color-teal-rich: oklch(58% 0.11 190);
+  --color-teal-pale: oklch(88% 0.06 190);
+
+  --color-gold: oklch(80% 0.15 85);
+  --color-gold-rich: oklch(70% 0.16 78);
+
+  --color-paper: oklch(95% 0.008 262);
+  --color-muted: oklch(75% 0.014 262);
+  --color-faint: oklch(62% 0.016 262);
+
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+
+  --radius-card: 1.5rem;
+  --radius-card-sm: 1.125rem;
+  --radius-pill: 999px;
+  --radius-input: 0.75rem;
+
+  --ease-out-strong: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-strong: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+[id] {
+  scroll-margin-top: 4.5rem;
+}
+
+#site-header.is-scrolled {
+  background-color: color-mix(in oklch, var(--color-ink) 82%, transparent);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-hairline);
+}
+
+body {
+  background-color: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: var(--color-coral);
+  color: var(--color-ink-deep);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Felt-table texture: a very quiet radial vignette + grain, never a purple/AI gradient */
+.bg-felt {
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% -10%, oklch(70% 0.19 35 / 0.14), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 10%, oklch(74% 0.12 190 / 0.12), transparent 60%),
+    linear-gradient(var(--color-ink), var(--color-ink));
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Reveal-on-scroll base state; Motion's inView() adds .is-visible */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(22px);
+}
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition:
+    opacity 700ms var(--ease-out-strong),
+    transform 700ms var(--ease-out-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+/* Press feedback for pressable elements */
+.pressable {
+  transition: transform 160ms var(--ease-out-strong);
+}
+.pressable:active {
+  transform: scale(0.97);
+}
+
+/* Scroll-snap pills for the game library list */
+.snap-row {
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+}
+.snap-row::-webkit-scrollbar {
+  display: none;
+}
+.snap-row > * {
+  scroll-snap-align: start;
+}
+
+/* Hero dice mascot: idle float + twinkle, both decorative and brand-motivated */
+.die-float-a,
+.die-float-b,
+.die-float-c {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+}
+.die-float-a {
+  animation: die-float-a 6s var(--ease-in-out-strong) infinite;
+}
+.die-float-b {
+  animation: die-float-b 7s var(--ease-in-out-strong) infinite;
+}
+.die-float-c {
+  animation: die-float-c 5.5s var(--ease-in-out-strong) infinite;
+}
+@keyframes die-float-a {
+  0%,
+  100% {
+    transform: translateY(0) rotate(-8deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-4deg);
+  }
+}
+@keyframes die-float-b {
+  0%,
+  100% {
+    transform: translateY(0) rotate(10deg);
+  }
+  50% {
+    transform: translateY(12px) rotate(14deg);
+  }
+}
+@keyframes die-float-c {
+  0%,
+  100% {
+    transform: translateY(0) rotate(6deg) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) rotate(2deg) scale(1.03);
+  }
+}
+.twinkle {
+  animation: twinkle 2.6s ease-in-out infinite;
+}
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+.die-greet {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  animation: die-greet 0.7s var(--ease-out-strong) 1;
+}
+@keyframes die-greet {
+  0% {
+    transform: rotate(-8deg);
+  }
+  20% {
+    transform: rotate(-26deg);
+  }
+  45% {
+    transform: rotate(6deg);
+  }
+  70% {
+    transform: rotate(-18deg);
+  }
+  100% {
+    transform: rotate(-8deg);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .die-float-a,
+  .die-float-b,
+  .die-float-c,
+  .twinkle,
+  .die-greet {
+    animation: none;
+  }
+}
+
+/* Custom scrollbar accent on the whole page */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-ink);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-2);
+  border-radius: 999px;
+}
