@@ -8,8 +8,18 @@
     <meta name="theme-color" content="#100a07" media="(prefers-color-scheme: dark)" />
     <meta
       name="description"
-      content="Alea Spielbar Zürich: über 180 Brettspiele, handgemachte Drinks und ein Team, das dir in Minuten das perfekte Spiel für den Abend findet."
+      content="Alea Brettspiel Café & Bar in Zürich: über 180 Spiele, Cocktails und Craft-Bier. Eintritt CHF 7 pro Person, ganz ohne Zeitlimit."
     />
+    <!--
+      Explicitly allows framing Google Maps. Harmless when no CSP header exists at all (the
+      common case for a static host), but it's also the documented fix for the Google Maps
+      embed rendering as "This content is blocked. Contact the site owner to fix the issue." —
+      a default-src CSP with no frame-src exception for google.com. A <meta> CSP can't override
+      a *stricter* CSP the hosting layer sends as an HTTP header, only add a policy where none
+      existed — if that ever turns out to be the cause here, the same frame-src needs adding to
+      the host's response headers too.
+    -->
+    <meta http-equiv="Content-Security-Policy" content="frame-src 'self' https://www.google.com https://maps.google.com;" />
     <title>Alea Spielbar — Würfle dein Glück, wähle dein Spiel</title>
     <script>
       // Applies a saved 'dark' preference before first paint, so there's no flash of the

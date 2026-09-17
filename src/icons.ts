@@ -9,6 +9,7 @@ import puzzlePiece from '@phosphor-icons/core/assets/regular/puzzle-piece.svg?ra
 import trophy from '@phosphor-icons/core/assets/regular/trophy.svg?raw'
 import sparkle from '@phosphor-icons/core/assets/regular/sparkle.svg?raw'
 import star from '@phosphor-icons/core/assets/regular/star.svg?raw'
+import starFill from '@phosphor-icons/core/assets/fill/star-fill.svg?raw'
 import arrowRight from '@phosphor-icons/core/assets/regular/arrow-right.svg?raw'
 import instagramLogo from '@phosphor-icons/core/assets/regular/instagram-logo.svg?raw'
 import discordLogo from '@phosphor-icons/core/assets/regular/discord-logo.svg?raw'
@@ -39,6 +40,7 @@ const registry = {
   trophy,
   sparkle,
   star,
+  'star-fill': starFill,
   'arrow-right': arrowRight,
   'instagram-logo': instagramLogo,
   'discord-logo': discordLogo,

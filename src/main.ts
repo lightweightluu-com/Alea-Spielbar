@@ -1,6 +1,8 @@
 import './style.css'
 import { animate } from 'motion'
 import {
+  ratingCtaPrimary,
+  ratingCtaSecondary,
   renderBewertung,
   renderEssenTrinken,
   renderEvents,
@@ -41,6 +43,7 @@ setupMobileNav()
 setupHeaderScrollState()
 setupScrollReveal()
 setupReservationForm()
+setupRatingWidget()
 if (!prefersReducedMotion && hasFinePointer) {
   setupMagneticCta()
   setupDiceGreeting()
@@ -230,6 +233,120 @@ function setupReservationForm(): void {
     status.textContent = 'E-Mail-Programm geöffnet — bitte dort noch auf „Senden" tippen.'
     window.setTimeout(() => {
       status.textContent = defaultStatus
+    }, 6000)
+  })
+}
+
+/**
+ * Star-only rating picker. Clicking a star reveals both a Google-review link and a direct
+ * feedback form — always both, regardless of the rating chosen. Routing happy customers to
+ * Google and unhappy ones only to a private form ("review gating") is against Google's review
+ * policy and actively enforced; the rating only changes which option is emphasized and what the
+ * message says, never which options exist.
+ */
+function setupRatingWidget(): void {
+  const starButtons = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-rating-star]'))
+  const result = document.querySelector<HTMLDivElement>('#rating-result')
+  const resultText = document.querySelector<HTMLParagraphElement>('#rating-result-text')
+  const googleCta = document.querySelector<HTMLAnchorElement>('#rating-google-cta')
+  const feedbackCta = document.querySelector<HTMLButtonElement>('#rating-feedback-cta')
+  const feedbackWrap = document.querySelector<HTMLDivElement>('#rating-feedback-wrap')
+  const feedbackForm = document.querySelector<HTMLFormElement>('#feedback-form')
+  const feedbackStatus = document.querySelector<HTMLParagraphElement>('#fb-status')
+  if (!starButtons.length || !result || !resultText || !googleCta || !feedbackCta || !feedbackWrap || !feedbackForm || !feedbackStatus) {
+    return
+  }
+
+  let selectedRating = 0
+
+  const paintStars = (rating: number) => {
+    starButtons.forEach((button) => {
+      const value = Number(button.dataset.ratingStar)
+      const filled = button.querySelector('.rating-star-filled')
+      const empty = button.querySelector('.rating-star-empty')
+      const isFilled = value <= rating
+      filled?.classList.toggle('hidden', !isFilled)
+      empty?.classList.toggle('hidden', isFilled)
+      button.classList.toggle('text-tan-text', isFilled)
+      button.classList.toggle('text-faint', !isFilled)
+    })
+  }
+
+  const messageFor = (rating: number): string => {
+    if (rating <= 2) {
+      return 'Das tut uns leid! Erzählt uns direkt, was schiefgelaufen ist — wir kümmern uns persönlich darum. Wer mag, kann seine Erfahrung natürlich auch öffentlich auf Google teilen.'
+    }
+    if (rating === 3) {
+      return 'Danke fürs ehrliche Feedback! Was können wir besser machen? Schreibt uns direkt, oder teilt eure Erfahrung öffentlich auf Google.'
+    }
+    return 'Das freut uns riesig! Eine ehrliche Bewertung auf Google hilft anderen Spielefans, uns zu finden. Ihr könnt uns natürlich auch direkt schreiben.'
+  }
+
+  const setCtaEmphasis = (primary: HTMLElement, secondary: HTMLElement) => {
+    primary.classList.remove(...ratingCtaSecondary.split(' '))
+    primary.classList.add(...ratingCtaPrimary.split(' '))
+    secondary.classList.remove(...ratingCtaPrimary.split(' '))
+    secondary.classList.add(...ratingCtaSecondary.split(' '))
+  }
+
+  const selectRating = (rating: number) => {
+    selectedRating = rating
+    paintStars(rating)
+    starButtons.forEach((button) => {
+      button.setAttribute('aria-pressed', String(Number(button.dataset.ratingStar) <= rating))
+    })
+
+    resultText.textContent = messageFor(rating)
+    result.classList.remove('hidden')
+
+    if (rating >= 4) {
+      setCtaEmphasis(googleCta, feedbackCta)
+    } else {
+      setCtaEmphasis(feedbackCta, googleCta)
+    }
+  }
+
+  starButtons.forEach((button) => {
+    const value = Number(button.dataset.ratingStar)
+    button.addEventListener('mouseenter', () => paintStars(value))
+    button.addEventListener('click', () => selectRating(value))
+  })
+
+  document.querySelector<HTMLDivElement>('#rating-stars')?.addEventListener('mouseleave', () => paintStars(selectedRating))
+
+  feedbackCta.addEventListener('click', () => {
+    const open = feedbackWrap.classList.toggle('hidden') === false
+    feedbackCta.setAttribute('aria-expanded', String(open))
+    if (open) {
+      feedbackWrap.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+      document.querySelector<HTMLInputElement>('#fb-name')?.focus()
+    }
+  })
+
+  const defaultFeedbackStatus = feedbackStatus.textContent ?? ''
+
+  feedbackForm.addEventListener('submit', (event) => {
+    event.preventDefault()
+
+    if (!feedbackForm.reportValidity()) {
+      feedbackStatus.textContent = 'Bitte füllt Name, E-Mail und Nachricht aus.'
+      return
+    }
+
+    const data = new FormData(feedbackForm)
+    const name = String(data.get('name') ?? '').trim()
+    const email = String(data.get('email') ?? '').trim()
+    const message = String(data.get('message') ?? '').trim()
+
+    const bodyLines = [`Bewertung: ${selectedRating} von 5 Sternen`, '', message, '', `— ${name} (${email})`]
+
+    const subject = `Feedback über die Website: ${selectedRating} von 5 Sternen`
+    const mailto = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
+
+    window.location.href = mailto
+    feedbackStatus.textContent = 'E-Mail-Programm geöffnet — bitte dort noch auf „Senden" tippen.'
+    window.setTimeout(() => {
+      feedbackStatus.textContent = defaultFeedbackStatus
     }, 6000)
   })
 }

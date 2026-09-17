@@ -132,7 +132,8 @@ export function renderHero(): string {
           Würfle dein Glück.<br />Wähle dein Spiel.
         </h1>
         <p class="mt-5 max-w-[46ch] text-balance text-base leading-relaxed text-muted sm:mt-6 sm:text-lg">
-          Über 180 Brettspiele, handgemachte Drinks und ein Team, das dir in zwei Minuten das perfekte Spiel für den Abend findet.
+          ${contact.brandName} im Herzen von Zürich: über 180 Spiele, Cocktails, Craft-Bier und ein Team, das dir in
+          Minuten das passende Spiel für den Abend zeigt. Eintritt: CHF 7 pro Person, ganz ohne Zeitlimit.
         </p>
         <div class="mt-6 flex flex-wrap items-center gap-4 sm:mt-8">
           <a
@@ -451,6 +452,7 @@ export function renderKontakt(): string {
             height="220"
             style="border:0; display:block"
             loading="lazy"
+            allow="fullscreen"
             referrerpolicy="no-referrer-when-downgrade"
             title="Karte: Alea Spielbar, ${contact.address}"
           ></iframe>
@@ -470,33 +472,107 @@ export function renderKontakt(): string {
   </section>`
 }
 
+/** Primary (filled) vs. secondary (outline) pill styles — JS swaps these between the two CTAs based on the chosen rating. */
+const ratingCtaPrimary =
+  'bg-brand text-on-accent hover:bg-brand-rich'
+const ratingCtaSecondary =
+  'border border-hairline text-paper hover:border-paper/30 hover:bg-surface-2'
+
+function ratingStars(): string {
+  return [1, 2, 3, 4, 5]
+    .map(
+      (n) => `
+      <button
+        type="button"
+        data-rating-star="${n}"
+        aria-label="${n} von 5 Sternen"
+        aria-pressed="false"
+        class="rating-star pressable relative inline-flex size-11 items-center justify-center text-faint transition-colors sm:size-14"
+      >
+        ${icon('star', 'size-8 rating-star-empty sm:size-10')}
+        ${icon('star-fill', 'hidden size-8 rating-star-filled sm:size-10')}
+      </button>`,
+    )
+    .join('')
+}
+
 export function renderBewertung(): string {
   return `
-  <section class="mx-auto max-w-7xl px-6 py-24 md:py-32">
+  <section id="bewertung" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
     <div data-reveal class="rounded-card border border-hairline bg-felt bg-surface p-10 text-center md:p-16">
-      <span class="mx-auto flex size-14 items-center justify-center rounded-pill bg-brand/12 text-brand-text">
-        ${icon('google-logo', 'size-6')}
-      </span>
-      <h2 class="mt-6 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
+      <h2 class="text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
         Wie war euer Abend?
       </h2>
       <p class="mx-auto mt-4 max-w-[46ch] text-balance leading-relaxed text-muted">
-        Eine ehrliche Bewertung auf Google hilft anderen Spielefans, uns zu finden — und uns, noch besser zu werden.
-        Der Link führt direkt zu unserem echten Google-Profil.
+        Wählt eure Sterne — wir zeigen euch direkt, wie ihr uns euer Feedback am besten zukommen lasst.
       </p>
-      <div class="mt-8 flex flex-wrap items-center justify-center gap-4">
-        <a
-          href="${contact.mapsPlaceHref}"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-on-accent transition-colors hover:bg-brand-rich"
-        >
-          ${icon('google-logo', 'size-4')} Bewertung auf Google schreiben
-        </a>
+
+      <div id="rating-stars" role="group" aria-label="Sterne-Bewertung" class="mt-8 flex items-center justify-center gap-1 sm:gap-2">
+        ${ratingStars()}
+      </div>
+
+      <div id="rating-result" class="hidden mt-8">
+        <p id="rating-result-text" role="status" aria-live="polite" class="mx-auto max-w-[48ch] text-balance leading-relaxed text-muted"></p>
+        <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
+          <a
+            id="rating-google-cta"
+            href="${contact.mapsPlaceHref}"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="pressable inline-flex items-center gap-2 rounded-pill px-6 py-3.5 font-semibold transition-colors"
+          >
+            ${icon('google-logo', 'size-4')} Auf Google bewerten
+          </a>
+          <button
+            id="rating-feedback-cta"
+            type="button"
+            aria-expanded="false"
+            aria-controls="rating-feedback-wrap"
+            class="pressable inline-flex items-center gap-2 rounded-pill px-6 py-3.5 font-semibold transition-colors"
+          >
+            ${icon('envelope-simple', 'size-4')} Feedback direkt an uns
+          </button>
+        </div>
+      </div>
+
+      <div id="rating-feedback-wrap" class="hidden mt-10 border-t border-hairline pt-8 text-left">
+        <h3 class="font-display text-xl font-semibold text-paper">Feedback direkt an uns</h3>
+        <p class="mt-2 max-w-[54ch] text-sm leading-relaxed text-muted">
+          Schreibt uns, was los war — wir kümmern uns persönlich darum. Öffnet dein E-Mail-Programm mit
+          vorausgefüllter Nachricht an ${contact.email}.
+        </p>
+        <form id="feedback-form" novalidate class="mt-6">
+          <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+            <div class="flex flex-col gap-2">
+              <label for="fb-name" class="text-sm font-medium text-paper">Dein Name</label>
+              <input id="fb-name" name="name" type="text" required autocomplete="name" class="form-input" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <label for="fb-email" class="text-sm font-medium text-paper">Deine E-Mail-Adresse</label>
+              <input id="fb-email" name="email" type="email" required autocomplete="email" class="form-input" />
+            </div>
+            <div class="flex flex-col gap-2 sm:col-span-2">
+              <label for="fb-message" class="text-sm font-medium text-paper">Deine Nachricht</label>
+              <textarea id="fb-message" name="message" rows="4" required class="form-input resize-none"></textarea>
+            </div>
+          </div>
+          <div class="mt-6 flex flex-wrap items-center gap-4">
+            <button
+              type="submit"
+              class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-on-accent transition-colors hover:bg-brand-rich"
+            >
+              Absenden
+              ${icon('arrow-right', 'size-4')}
+            </button>
+            <p id="fb-status" role="status" aria-live="polite" class="text-sm text-muted"></p>
+          </div>
+        </form>
       </div>
     </div>
   </section>`
 }
+
+export { ratingCtaPrimary, ratingCtaSecondary }
 
 export function renderFooter(): string {
   const year = new Date().getFullYear()
