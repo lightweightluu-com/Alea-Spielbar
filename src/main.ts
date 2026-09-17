@@ -15,39 +15,112 @@ import {
   renderSpiele,
 } from './sections'
 import { contact, rooms } from './content'
+import { renderGameDetailPage, renderGamesGrid, renderGamesListPage } from './gamePages'
 
 const THEME_KEY = 'alea-theme'
 
 const app = document.querySelector<HTMLDivElement>('#app')!
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
 
+/**
+ * The header/nav and footer are page chrome shared by every route, so they render once and stay
+ * mounted. #home-root and #games-root are siblings inside <main>; the router only ever toggles
+ * which one is visible (and (re)fills #games-root's content on the way in) — it never tears down
+ * and rebuilds the homepage, so its scroll-reveal state, reservation form input, and rating
+ * selection survive a trip to the games catalog and back.
+ */
 app.innerHTML = [
   renderNav(),
   '<main>',
-  renderHero(),
-  renderFactsStrip(),
-  renderKonzept(),
-  renderSpiele(),
-  renderEssenTrinken(),
-  renderEvents(),
-  renderKontakt(),
-  renderBewertung(),
+  '<div id="home-root"></div>',
+  '<div id="games-root" class="hidden"></div>',
   '</main>',
   renderFooter(),
 ].join('')
 
-const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-const hasFinePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches
+const homeRoot = document.querySelector<HTMLDivElement>('#home-root')!
+const gamesRoot = document.querySelector<HTMLDivElement>('#games-root')!
 
 setupThemeToggle()
 setupMobileNav()
 setupHeaderScrollState()
-setupScrollReveal()
-setupReservationForm()
-setupRatingWidget()
-if (!prefersReducedMotion && hasFinePointer) {
-  setupMagneticCta()
-  setupDiceGreeting()
+
+/**
+ * A tiny hash router for the standalone games catalog (#/spiele-liste, #/spiele-liste/:slug).
+ * Every other hash — including the marketing site's plain in-page anchors like #kontakt — falls
+ * through to "home" and is left to the browser's native anchor scrolling.
+ */
+type Route = { kind: 'home' } | { kind: 'games-list' } | { kind: 'game-detail'; slug: string }
+
+function parseRoute(): Route {
+  const hash = window.location.hash
+  if (hash === '#/spiele-liste') return { kind: 'games-list' }
+  const detailMatch = hash.match(/^#\/spiele-liste\/(.+)$/)
+  if (detailMatch) return { kind: 'game-detail', slug: decodeURIComponent(detailMatch[1]) }
+  return { kind: 'home' }
 }
+
+let homeInitialized = false
+
+function renderHomePage(): void {
+  homeRoot.innerHTML = [
+    renderHero(),
+    renderFactsStrip(),
+    renderKonzept(),
+    renderSpiele(),
+    renderEssenTrinken(),
+    renderEvents(),
+    renderKontakt(),
+    renderBewertung(),
+  ].join('')
+
+  setupScrollReveal()
+  setupReservationForm()
+  setupRatingWidget()
+  if (!prefersReducedMotion && hasFinePointer) {
+    setupMagneticCta()
+    setupDiceGreeting()
+  }
+}
+
+function setupGamesSearch(): void {
+  const input = document.querySelector<HTMLInputElement>('#games-search')
+  const grid = document.querySelector<HTMLDivElement>('#games-grid')
+  if (!input || !grid) return
+  input.addEventListener('input', () => {
+    grid.innerHTML = renderGamesGrid(input.value)
+  })
+}
+
+function route(): void {
+  const current = parseRoute()
+
+  if (current.kind === 'home') {
+    if (!homeInitialized) {
+      renderHomePage()
+      homeInitialized = true
+    }
+    homeRoot.classList.remove('hidden')
+    gamesRoot.classList.add('hidden')
+    const anchor = window.location.hash.slice(1)
+    if (anchor) document.getElementById(anchor)?.scrollIntoView()
+    return
+  }
+
+  homeRoot.classList.add('hidden')
+  gamesRoot.classList.remove('hidden')
+  if (current.kind === 'games-list') {
+    gamesRoot.innerHTML = renderGamesListPage()
+    setupGamesSearch()
+  } else {
+    gamesRoot.innerHTML = renderGameDetailPage(current.slug)
+  }
+  window.scrollTo(0, 0)
+}
+
+window.addEventListener('hashchange', route)
+route()
 
 /** Reads/writes the persisted theme choice. Default is light; index.html's inline head script already applied a stored 'dark' before first paint, so this only wires the toggle going forward. */
 function setupThemeToggle(): void {

@@ -27,6 +27,11 @@ import navigationArrow from '@phosphor-icons/core/assets/regular/navigation-arro
 import checkCircle from '@phosphor-icons/core/assets/regular/check-circle.svg?raw'
 import warningCircle from '@phosphor-icons/core/assets/regular/warning-circle.svg?raw'
 import spinner from '@phosphor-icons/core/assets/regular/spinner-gap.svg?raw'
+import magnifyingGlass from '@phosphor-icons/core/assets/regular/magnifying-glass.svg?raw'
+import arrowLeft from '@phosphor-icons/core/assets/regular/arrow-left.svg?raw'
+import arrowSquareOut from '@phosphor-icons/core/assets/regular/arrow-square-out.svg?raw'
+import gauge from '@phosphor-icons/core/assets/regular/gauge.svg?raw'
+import imageIcon from '@phosphor-icons/core/assets/regular/image.svg?raw'
 
 const registry = {
   'map-pin': mapPin,
@@ -58,6 +63,11 @@ const registry = {
   'check-circle': checkCircle,
   'warning-circle': warningCircle,
   spinner,
+  'magnifying-glass': magnifyingGlass,
+  'arrow-left': arrowLeft,
+  'arrow-square-out': arrowSquareOut,
+  gauge,
+  image: imageIcon,
 } as const
 
 export type IconName = keyof typeof registry

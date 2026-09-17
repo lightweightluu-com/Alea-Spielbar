@@ -1,0 +1,913 @@
+[
+  {
+    "name": "5-Minute Dungeon",
+    "language": "Deutsch",
+    "slug": "5-minute-dungeon",
+    "bggId": null
+  },
+  {
+    "name": "7 Wonders",
+    "language": "Deutsch",
+    "slug": "7-wonders",
+    "bggId": null
+  },
+  {
+    "name": "7 Wonders Duel",
+    "language": "Deutsch",
+    "slug": "7-wonders-duel",
+    "bggId": null
+  },
+  {
+    "name": "Ahau: Rulers of Yucatán",
+    "language": "English",
+    "expansions": [
+      "Eclipse"
+    ],
+    "slug": "ahau-rulers-of-yucatan",
+    "bggId": null
+  },
+  {
+    "name": "Alhambra",
+    "language": "Deutsch",
+    "slug": "alhambra",
+    "bggId": null
+  },
+  {
+    "name": "Andor Junior",
+    "language": "Deutsch",
+    "slug": "andor-junior",
+    "bggId": null
+  },
+  {
+    "name": "Ark Nova",
+    "language": "English",
+    "slug": "ark-nova",
+    "bggId": null
+  },
+  {
+    "name": "Azul",
+    "language": "Deutsch",
+    "slug": "azul",
+    "bggId": null
+  },
+  {
+    "name": "Blood Rage",
+    "language": "Deutsch",
+    "slug": "blood-rage",
+    "bggId": null
+  },
+  {
+    "name": "Bomb Busters",
+    "language": "Deutsch",
+    "slug": "bomb-busters",
+    "bggId": null
+  },
+  {
+    "name": "Brändi DOG",
+    "language": "Deutsch",
+    "slug": "brandi-dog",
+    "bggId": null
+  },
+  {
+    "name": "Brass Birmingham",
+    "language": "English",
+    "slug": "brass-birmingham",
+    "bggId": null
+  },
+  {
+    "name": "Carcassonne, Winter Edition",
+    "language": "Deutsch",
+    "expansions": [
+      "Goldrausch"
+    ],
+    "slug": "carcassonne-winter-edition",
+    "bggId": null
+  },
+  {
+    "name": "Cards Against Humanity",
+    "language": "English",
+    "slug": "cards-against-humanity",
+    "bggId": null
+  },
+  {
+    "name": "Cartographers Heroes",
+    "language": "English",
+    "slug": "cartographers-heroes",
+    "bggId": null
+  },
+  {
+    "name": "Cascadia",
+    "language": "Deutsch",
+    "slug": "cascadia",
+    "bggId": null
+  },
+  {
+    "name": "Cascadia Junior",
+    "language": "Deutsch",
+    "slug": "cascadia-junior",
+    "bggId": null
+  },
+  {
+    "name": "Castle Panic",
+    "language": "English",
+    "slug": "castle-panic",
+    "bggId": null
+  },
+  {
+    "name": "Catan Junior",
+    "language": "Deutsch",
+    "slug": "catan-junior",
+    "bggId": null
+  },
+  {
+    "name": "Challengers!",
+    "language": "Deutsch",
+    "slug": "challengers",
+    "bggId": null
+  },
+  {
+    "name": "Circus Domini",
+    "language": null,
+    "slug": "circus-domini",
+    "bggId": null
+  },
+  {
+    "name": "Coco Schnipp",
+    "language": "Deutsch",
+    "slug": "coco-schnipp",
+    "bggId": null
+  },
+  {
+    "name": "Codenames",
+    "language": "Deutsch",
+    "slug": "codenames",
+    "bggId": null
+  },
+  {
+    "name": "Codenames Duett",
+    "language": "Deutsch",
+    "slug": "codenames-duett",
+    "bggId": null
+  },
+  {
+    "name": "Conquest",
+    "language": "Deutsch",
+    "slug": "conquest",
+    "bggId": null
+  },
+  {
+    "name": "Crossfire",
+    "language": "Deutsch",
+    "slug": "crossfire",
+    "bggId": null
+  },
+  {
+    "name": "Das ältere Zeichen",
+    "language": "Deutsch",
+    "slug": "das-altere-zeichen",
+    "bggId": null
+  },
+  {
+    "name": "Déblok",
+    "language": "Francais",
+    "slug": "deblok",
+    "bggId": null
+  },
+  {
+    "name": "Der Fuchs im Wald",
+    "language": "Deutsch",
+    "slug": "der-fuchs-im-wald",
+    "bggId": null
+  },
+  {
+    "name": "Der Natur auf der Spur",
+    "language": "Deutsch",
+    "slug": "der-natur-auf-der-spur",
+    "bggId": null
+  },
+  {
+    "name": "Die Legenden von Andor",
+    "language": "Deutsch",
+    "slug": "die-legenden-von-andor",
+    "bggId": null
+  },
+  {
+    "name": "Die Siedler von Catan",
+    "language": "Deutsch",
+    "expansions": [
+      "Städte und Ritter"
+    ],
+    "slug": "die-siedler-von-catan",
+    "bggId": null
+  },
+  {
+    "name": "Dobble",
+    "language": null,
+    "slug": "dobble",
+    "bggId": null
+  },
+  {
+    "name": "Dominion",
+    "language": "Deutsch",
+    "expansions": [
+      "Die Alchemisten"
+    ],
+    "slug": "dominion",
+    "bggId": null
+  },
+  {
+    "name": "Dorfromantik",
+    "language": "Deutsch",
+    "slug": "dorfromantik",
+    "bggId": null
+  },
+  {
+    "name": "Dos Rios",
+    "language": "Deutsch",
+    "slug": "dos-rios",
+    "bggId": null
+  },
+  {
+    "name": "Dreaksau",
+    "language": "Deutsch",
+    "expansions": [
+      "Sauschön"
+    ],
+    "slug": "dreaksau",
+    "bggId": null
+  },
+  {
+    "name": "Dune Imperium",
+    "language": "Deutsch",
+    "slug": "dune-imperium",
+    "bggId": null
+  },
+  {
+    "name": "Dune Imperium Uprising",
+    "language": "English",
+    "slug": "dune-imperium-uprising",
+    "bggId": null
+  },
+  {
+    "name": "Dungeon Fighter",
+    "language": "Deutsch",
+    "slug": "dungeon-fighter",
+    "bggId": null
+  },
+  {
+    "name": "Durch die Wüste",
+    "language": "Deutsch",
+    "slug": "durch-die-wuste",
+    "bggId": null
+  },
+  {
+    "name": "Equinox",
+    "language": "Deutsch",
+    "slug": "equinox",
+    "bggId": null
+  },
+  {
+    "name": "Everdell",
+    "language": "English",
+    "slug": "everdell",
+    "bggId": null
+  },
+  {
+    "name": "Familienspiele",
+    "language": "Deutsch",
+    "slug": "familienspiele",
+    "bggId": null
+  },
+  {
+    "name": "Fang de Böögg!!",
+    "language": "Deutsch",
+    "slug": "fang-de-boogg",
+    "bggId": null
+  },
+  {
+    "name": "Flamecraft",
+    "language": "Deutsch",
+    "slug": "flamecraft",
+    "bggId": null
+  },
+  {
+    "name": "Flügelschlag",
+    "language": "Deutsch",
+    "slug": "flugelschlag",
+    "bggId": null
+  },
+  {
+    "name": "Food Chain Magnate",
+    "language": "English",
+    "slug": "food-chain-magnate",
+    "bggId": null
+  },
+  {
+    "name": "Fort",
+    "language": "English",
+    "slug": "fort",
+    "bggId": null
+  },
+  {
+    "name": "Gloomhaven: Die Pranken des Löwen",
+    "language": "Deutsch",
+    "slug": "gloomhaven-die-pranken-des-lowen",
+    "bggId": null
+  },
+  {
+    "name": "Glory to Rome",
+    "language": "English",
+    "slug": "glory-to-rome",
+    "bggId": null
+  },
+  {
+    "name": "Hai Alarm",
+    "language": "Deutsch",
+    "slug": "hai-alarm",
+    "bggId": null
+  },
+  {
+    "name": "Harter Tobak",
+    "language": "Deutsch",
+    "slug": "harter-tobak",
+    "bggId": null
+  },
+  {
+    "name": "Heckmeck",
+    "language": "Deutsch, English, Francais",
+    "slug": "heckmeck",
+    "bggId": null
+  },
+  {
+    "name": "Hero Realms",
+    "language": "English",
+    "slug": "hero-realms",
+    "bggId": null
+  },
+  {
+    "name": "Herr der Ringe: Das Meisterquiz",
+    "language": "Deutsch",
+    "slug": "herr-der-ringe-das-meisterquiz",
+    "bggId": null
+  },
+  {
+    "name": "Herr der Ringe: Die Entscheidung",
+    "language": "Deutsch",
+    "slug": "herr-der-ringe-die-entscheidung",
+    "bggId": null
+  },
+  {
+    "name": "Inis",
+    "language": "English",
+    "slug": "inis",
+    "bggId": null
+  },
+  {
+    "name": "Jagd der Vampire",
+    "language": "Deutsch",
+    "slug": "jagd-der-vampire",
+    "bggId": null
+  },
+  {
+    "name": "Jasskarten",
+    "language": null,
+    "slug": "jasskarten",
+    "bggId": null
+  },
+  {
+    "name": "Jenga",
+    "language": null,
+    "slug": "jenga",
+    "bggId": null
+  },
+  {
+    "name": "Jolly Roger",
+    "language": "Deutsch",
+    "slug": "jolly-roger",
+    "bggId": null
+  },
+  {
+    "name": "Kahuna",
+    "language": "Deutsch",
+    "slug": "kahuna",
+    "bggId": null
+  },
+  {
+    "name": "Kampf gegen das Bünzlitum",
+    "language": "Deutsch",
+    "slug": "kampf-gegen-das-bunzlitum",
+    "bggId": null
+  },
+  {
+    "name": "Keltis",
+    "language": "Deutsch",
+    "slug": "keltis",
+    "bggId": null
+  },
+  {
+    "name": "Kingdom Builder",
+    "language": "Deutsch",
+    "slug": "kingdom-builder",
+    "bggId": null
+  },
+  {
+    "name": "Kingdomino",
+    "language": "Deutsch",
+    "slug": "kingdomino",
+    "bggId": null
+  },
+  {
+    "name": "Klugscheisse 2. Ausgabe",
+    "language": "Deutsch",
+    "slug": "klugscheisse-2-ausgabe",
+    "bggId": null
+  },
+  {
+    "name": "Klugscheisser",
+    "language": "Deutsch",
+    "slug": "klugscheisser",
+    "bggId": null
+  },
+  {
+    "name": "L.A.M.A",
+    "language": "Deutsch, Italiano, Francais",
+    "slug": "l-a-m-a",
+    "bggId": null
+  },
+  {
+    "name": "Das verrückte Labyrinth",
+    "language": "Deutsch",
+    "slug": "das-verruckte-labyrinth",
+    "bggId": null
+  },
+  {
+    "name": "Leo muss zum Friseur",
+    "language": "Deutsch",
+    "slug": "leo-muss-zum-friseur",
+    "bggId": null
+  },
+  {
+    "name": "Ligretto",
+    "language": "Deutsch",
+    "slug": "ligretto",
+    "bggId": null
+  },
+  {
+    "name": "Looping Louie",
+    "language": "Deutsch",
+    "slug": "looping-louie",
+    "bggId": null
+  },
+  {
+    "name": "Love Letter",
+    "language": "English",
+    "slug": "love-letter",
+    "bggId": null
+  },
+  {
+    "name": "Magic Maze",
+    "language": "Deutsch",
+    "slug": "magic-maze",
+    "bggId": null
+  },
+  {
+    "name": "Masters of the Renaissance",
+    "language": "English",
+    "slug": "masters-of-the-renaissance",
+    "bggId": null
+  },
+  {
+    "name": "Maus und Mystik",
+    "language": "Deutsch",
+    "slug": "maus-und-mystik",
+    "bggId": null
+  },
+  {
+    "name": "Mäuse Würfeln",
+    "language": "Deutsch",
+    "slug": "mause-wurfeln",
+    "bggId": null
+  },
+  {
+    "name": "Memory",
+    "language": null,
+    "slug": "memory",
+    "bggId": null
+  },
+  {
+    "name": "Mikado",
+    "language": null,
+    "slug": "mikado",
+    "bggId": null
+  },
+  {
+    "name": "Monopoly",
+    "language": "Deutsch",
+    "slug": "monopoly",
+    "bggId": null
+  },
+  {
+    "name": "Munchkin",
+    "language": "Deutsch",
+    "expansions": [
+      "Abartige Axt"
+    ],
+    "slug": "munchkin",
+    "bggId": null
+  },
+  {
+    "name": "Munchkin Critical Role",
+    "language": "English",
+    "slug": "munchkin-critical-role",
+    "bggId": null
+  },
+  {
+    "name": "Munchkin Panic",
+    "language": "Deutsch",
+    "slug": "munchkin-panic",
+    "bggId": null
+  },
+  {
+    "name": "Nautilus",
+    "language": "Deutsch",
+    "slug": "nautilus",
+    "bggId": null
+  },
+  {
+    "name": "Nova Luna",
+    "language": "Deutsch",
+    "slug": "nova-luna",
+    "bggId": null
+  },
+  {
+    "name": "Onitama",
+    "language": "English",
+    "slug": "onitama",
+    "bggId": null
+  },
+  {
+    "name": "Paper Dungeons",
+    "language": "English",
+    "slug": "paper-dungeons",
+    "bggId": null
+  },
+  {
+    "name": "Patchwork",
+    "language": "Deutsch",
+    "slug": "patchwork",
+    "bggId": null
+  },
+  {
+    "name": "Pokerkarten",
+    "language": null,
+    "slug": "pokerkarten",
+    "bggId": null
+  },
+  {
+    "name": "Puerto Rico 1897",
+    "language": "Deutsch",
+    "expansions": [
+      "Die neuen Gebäude",
+      "Die Bürger",
+      "Schmuggler",
+      "Festival"
+    ],
+    "slug": "puerto-rico-1897",
+    "bggId": null
+  },
+  {
+    "name": "Qwirkle",
+    "language": "Deutsch",
+    "slug": "qwirkle",
+    "bggId": null
+  },
+  {
+    "name": "Qwixx",
+    "language": "Deutsch",
+    "slug": "qwixx",
+    "bggId": null
+  },
+  {
+    "name": "Risiko",
+    "language": "Deutsch",
+    "slug": "risiko",
+    "bggId": null
+  },
+  {
+    "name": "Root",
+    "language": "Deutsch",
+    "slug": "root",
+    "bggId": null
+  },
+  {
+    "name": "Rummikub",
+    "language": "Deutsch, Italiano, Francais",
+    "slug": "rummikub",
+    "bggId": null
+  },
+  {
+    "name": "Rummy",
+    "language": "Deutsch",
+    "slug": "rummy",
+    "bggId": null
+  },
+  {
+    "name": "Schach",
+    "language": null,
+    "slug": "schach",
+    "bggId": null
+  },
+  {
+    "name": "Scotland Yard",
+    "language": "Deutsch, English, Francais",
+    "slug": "scotland-yard",
+    "bggId": null
+  },
+  {
+    "name": "Scrabble",
+    "language": "Deutsch",
+    "slug": "scrabble",
+    "bggId": null
+  },
+  {
+    "name": "Scrabble Karten",
+    "language": "Deutsch",
+    "slug": "scrabble-karten",
+    "bggId": null
+  },
+  {
+    "name": "Scythe",
+    "language": "Deutsch",
+    "slug": "scythe",
+    "bggId": null
+  },
+  {
+    "name": "Sequence",
+    "language": "Deutsch",
+    "slug": "sequence",
+    "bggId": null
+  },
+  {
+    "name": "SET",
+    "language": "Deutsch, Italiano, Francais",
+    "slug": "set",
+    "bggId": null
+  },
+  {
+    "name": "Skip-Bo",
+    "language": null,
+    "slug": "skip-bo",
+    "bggId": null
+  },
+  {
+    "name": "Skull King",
+    "language": "Deutsch",
+    "slug": "skull-king",
+    "bggId": null
+  },
+  {
+    "name": "Skull King: Das Würfelspiel",
+    "language": "Deutsch",
+    "slug": "skull-king-das-wurfelspiel",
+    "bggId": null
+  },
+  {
+    "name": "Sky Team",
+    "language": "Deutsch",
+    "slug": "sky-team",
+    "bggId": null
+  },
+  {
+    "name": "Small World of Warcraft",
+    "language": "Deutsch",
+    "slug": "small-world-of-warcraft",
+    "bggId": null
+  },
+  {
+    "name": "Small World",
+    "language": "English",
+    "slug": "small-world",
+    "bggId": null
+  },
+  {
+    "name": "Spiel des Lebens",
+    "language": "Deutsch",
+    "slug": "spiel-des-lebens",
+    "bggId": null
+  },
+  {
+    "name": "Spirit Island",
+    "language": "Deutsch",
+    "slug": "spirit-island",
+    "bggId": null
+  },
+  {
+    "name": "Star Munchkin",
+    "language": "Deutsch",
+    "slug": "star-munchkin",
+    "bggId": null
+  },
+  {
+    "name": "Steampunk Rally",
+    "language": "English",
+    "slug": "steampunk-rally",
+    "bggId": null
+  },
+  {
+    "name": "Stone Age",
+    "language": "Deutsch",
+    "slug": "stone-age",
+    "bggId": null
+  },
+  {
+    "name": "Stone Age Junior",
+    "language": "Deutsch",
+    "slug": "stone-age-junior",
+    "bggId": null
+  },
+  {
+    "name": "Stratego",
+    "language": "Deutsch, English, Francais",
+    "slug": "stratego",
+    "bggId": null
+  },
+  {
+    "name": "Suburbia",
+    "language": "Deutsch",
+    "slug": "suburbia",
+    "bggId": null
+  },
+  {
+    "name": "Tangram",
+    "language": "Deutsch",
+    "slug": "tangram",
+    "bggId": null
+  },
+  {
+    "name": "Tanto Cuore",
+    "language": "English",
+    "slug": "tanto-cuore",
+    "bggId": null
+  },
+  {
+    "name": "Terraforming Mars",
+    "language": "Deutsch",
+    "expansions": [
+      "Präludium",
+      "Aufruhr",
+      "Nächster Halt: Venus",
+      "Kolonien"
+    ],
+    "slug": "terraforming-mars",
+    "bggId": null
+  },
+  {
+    "name": "That's Not a Hat",
+    "language": "Deutsch, Italiano, Francais",
+    "slug": "that-s-not-a-hat",
+    "bggId": null
+  },
+  {
+    "name": "The 7th Continent",
+    "language": "English",
+    "slug": "the-7th-continent",
+    "bggId": null
+  },
+  {
+    "name": "The Game",
+    "language": "Deutsch",
+    "slug": "the-game",
+    "bggId": null
+  },
+  {
+    "name": "The Viking Game",
+    "language": "Deutsch, English, Francais",
+    "slug": "the-viking-game",
+    "bggId": null
+  },
+  {
+    "name": "Therion",
+    "language": "Deutsch, English, Francais",
+    "slug": "therion",
+    "bggId": null
+  },
+  {
+    "name": "Thunderstone Advance",
+    "language": "Deutsch",
+    "slug": "thunderstone-advance",
+    "bggId": null
+  },
+  {
+    "name": "Tichu",
+    "language": "Deutsch",
+    "slug": "tichu",
+    "bggId": null
+  },
+  {
+    "name": "Ticket to Ride: Europe",
+    "language": "Deutsch, Italiano, Francais",
+    "slug": "ticket-to-ride-europe",
+    "bggId": null
+  },
+  {
+    "name": "Tokaido",
+    "language": "Deutsch",
+    "slug": "tokaido",
+    "bggId": null
+  },
+  {
+    "name": "Torres",
+    "language": "Deutsch",
+    "slug": "torres",
+    "bggId": null
+  },
+  {
+    "name": "Trains",
+    "language": "English",
+    "slug": "trains",
+    "bggId": null
+  },
+  {
+    "name": "Rising Sun",
+    "language": "English",
+    "slug": "rising-sun",
+    "bggId": null
+  },
+  {
+    "name": "Tsuro of the Seas",
+    "language": "English",
+    "slug": "tsuro-of-the-seas",
+    "bggId": null
+  },
+  {
+    "name": "Ubongo! Classic",
+    "language": "Deutsch",
+    "slug": "ubongo-classic",
+    "bggId": null
+  },
+  {
+    "name": "Uno",
+    "language": null,
+    "slug": "uno",
+    "bggId": null
+  },
+  {
+    "name": "Unstable Unicorns",
+    "language": "English",
+    "expansions": [
+      "Unicorns of Legends",
+      "Rainbow Apocalypse",
+      "NSFW"
+    ],
+    "slug": "unstable-unicorns",
+    "bggId": null
+  },
+  {
+    "name": "Untold",
+    "language": "English",
+    "slug": "untold",
+    "bggId": null
+  },
+  {
+    "name": "Werwölfe von Düsterwald",
+    "language": "Deutsch",
+    "slug": "werwolfe-von-dusterwald",
+    "bggId": null
+  },
+  {
+    "name": "Werwölfe: Vollmondnacht",
+    "language": "Deutsch",
+    "slug": "werwolfe-vollmondnacht",
+    "bggId": null
+  },
+  {
+    "name": "Wettlauf nach El Dorado",
+    "language": "Deutsch",
+    "slug": "wettlauf-nach-el-dorado",
+    "bggId": null
+  },
+  {
+    "name": "What Do You Meme?",
+    "language": "English",
+    "slug": "what-do-you-meme",
+    "bggId": null
+  },
+  {
+    "name": "Winter Tales",
+    "language": "Deutsch",
+    "slug": "winter-tales",
+    "bggId": null
+  },
+  {
+    "name": "Wizard",
+    "language": "Deutsch, Italiano, Francais",
+    "slug": "wizard",
+    "bggId": null
+  },
+  {
+    "name": "Yatzy",
+    "language": null,
+    "slug": "yatzy",
+    "bggId": null
+  }
+]

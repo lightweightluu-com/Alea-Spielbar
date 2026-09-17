@@ -1,5 +1,6 @@
 import { icon } from './icons'
 import { contact, events, gameCategories, hours, menuHighlights, nav, quickFacts, rooms, steps } from './content'
+import { games } from './games'
 
 const tintStyles = {
   brand: {
@@ -258,6 +259,15 @@ export function renderSpiele(): string {
         </div>
       </div>
       ${restCards}
+    </div>
+    <div data-reveal class="mt-8">
+      <a
+        href="#/spiele-liste"
+        class="pressable inline-flex items-center gap-2 rounded-pill border border-hairline px-6 py-3.5 font-semibold text-paper transition-colors hover:border-paper/30 hover:bg-surface-2"
+      >
+        Alle ${games.length} Spiele durchsuchen
+        ${icon('arrow-right', 'size-4')}
+      </a>
     </div>
   </section>`
 }

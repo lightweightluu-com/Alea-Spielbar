@@ -3,6 +3,7 @@ import type { IconName } from './icons'
 export const nav = [
   { label: 'Konzept', href: '#konzept' },
   { label: 'Spiele', href: '#spiele' },
+  { label: 'Alle Spiele', href: '#/spiele-liste' },
   { label: 'Events', href: '#events' },
   { label: 'Kontakt', href: '#kontakt' },
 ] as const
