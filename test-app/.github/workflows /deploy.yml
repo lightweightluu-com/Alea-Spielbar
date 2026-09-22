@@ -65,6 +65,7 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           command: pages deploy ${{ steps.meta.outputs.dir }} --project-name=${{ steps.meta.outputs.project_name }} --commit-dirty=true
 
+
       - name: Attach Custom Domain via Cloudflare API
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
