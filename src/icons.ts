@@ -9,6 +9,7 @@ import puzzlePiece from '@phosphor-icons/core/assets/regular/puzzle-piece.svg?ra
 import trophy from '@phosphor-icons/core/assets/regular/trophy.svg?raw'
 import sparkle from '@phosphor-icons/core/assets/regular/sparkle.svg?raw'
 import star from '@phosphor-icons/core/assets/regular/star.svg?raw'
+import starFill from '@phosphor-icons/core/assets/fill/star-fill.svg?raw'
 import arrowRight from '@phosphor-icons/core/assets/regular/arrow-right.svg?raw'
 import instagramLogo from '@phosphor-icons/core/assets/regular/instagram-logo.svg?raw'
 import discordLogo from '@phosphor-icons/core/assets/regular/discord-logo.svg?raw'
@@ -26,6 +27,11 @@ import navigationArrow from '@phosphor-icons/core/assets/regular/navigation-arro
 import checkCircle from '@phosphor-icons/core/assets/regular/check-circle.svg?raw'
 import warningCircle from '@phosphor-icons/core/assets/regular/warning-circle.svg?raw'
 import spinner from '@phosphor-icons/core/assets/regular/spinner-gap.svg?raw'
+import magnifyingGlass from '@phosphor-icons/core/assets/regular/magnifying-glass.svg?raw'
+import arrowLeft from '@phosphor-icons/core/assets/regular/arrow-left.svg?raw'
+import arrowSquareOut from '@phosphor-icons/core/assets/regular/arrow-square-out.svg?raw'
+import gauge from '@phosphor-icons/core/assets/regular/gauge.svg?raw'
+import imageIcon from '@phosphor-icons/core/assets/regular/image.svg?raw'
 
 const registry = {
   'map-pin': mapPin,
@@ -39,6 +45,7 @@ const registry = {
   trophy,
   sparkle,
   star,
+  'star-fill': starFill,
   'arrow-right': arrowRight,
   'instagram-logo': instagramLogo,
   'discord-logo': discordLogo,
@@ -56,6 +63,11 @@ const registry = {
   'check-circle': checkCircle,
   'warning-circle': warningCircle,
   spinner,
+  'magnifying-glass': magnifyingGlass,
+  'arrow-left': arrowLeft,
+  'arrow-square-out': arrowSquareOut,
+  gauge,
+  image: imageIcon,
 } as const
 
 export type IconName = keyof typeof registry

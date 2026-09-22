@@ -3,20 +3,31 @@ import type { IconName } from './icons'
 export const nav = [
   { label: 'Konzept', href: '#konzept' },
   { label: 'Spiele', href: '#spiele' },
+  { label: 'Alle Spiele', href: '#/spiele-liste' },
   { label: 'Events', href: '#events' },
   { label: 'Kontakt', href: '#kontakt' },
 ] as const
 
 export const quickFacts: { icon: IconName; label: string }[] = [
+  { icon: 'ticket', label: 'CHF 7 Eintritt, ganz ohne Zeitlimit' },
   { icon: 'cards', label: '180+ Spiele im Regal' },
-  { icon: 'users-three', label: '2–12 Spieler pro Tisch' },
+  { icon: 'users-three', label: '2–20 Spieler, auch in privaten Räumen' },
   { icon: 'clock', label: 'Di–So geöffnet, Montag Ruhetag' },
 ]
 
 export const steps: { title: string; desc: string }[] = [
-  { title: 'Tisch wählen', desc: 'Ihr setzt euch hin, wo euch der Blick über das Regal am besten gefällt.' },
-  { title: 'Spiel ziehen', desc: 'Nach Spielerzahl, Dauer oder Bauchgefühl sortiert — einfach mitnehmen.' },
-  { title: 'Loslegen', desc: 'Regel unklar? Ein Spielpate setzt sich zwei Minuten dazu, dann seid ihr allein.' },
+  {
+    title: 'Eintreten',
+    desc: 'CHF 7 Spielmiete pro Person, ganz ohne Zeitlimit — egal ob ihr ein Spiel testet oder euch durch mehrere probiert.',
+  },
+  {
+    title: 'Spiel wählen',
+    desc: 'Über 180 Titel im Regal, nach Spielerzahl und Dauer sortiert. Ihr dürft auch euer eigenes Brettspiel, Kartendeck oder eure TTRPG-Kampagne mitbringen.',
+  },
+  {
+    title: 'Loslegen',
+    desc: 'Regel unklar? Ein Spielpate setzt sich zwei Minuten dazu, dann seid ihr allein.',
+  },
 ]
 
 export const gameCategories: {
@@ -46,43 +57,49 @@ export const gameCategories: {
     tint: 'tan',
   },
   {
-    title: 'Kooperativ & Rätsel',
-    desc: 'Gemeinsam gegen das Spiel, Fluchtraum-Feeling inklusive.',
+    title: 'Rollenspiele & Koop',
+    desc: 'Pen-&-Paper-Kampagnen in der Hobbit- oder Drachenhöhle, dazu kooperative Spiele mit Fluchtraum-Feeling.',
     icon: 'puzzle-piece',
     tint: 'surface',
   },
 ]
 
 export const menuHighlights: { icon: IconName; label: string }[] = [
-  { icon: 'martini', label: 'Signature-Cocktails' },
-  { icon: 'beer-stein', label: 'Craft-Bier vom Fass' },
-  { icon: 'fork-knife', label: 'Flammkuchen & Snacks' },
+  { icon: 'martini', label: 'Cocktailklassiker: Negroni, Gin Tonic, Aperol Spritz' },
+  { icon: 'beer-stein', label: 'Bier Paul vom Fass, dazu Wein & Met' },
+  { icon: 'fork-knife', label: 'Grilled Cheese Sandwich — unser Favorit' },
 ]
 
 export const events: { day: string; title: string; desc: string; icon: IconName }[] = [
   {
-    day: 'Dienstags',
-    title: 'Quizabend',
-    desc: 'Fünf Runden, ein Pokal, viele Ausreden für die falschen Antworten.',
-    icon: 'ticket',
+    day: 'Jeden 2. Dienstag',
+    title: 'MTG Commander Night',
+    desc: 'Ab 19 Uhr treffen sich Magic-Fans zum Commander-Format — bringt gerne ein Extra-Deck für Neueinsteiger mit.',
+    icon: 'cards',
   },
   {
-    day: 'Freitags',
-    title: 'Turniernacht',
-    desc: 'Wechselndes Spiel im K.-o.-Modus, der Sieger kommt aufs Brett an der Wand.',
-    icon: 'trophy',
+    day: 'Donnerstags',
+    title: 'Blood on the Clocktower',
+    desc: 'Sozial-Deduktion im Dorf Rabenholz: Wer ist der Dämon unter euch? Ab 19 Uhr.',
+    icon: 'users-three',
+  },
+  {
+    day: 'Sonntags',
+    title: 'Mitspieler-Roulette',
+    desc: 'Zufällig verloste Spiele und Teams — perfekt, um neue Spiele und neue Leute kennenzulernen.',
+    icon: 'sparkle',
   },
   {
     day: '1× im Monat',
-    title: 'Neuheiten-Testabend',
-    desc: 'Frisch eingetroffene Spiele vorgestellt, kostenlos mitspielen.',
-    icon: 'sparkle',
+    title: 'Quiznight',
+    desc: 'Team-Trivia mit wechselnden Themen und Mini-Games, ab 19:30 Uhr.',
+    icon: 'trophy',
   },
   {
     day: 'Auf Anfrage',
     title: 'Geburtstag & Gruppen',
-    desc: 'Eigener Tisch, Snacks und ein Spielpate nur für eure Runde.',
-    icon: 'users-three',
+    desc: 'Eigener Raum, Snacks und ein Spielpate nur für eure Runde.',
+    icon: 'ticket',
   },
 ]
 
@@ -116,6 +133,11 @@ export const rooms: { id: string; name: string; desc: string }[] = [
     desc: '23 m², zwei Tische für bis zu 20 Personen. CHF 20 / Stunde.',
   },
   {
+    id: 'gutschein',
+    name: 'Gutschein bestellen',
+    desc: 'Gutscheine zu CHF 20, 50 oder 100 — gültig für Spielmiete, Getränke, Essen und Raummiete. Menge und Werte einfach in der Nachricht angeben, ihr bekommt sie als PDF per Mail.',
+  },
+  {
     id: 'allgemein',
     name: 'Allgemeine Frage',
     desc: 'Nichts davon trifft es? Schreibt uns einfach, worum es geht.',
@@ -124,14 +146,24 @@ export const rooms: { id: string; name: string; desc: string }[] = [
 
 export const contact = {
   company: 'Alea Spielbar AG',
+  /** Public-facing name used in marketing copy — the legal name above stays reserved for the footer's copyright line. */
+  brandName: 'Alea Brettspiel Café & Bar',
   address: 'Zschokkestrasse 1, 8037 Zürich',
   hint: 'Bushaltestelle Rosengartenstrasse (33/72/83), 3 Min. ab Bahnhof Hardbrücke.',
   email: 'info@alea-spielbar.ch',
   mailHref: 'mailto:info@alea-spielbar.ch',
   instagramHref: 'https://www.instagram.com/alea.spielbar/',
   discordHref: 'https://alea-spielbar.ch/discord',
-  /** No API key needed — Google's plain q= embed format, centered on the real address. */
-  mapsEmbedSrc: 'https://www.google.com/maps?q=Alea+Spielbar%2C+Zschokkestrasse+1%2C+8037+Z%C3%BCrich&z=16&output=embed',
+  /**
+   * No API key needed. Uses Google's current "Share > Embed a map" iframe target directly
+   * (skips the legacy `/maps?q=...&output=embed` shortcut, which now just 301-redirects here
+   * anyway) — one fewer cross-origin hop for the iframe to clear, which matters in browsers/
+   * previews that partition third-party storage per frame. See index.html's CSP meta tag,
+   * which explicitly allows this frame-src; a strict default-src with no frame-src exception
+   * is the most common reason this exact embed silently renders as "This content is blocked."
+   */
+  mapsEmbedSrc:
+    'https://www.google.com/maps/embed?pb=!1m3!2m1!1sAlea+Spielbar,+Zschokkestrasse+1,+8037+Z%C3%BCrich!6i16',
   /** The bar's real Google Maps place page — used for both "get directions" and "write a review". */
   mapsPlaceHref:
     'https://www.google.com/maps/place/Alea+Spielbar/@47.3953408,8.5257188,19z/data=!4m6!3m5!1s0x47900b0064bb47cb:0x353368f86edaab5b!8m2!3d47.3953408!4d8.5257188!16s%2Fg%2F11xh1dvwtj',

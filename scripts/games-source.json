@@ -1,0 +1,624 @@
+[
+  {
+    "name": "5-Minute Dungeon",
+    "language": "Deutsch"
+  },
+  {
+    "name": "7 Wonders",
+    "language": "Deutsch"
+  },
+  {
+    "name": "7 Wonders Duel",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Ahau: Rulers of Yucatán",
+    "language": "English",
+    "expansions": [
+      "Eclipse"
+    ]
+  },
+  {
+    "name": "Alhambra",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Andor Junior",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Ark Nova",
+    "language": "English"
+  },
+  {
+    "name": "Azul",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Blood Rage",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Bomb Busters",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Brändi DOG",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Brass Birmingham",
+    "language": "English"
+  },
+  {
+    "name": "Carcassonne, Winter Edition",
+    "language": "Deutsch",
+    "expansions": [
+      "Goldrausch"
+    ]
+  },
+  {
+    "name": "Cards Against Humanity",
+    "language": "English"
+  },
+  {
+    "name": "Cartographers Heroes",
+    "language": "English"
+  },
+  {
+    "name": "Cascadia",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Cascadia Junior",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Castle Panic",
+    "language": "English"
+  },
+  {
+    "name": "Catan Junior",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Challengers!",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Circus Domini",
+    "language": null
+  },
+  {
+    "name": "Coco Schnipp",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Codenames",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Codenames Duett",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Conquest",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Crossfire",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Das ältere Zeichen",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Déblok",
+    "language": "Francais"
+  },
+  {
+    "name": "Der Fuchs im Wald",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Der Natur auf der Spur",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Die Legenden von Andor",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Die Siedler von Catan",
+    "language": "Deutsch",
+    "expansions": [
+      "Städte und Ritter"
+    ]
+  },
+  {
+    "name": "Dobble",
+    "language": null
+  },
+  {
+    "name": "Dominion",
+    "language": "Deutsch",
+    "expansions": [
+      "Die Alchemisten"
+    ]
+  },
+  {
+    "name": "Dorfromantik",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Dos Rios",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Dreaksau",
+    "language": "Deutsch",
+    "expansions": [
+      "Sauschön"
+    ]
+  },
+  {
+    "name": "Dune Imperium",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Dune Imperium Uprising",
+    "language": "English"
+  },
+  {
+    "name": "Dungeon Fighter",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Durch die Wüste",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Equinox",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Everdell",
+    "language": "English"
+  },
+  {
+    "name": "Familienspiele",
+    "language": "Deutsch",
+    "skip": true
+  },
+  {
+    "name": "Fang de Böögg!!",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Flamecraft",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Flügelschlag",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Food Chain Magnate",
+    "language": "English"
+  },
+  {
+    "name": "Fort",
+    "language": "English"
+  },
+  {
+    "name": "Gloomhaven: Die Pranken des Löwen",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Glory to Rome",
+    "language": "English"
+  },
+  {
+    "name": "Hai Alarm",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Harter Tobak",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Heckmeck",
+    "language": "Deutsch, English, Francais"
+  },
+  {
+    "name": "Hero Realms",
+    "language": "English"
+  },
+  {
+    "name": "Herr der Ringe: Das Meisterquiz",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Herr der Ringe: Die Entscheidung",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Inis",
+    "language": "English"
+  },
+  {
+    "name": "Jagd der Vampire",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Jasskarten",
+    "language": null,
+    "skip": true
+  },
+  {
+    "name": "Jenga",
+    "language": null
+  },
+  {
+    "name": "Jolly Roger",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Kahuna",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Kampf gegen das Bünzlitum",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Keltis",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Kingdom Builder",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Kingdomino",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Klugscheisse 2. Ausgabe",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Klugscheisser",
+    "language": "Deutsch"
+  },
+  {
+    "name": "L.A.M.A",
+    "language": "Deutsch, Italiano, Francais"
+  },
+  {
+    "name": "Das verrückte Labyrinth",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Leo muss zum Friseur",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Ligretto",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Looping Louie",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Love Letter",
+    "language": "English"
+  },
+  {
+    "name": "Magic Maze",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Masters of the Renaissance",
+    "language": "English"
+  },
+  {
+    "name": "Maus und Mystik",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Mäuse Würfeln",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Memory",
+    "language": null
+  },
+  {
+    "name": "Mikado",
+    "language": null
+  },
+  {
+    "name": "Monopoly",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Munchkin",
+    "language": "Deutsch",
+    "expansions": [
+      "Abartige Axt"
+    ]
+  },
+  {
+    "name": "Munchkin Critical Role",
+    "language": "English"
+  },
+  {
+    "name": "Munchkin Panic",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Nautilus",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Nova Luna",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Onitama",
+    "language": "English"
+  },
+  {
+    "name": "Paper Dungeons",
+    "language": "English"
+  },
+  {
+    "name": "Patchwork",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Pokerkarten",
+    "language": null,
+    "skip": true
+  },
+  {
+    "name": "Puerto Rico 1897",
+    "language": "Deutsch",
+    "expansions": [
+      "Die neuen Gebäude",
+      "Die Bürger",
+      "Schmuggler",
+      "Festival"
+    ]
+  },
+  {
+    "name": "Qwirkle",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Qwixx",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Risiko",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Root",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Rummikub",
+    "language": "Deutsch, Italiano, Francais"
+  },
+  {
+    "name": "Rummy",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Schach",
+    "language": null
+  },
+  {
+    "name": "Scotland Yard",
+    "language": "Deutsch, English, Francais"
+  },
+  {
+    "name": "Scrabble",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Scrabble Karten",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Scythe",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Sequence",
+    "language": "Deutsch"
+  },
+  {
+    "name": "SET",
+    "language": "Deutsch, Italiano, Francais"
+  },
+  {
+    "name": "Skip-Bo",
+    "language": null
+  },
+  {
+    "name": "Skull King",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Skull King: Das Würfelspiel",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Sky Team",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Small World of Warcraft",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Small World",
+    "language": "English"
+  },
+  {
+    "name": "Spiel des Lebens",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Spirit Island",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Star Munchkin",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Steampunk Rally",
+    "language": "English"
+  },
+  {
+    "name": "Stone Age",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Stone Age Junior",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Stratego",
+    "language": "Deutsch, English, Francais"
+  },
+  {
+    "name": "Suburbia",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Tangram",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Tanto Cuore",
+    "language": "English"
+  },
+  {
+    "name": "Terraforming Mars",
+    "language": "Deutsch",
+    "expansions": [
+      "Präludium",
+      "Aufruhr",
+      "Nächster Halt: Venus",
+      "Kolonien"
+    ]
+  },
+  {
+    "name": "That's Not a Hat",
+    "language": "Deutsch, Italiano, Francais"
+  },
+  {
+    "name": "The 7th Continent",
+    "language": "English"
+  },
+  {
+    "name": "The Game",
+    "language": "Deutsch"
+  },
+  {
+    "name": "The Viking Game",
+    "language": "Deutsch, English, Francais"
+  },
+  {
+    "name": "Therion",
+    "language": "Deutsch, English, Francais"
+  },
+  {
+    "name": "Thunderstone Advance",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Tichu",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Ticket to Ride: Europe",
+    "language": "Deutsch, Italiano, Francais"
+  },
+  {
+    "name": "Tokaido",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Torres",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Trains",
+    "language": "English"
+  },
+  {
+    "name": "Rising Sun",
+    "language": "English"
+  },
+  {
+    "name": "Tsuro of the Seas",
+    "language": "English"
+  },
+  {
+    "name": "Ubongo! Classic",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Uno",
+    "language": null
+  },
+  {
+    "name": "Unstable Unicorns",
+    "language": "English",
+    "expansions": [
+      "Unicorns of Legends",
+      "Rainbow Apocalypse",
+      "NSFW"
+    ]
+  },
+  {
+    "name": "Untold",
+    "language": "English"
+  },
+  {
+    "name": "Werwölfe von Düsterwald",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Werwölfe: Vollmondnacht",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Wettlauf nach El Dorado",
+    "language": "Deutsch"
+  },
+  {
+    "name": "What Do You Meme?",
+    "language": "English"
+  },
+  {
+    "name": "Winter Tales",
+    "language": "Deutsch"
+  },
+  {
+    "name": "Wizard",
+    "language": "Deutsch, Italiano, Francais"
+  },
+  {
+    "name": "Yatzy",
+    "language": null
+  }
+]
