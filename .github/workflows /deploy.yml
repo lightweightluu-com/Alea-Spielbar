@@ -1,0 +1,86 @@
+name: Deploy to Cloudflare Pages & Custom Domain
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install & Build
+        run: |
+          if [ -f package.json ]; then
+            npm ci || npm install
+            npm run build --if-present
+          fi
+
+      - name: Resolve Deploy Directory & Safe Name
+        id: meta
+        run: |
+          if [ -d "dist" ]; then
+            echo "dir=dist" >> $GITHUB_OUTPUT
+          elif [ -d "out" ]; then
+            echo "dir=out" >> $GITHUB_OUTPUT
+          elif [ -d "build" ]; then
+            echo "dir=build" >> $GITHUB_OUTPUT
+          else
+            echo "dir=." >> $GITHUB_OUTPUT
+          fi
+
+          REPO_LOWER=$(echo "${{ github.event.repository.name }}" | tr '[:upper:]' '[:lower:]')
+          echo "project_name=$REPO_LOWER" >> $GITHUB_OUTPUT
+
+      - name: Ensure Pages Project Exists
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT_NAME: ${{ steps.meta.outputs.project_name }}
+        run: |
+          curl -s -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/pages/projects" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data "{\"name\":\"${PROJECT_NAME}\",\"production_branch\":\"main\"}" || true
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/wrangler-action@v3
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy ${{ steps.meta.outputs.dir }} --project-name=${{ steps.meta.outputs.project_name }} --commit-dirty=true
+
+      - name: Attach Custom Domain via Cloudflare API
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          PROJECT_NAME: ${{ steps.meta.outputs.project_name }}
+          DOMAIN_NAME: ${{ steps.meta.outputs.project_name }}.lightweightluu.com
+        run: |
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/pages/projects/${PROJECT_NAME}/domains" \
+            -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data "{\"name\":\"${DOMAIN_NAME}\"}")
+
+          if [ "$RESPONSE" = "200" ] || [ "$RESPONSE" = "409" ]; then
+            echo "Domain $DOMAIN_NAME ist bereit (Status: $RESPONSE)."
+          else
+            echo "Fehler beim Verknüpfen der Domain. HTTP Status: $RESPONSE"
+            exit 1
+          fi
