@@ -1,5 +1,6 @@
 import './style.css'
 import { getSession, onAuthStateChange, requireAuth } from './auth'
+import { isSupabaseConfigured } from './supabaseClient'
 import { renderShell, setupShell } from './shell'
 import { renderLogin, setupLogin } from './views/login'
 import { renderGamesList, setupGamesList } from './views/gamesList'
@@ -7,6 +8,22 @@ import { renderGameForm, setupGameForm } from './views/gameForm'
 import { renderReservationsList, setupReservationsList } from './views/reservationsList'
 
 const root = document.querySelector<HTMLDivElement>('#admin-app')!
+
+// Checked before anything else touches Supabase (including onAuthStateChange below, which would
+// otherwise throw at module load and leave #admin-app blank with no explanation — see
+// supabaseClient.ts for why the client itself is lazy).
+if (!isSupabaseConfigured()) {
+  root.innerHTML = `
+    <div class="mx-auto flex min-h-screen max-w-md flex-col justify-center px-6 text-center">
+      <p class="text-xs font-semibold uppercase tracking-[0.18em] text-tan-text">Alea Spielbar</p>
+      <h1 class="mt-3 font-display text-xl font-bold text-paper">Admin ist nicht konfiguriert</h1>
+      <p class="mt-3 text-sm leading-relaxed text-muted">
+        VITE_SUPABASE_URL und VITE_SUPABASE_ANON_KEY sind nicht gesetzt. Lokal: .env aus
+        .env.example anlegen und ausfüllen, dann den Dev-Server neu starten.
+      </p>
+    </div>`
+  throw new Error('Supabase ist nicht konfiguriert (VITE_SUPABASE_URL/VITE_SUPABASE_ANON_KEY fehlen).')
+}
 
 /**
  * Tiny hash router scoped to this admin page only (admin.html is its own Vite entry point —
