@@ -3,19 +3,37 @@
     "name": "5-Minute Dungeon",
     "language": "Deutsch",
     "slug": "5-minute-dungeon",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "5-Minute Dungeon ist ein schnelles, kooperatives Realtime-Legespiel, welches im Jahr 2018 vom Spieleverlag Kosmos veröffentlicht wurde. Innerhalb von fünf Minuten gilt es, gemeinsam mit seinen anderen Mitstreitern alle Monster, Hindernisse, Personen und Aktionen zu besiegen bzw. erfolgreich auszuführen. Dafür stehen verschiedene „Helden“ zur Verfügung, welche alle unterschiedliche Fähigkeiten, somit andere Stärken und Schwächen, mit sich bringen. Das Spiel besteht aus 250 Karten, fünf Spielertafeln und fünf Bosstafeln. Das Spiel befand sich bei der Wahl zum Spiel des Jahres 2018 auf der Empfehlungsliste.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/5-Minute_Dungeon",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 1.5
   },
   {
     "name": "7 Wonders",
     "language": "Deutsch",
     "slug": "7-wonders",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/0/0b/7_Wonders_-_New_Edition_boxart.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "7 Wonders is a board game created by Antoine Bauza in 2010 and originally published by Repos Production. Three decks of cards featuring images of historical civilizations, armed conflicts, and commercial activity are used in the card drafting game 7 Wonders. The game received critical success upon its release, and won numerous awards, including the inaugural Kennerspiel des Jahres connoisseurs' award in 2011.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/7_Wonders_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 7,
+    "complexity": 2.3
   },
   {
     "name": "7 Wonders Duel",
     "language": "Deutsch",
     "slug": "7-wonders-duel",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/6/6d/7_Wonders_Duel_cover.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "7 Wonders Duel is a 2015 two-player strategy card game designed by Antoine Bauza and Bruno Cathala with art from Miguel Coimbra. A spinoff of 7 Wonders, the game was published by Repos Production and achieved commercial success.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/7_Wonders_Duel",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 2.2
   },
   {
     "name": "Ahau: Rulers of Yucatán",
@@ -30,37 +48,71 @@
     "name": "Alhambra",
     "language": "Deutsch",
     "slug": "alhambra",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Deskohran%C3%AD_08-10-05_048.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Alhambra is a 2003 tile-based German-style board game designed by Dirk Henn. It was originally published in Germany by Queen Games in a language-interdependent version; an English-specific version was released in North America by the now-defunct Überplay. The game is an update, set during the construction of the Alhambra palace in 14th century Granada, of the 1998 stock trading board game Stimmt So!, which in turn was an update of the 1992 mafia influence board game Al Capone; the original version was subsequently released as Alhambra: The Card Game. Upon its release, Alhambra won numerous awards, including the Spiel des Jahres award. Its success has led to the release of numerous expansion",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Alhambra_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "complexity": 2.2
   },
   {
     "name": "Andor Junior",
     "language": "Deutsch",
     "slug": "andor-junior",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Andor Junior ist ein kooperatives Kinderspiel der Spieleautoren Inka und Markus Brand, das auf dem Spiel Die Legenden von Andor von Michael Menzel aufbaut. Das Spiel für zwei bis vier Spieler ab sieben Jahren dauert pro Runde etwa 30 bis 45 Minuten. Es ist im Jahr 2020 bei dem deutschen Verlag Kosmos erschienen. Im selben Jahr gewann das Spiel den Deutschen Kinderspielepreis.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Andor_Junior",
+    "minPlayers": 2,
+    "maxPlayers": 4
   },
   {
     "name": "Ark Nova",
     "language": "English",
     "slug": "ark-nova",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/42/Ark_Nova_box_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Ark Nova is a zoo-building, card-driven, engine-building board game for one to four players, designed by Mathias Wigge with illustrations by Loïc Billiau and Dennis Lohausen. It was first published by Feuerland Spiele in 2021 and released in English by Capstone Games in 2022.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ark_Nova",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 3.7
   },
   {
     "name": "Azul",
     "language": "Deutsch",
     "slug": "azul",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/23/Picture_of_Azul_game_box.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Azul is an abstract strategy board game designed by Michael Kiesling and released by Plan B Games in 2017. Based on Portuguese tiles called azulejos, in Azul players collect sets of similarly colored tiles which they place on their player board. When a row is filled, one of the tiles is moved into a square pattern on the right side of the player board, where it garners points depending on where it is placed in relation to other tiles on the board.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Azul_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.8
   },
   {
     "name": "Blood Rage",
     "language": "Deutsch",
     "slug": "blood-rage",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/5a/Blood_Rage_board_game_box_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Blood Rage is a Viking themed board game designed by Eric Lang and published by CMON Limited in 2015. Each player controls a clan of mythological Vikings seeking glory as Ragnarok approaches. Played in three ages or rounds, Blood Rage features card drafting, battles and territory control via forces represented by sculpted plastic miniatures. All conflicts are resolved through playing cards, and cards are also used to improve and differentiate the different clans and the leaders, warriors, ships and monsters at their command.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Blood_Rage_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 2.9
   },
   {
     "name": "Bomb Busters",
     "language": "Deutsch",
     "slug": "bomb-busters",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/15%20SpielDesJahres%20130725%20Photo%20ThomasEcke%208253.jpg",
+    "description": "Bomb Busters ist ein kooperatives Familien- und Kampagnenspiel des japanischen Spieleautors Hisashi Hayashi, das im Jahr 2024 beim Verlag Cocktail Games sowie im gleichen Jahr auch bei Pegasus Spiele erschienen ist. Thematisch versuchen die Mitspieler über mehrere Missionen hinweg, gemeinsam Bomben zu entschärfen. Das Spiel errang 2024 den dritten Rang des Swiss Gamers Award und wurde Spiel des Jahres 2025.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Bomb_Busters",
+    "minPlayers": 2,
+    "maxPlayers": 5
   },
   {
     "name": "Brändi DOG",
@@ -72,7 +124,13 @@
     "name": "Brass Birmingham",
     "language": "English",
     "slug": "brass-birmingham",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Play%201070%201725124367562.jpg",
+    "description": "Brass is a board game set in Lancashire, England during the Industrial Revolution. It was developed by Martin Wallace. The goal of the game is accrue the most victory points by building mines, cotton factories, ports, canals and rail links, and establishing trade routes. The game is divided into two historical periods: the canal period and the rail period. Victory points are scored at the end of each period.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Brass_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 3.9
   },
   {
     "name": "Carcassonne, Winter Edition",
@@ -81,49 +139,85 @@
       "Goldrausch"
     ],
     "slug": "carcassonne-winter-edition",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.9
   },
   {
     "name": "Cards Against Humanity",
     "language": "English",
     "slug": "cards-against-humanity",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/85/Cards_Against_Humanity_logo_2009.svg/960px-Cards_Against_Humanity_logo_2009.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Cards Against Humanity is an American adult card-based party game in which players complete fill-in-the-blank statements, using words or phrases typically deemed offensive, risqué, or politically incorrect, printed on playing cards. It has been compared to the card game Apples to Apples (1999).",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Cards_Against_Humanity",
+    "minPlayers": 3,
+    "maxPlayers": null,
+    "complexity": 1.3
   },
   {
     "name": "Cartographers Heroes",
     "language": "English",
     "slug": "cartographers-heroes",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.7
   },
   {
     "name": "Cascadia",
     "language": "Deutsch",
     "slug": "cascadia",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/79/Cascadia_box_cover.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Cascadia is a 2021 board game designed by Randy Flynn and published by Flatout Games. In Cascadia, players draft and add habitat tokens and matching wildlife tokens to score victory points based on various scoring conditions. Upon its release, Cascadia received critical success, with reviewers praising its components, accessibility, and strategy, but also noting its lack of player interaction. Cascadia won the 2022 Spiel des Jahres and the 2023 International Gamers Award for the Best solo game.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Cascadia_(board_game)",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 1.8
   },
   {
     "name": "Cascadia Junior",
     "language": "Deutsch",
     "slug": "cascadia-junior",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Cascadia junior is a 2025 board game.",
+    "wikipediaUrl": "https://www.wikidata.org/wiki/Q135208682",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Castle Panic",
     "language": "English",
     "slug": "castle-panic",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Castle Panic is a board game designed by Justin De Witt and published by Fireside Games in 2009 Castle Panic is a tower defense strategy game in which players work cooperatively to protect a castle from monsters. The game was a nominee for the 2010 Golden Geek Best Family Board Game.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Castle_Panic",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 2.1
   },
   {
     "name": "Catan Junior",
     "language": "Deutsch",
     "slug": "catan-junior",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Madagascar Catan Junior ist eine im Herbst 2012 erschienene Version der Siedler von Catan von Klaus Teuber für 2 bis 4 Spieler ab 6 Jahren. Das Spiel ist eine Weiterentwicklung von Die Siedler von Catan – Junior, entspricht dabei aber eher der Mayfair-Games-Version.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Madagascar_Catan_Junior",
+    "minPlayers": 2,
+    "maxPlayers": 4
   },
   {
     "name": "Challengers!",
     "language": "Deutsch",
     "slug": "challengers",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/75/Challengers.jpg/3840px-Challengers.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Challengers! ist ein Kartenspiel der österreichischen Spieleautoren Johannes Krenner und Markus Slawitscheck, das 2022 bei den Spieleverlagen 1 More Time Games und Z-Man Games erschienen ist. Es handelt sich um ein Kartendeckmanagement-Spiel für einen bis acht Spieler im Turniermodus, bei dem die Spieler in jeder Runde gegen einen anderen Gegner spielen und das Finale gewinnen müssen.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Challengers!",
+    "minPlayers": 1,
+    "maxPlayers": 8,
+    "complexity": 2
   },
   {
     "name": "Circus Domini",
@@ -141,25 +235,42 @@
     "name": "Codenames",
     "language": "Deutsch",
     "slug": "codenames",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b0/Codenames_board_game.jpg/3840px-Codenames_board_game.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Codenames is a 2015 party board game designed by Vlaada Chvátil and published by Czech Games Edition (CGE). In it, two teams compete by each having a \"spymaster\" give one-word clues that can point to specific words on the board. The other players on the team must attempt to guess their team's words while avoiding the words of the other team as well as an assassin square; if the latter is selected, then the team which selected it instantly loses. Victory is achieved when one team guesses all of their spymaster's assigned words.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Codenames_(board_game)",
+    "minPlayers": 4,
+    "maxPlayers": 8,
+    "complexity": 1.3
   },
   {
     "name": "Codenames Duett",
     "language": "Deutsch",
     "slug": "codenames-duett",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.4
   },
   {
     "name": "Conquest",
     "language": "Deutsch",
     "slug": "conquest",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/2/2c/Cover_of_conquest_board_game.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Conquest is an abstract strategy board game created and published by Donald Benge that combines chess with a map board. First published in 1972 with cardboard counters, it evolved to plastic pieces as well as a deluxe set with pewter pieces plated in various metals including gold.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Conquest_(board_game)",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Crossfire",
     "language": "Deutsch",
     "slug": "crossfire",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/74/Crossfire_board_game_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Crossfire is a board game created by the Ideal Toy Company in 1971. The object of the game is to score goals by pushing one of the two pucks into the opposing player's goal. This task is accomplished by shooting small metal ball bearings at the pucks using the attached guns. The earliest version of the game featured a flat board, whereas the 1990s release featured a dome-shaped board. This allows the ball bearings to roll into the players' bins more easily but can cause the pucks to indefinitely rest at the edges of the board. In the 2010s rerelease, the board was sloped with a shallow grade, preventing the pucks from sliding on their own as much and making it easier to get them away from th",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Crossfire_(board_game)",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Das ältere Zeichen",
@@ -177,7 +288,8 @@
     "name": "Der Fuchs im Wald",
     "language": "Deutsch",
     "slug": "der-fuchs-im-wald",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.6
   },
   {
     "name": "Der Natur auf der Spur",
@@ -189,7 +301,13 @@
     "name": "Die Legenden von Andor",
     "language": "Deutsch",
     "slug": "die-legenden-von-andor",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Die Legenden von Andor ist das erste Brettspiel von Michael Menzel, der auch die Illustrationen vornahm. Es erschien 2012 im Franckh-Kosmos-Verlag und wurde zum Kennerspiel des Jahres 2013 gewählt. Das strategische, rundenbasierte Brettspiel gehört dabei zu den kooperativen Spielen. Ziel ist es, die namensgebenden Legenden durchzuspielen, bei denen die Spieler zusammen Aufgaben erfüllen müssen. So gewinnen oder verlieren die Spieler gemeinsam. In den Folgejahren wurden mehrere Erweiterungen veröffentlicht, wodurch Legenden hinzukamen, die von einem Einzelspieler gespielt werden können oder bei dem die Spieler gegeneinander spielen.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Die_Legenden_von_Andor",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 2.8
   },
   {
     "name": "Die Siedler von Catan",
@@ -198,13 +316,25 @@
       "Städte und Ritter"
     ],
     "slug": "die-siedler-von-catan",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a3/Catan-2015-boxart.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Catan, previously known as The Settlers of Catan or simply Settlers, is a multiplayer board game designed by Klaus Teuber. It was first published in 1995 in Germany by Franckh-Kosmos Verlag (Kosmos). Its release, The Settlers of Catan became one of the first Eurogames to achieve popularity outside Europe. As of 2020, more than 32 million boxed sets in 40 languages had been sold. The game and its many expansions are also published by Catan Studio, Filosofia, GP, Inc., 999 Games, (Káissa), and Devir.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Catan",
+    "minPlayers": 3,
+    "maxPlayers": 4,
+    "complexity": 2.3
   },
   {
     "name": "Dobble",
     "language": null,
     "slug": "dobble",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/84/Dobble_jeu.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Dobble is a game in which players have to find symbols in common between two cards. It was the UK’s best-selling game in 2018 and 2019.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Dobble",
+    "minPlayers": 2,
+    "maxPlayers": 8,
+    "complexity": 1.1
   },
   {
     "name": "Dominion",
@@ -213,19 +343,36 @@
       "Die Alchemisten"
     ],
     "slug": "dominion",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/b5/Dominion_game.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Dominion is a card game created by Donald X. Vaccarino and published by Rio Grande Games. Originally published in 2008, it was the first deck-building game, and inspired a genre of games building on its central mechanic.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Dominion_(card_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 2.4
   },
   {
     "name": "Dorfromantik",
     "language": "Deutsch",
     "slug": "dorfromantik",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/d/d7/Dorfromantik_board_game.webp?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Dorfromantik: The Board Game is a board game by Lukas Zach and Michael Palm based on the video game of the same name. The game was published by the German game company Pegasus Spiele in 2022. Dorfromantik is a cooperative game in which players lay hexagonal tiles to create a landscape of various terrains, while also managing tasks to score more points. Dorfromantik also has a campaign mode in which players open boxes as they play games to continually increase their scores. It has won several awards both in Germany and abroad, including the 2023 Spiel des Jahres.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Dorfromantik%3A_The_Board_Game",
+    "minPlayers": 1,
+    "maxPlayers": 6,
+    "complexity": 1.9
   },
   {
     "name": "Dos Rios",
     "language": "Deutsch",
     "slug": "dos-rios",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Dos Rios is a board game.",
+    "wikipediaUrl": "https://www.wikidata.org/wiki/Q11856292",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Dreaksau",
@@ -240,41 +387,72 @@
     "name": "Dune Imperium",
     "language": "Deutsch",
     "slug": "dune-imperium",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Dune: Imperium is a 2020 board game designed by Paul Dennen and published by Dire Wolf Digital. In the board game, which is set in Frank Herbert's Dune universe, players use deck-building and worker placement to gain alliances with factions and combat to earn victory points. Upon its release, the game was nominated for several awards, including the Kennerspiel des Jahres.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Dune%3A_Imperium",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 3.1
   },
   {
     "name": "Dune Imperium Uprising",
     "language": "English",
     "slug": "dune-imperium-uprising",
-    "bggId": null
+    "bggId": null,
+    "complexity": 3.2
   },
   {
     "name": "Dungeon Fighter",
     "language": "Deutsch",
     "slug": "dungeon-fighter",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/3/32/Dfo_new_logo.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Dungeon Fighter Online, known in South Korea as Dungeon & Fighter, is a multiplayer beat 'em up action role-playing game, developed and published for personal computers by Neople, a South Korean subsidiary of Nexon, and originally published by Hangame in 2005. The game was originally released in South Korea as Dungeon & Fighter, then in Japan as Arad Senki, and then published in China by Tencent. A global version of Dungeon Fighter Online was released in May 2015.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Dungeon_Fighter_Online",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Durch die Wüste",
     "language": "Deutsch",
     "slug": "durch-die-wuste",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/be/Durchdiewuste.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Durch die Wüste is the first full-length solo album by German keyboardist Hans-Joachim Roedelius, best known for his work with Cluster, Harmonia, and Aquarello. The title is German for \"Through the Desert.\"",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Durch_die_W%C3%BCste",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1.7
   },
   {
     "name": "Equinox",
     "language": "Deutsch",
     "slug": "equinox",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Earth-lighting-equinox%20af.png",
+    "description": "A solar equinox is a moment in time when the Sun appears directly above the equator, rather than to its north or south. On the day of the equinox, the Sun rises almost exactly in the east and sets almost exactly in the west. This occurs twice each year, around 20 March and 23 September.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Equinox",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 2.6
   },
   {
     "name": "Everdell",
     "language": "English",
     "slug": "everdell",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Playing%20board%20game%20-%20Play%201821%201762974456804.jpg",
+    "description": "Everdell is a board game for 1 to 4 players designed by James Wilson and published by Starling Games in 2018. In the game, players take the role of forest animals building a city over four seasons by collecting resources, recruiting workers, and constructing buildings. The game has been well regarded by reviewers, with its art and components receiving strong praise.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Everdell",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 2.8
   },
   {
     "name": "Familienspiele",
     "language": "Deutsch",
+    "skip": true,
     "slug": "familienspiele",
     "bggId": null
   },
@@ -288,37 +466,72 @@
     "name": "Flamecraft",
     "language": "Deutsch",
     "slug": "flamecraft",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Juego_de_mesa_-_Play_271_1686162330413.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Flamecraft is a card game designed by Manny Vega and published in 2022 by Cardboard Alchemy, featuring illustrations by Sandara Tang. Players act as \"Flamekeepers\", assisting shops in town with dragons and enchantments in order to have the best reputation by the end of the game.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Flamecraft",
+    "minPlayers": 1,
+    "maxPlayers": 5,
+    "complexity": 2.3
   },
   {
     "name": "Flügelschlag",
     "language": "Deutsch",
     "slug": "flugelschlag",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Components_in_Wingspan_board_game.jpg/3840px-Components_in_Wingspan_board_game.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Flügelschlag ist ein strategisches Brettspiel der US-amerikanischen Spieleautorin Elizabeth Hargrave. Es ist ein kartenbasiertes Spiel, bei dem die Spieler darum wetteifern, verschiedene Vogelarten in passende Habitate zu legen. Es erschien 2019 in der englischen Originalausgabe beim Verlag Stonemaier Games und im selben Jahr auf Deutsch bei Feuerland Spiele.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Fl%C3%BCgelschlag",
+    "minPlayers": 1,
+    "maxPlayers": 5,
+    "complexity": 2.4
   },
   {
     "name": "Food Chain Magnate",
     "language": "English",
     "slug": "food-chain-magnate",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/1e/Food_Chain_Magnate_box_art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Food Chain Magnate is a strategy board game published in 2015 by Dutch board game publisher Splotter Spellen. The game involves competition between players for which fast food restaurant chain can earn the most money.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Food_Chain_Magnate",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 4.3
   },
   {
     "name": "Fort",
     "language": "English",
     "slug": "fort",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Castillo_San_Felipe_del_Morro_%2810_of_1%29.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "A fortification is a military construction designed for the defense of territories in warfare, and is used to establish rule in a region during peacetime. The term is derived from Latin fortis (\"strong\") and facere.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Fortification",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Gloomhaven: Die Pranken des Löwen",
     "language": "Deutsch",
     "slug": "gloomhaven-die-pranken-des-lowen",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/ee/Gloomhaven_Cover_Art.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Gloomhaven is a cooperative board game for one to four players designed by Isaac Childres and published by Cephalofair Games in 2017. It is a campaign-based dungeon crawl game including a narrative campaign, 95 unique playable scenarios, and 17 playable classes. Since its introduction the game has been acclaimed by reviewers, and has been described as one of the best board games ever made.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Gloomhaven",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 3
   },
   {
     "name": "Glory to Rome",
     "language": "English",
     "slug": "glory-to-rome",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Glory to Rome is a 2005 card-based board game designed by Ed Carter and Carl Chudyk and published by Cambridge Games. It received positive reviews, but in 2010s it became infamous due to being out of print which led to greatly inflated prices in the secondary market.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Glory_to_Rome",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 3
   },
   {
     "name": "Hai Alarm",
@@ -336,41 +549,76 @@
     "name": "Heckmeck",
     "language": "Deutsch, English, Francais",
     "slug": "heckmeck",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Heckmeck Junior is a 2010 board game.",
+    "wikipediaUrl": "https://www.wikidata.org/wiki/Q130279375",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 1.4
   },
   {
     "name": "Hero Realms",
     "language": "English",
     "slug": "hero-realms",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/53/Hero_Realms_Card_Game.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Hero Realms is a 2016 fantasy card-based deck building tabletop game designed by Rob Dougherty and Darwin Kastle and published by Wise Wizard Games. In the game, the player has to defeat opponents by purchasing cards using gold coins that deal damage points until the opponent's health points reach zero. The game features four factions of cards, which can either deal damage, give health points, or give the player a number of coins.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Hero_Realms",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 2
   },
   {
     "name": "Herr der Ringe: Das Meisterquiz",
     "language": "Deutsch",
     "slug": "herr-der-ringe-das-meisterquiz",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/El%20Se%C3%B1or%20de%20los%20Anillos%20lectura.jpg",
+    "description": "Der Herr der Ringe ist ein Roman von J. R. R. Tolkien. Er gehört zu den kommerziell erfolgreichsten Romanwerken des 20. Jahrhunderts, ist ein Klassiker der Fantasy-Literatur und gilt als grundlegendes Werk der High Fantasy. Im englischen Original wurden in den Jahren 1954/1955 drei Bände zu jeweils zwei Büchern plus Appendizes veröffentlicht. Die erste deutsche Übersetzung von Margaret Carroux erschien 1969/1970. Weltweit wurde Der Herr der Ringe etwa 150 Millionen Mal verkauft.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Der_Herr_der_Ringe",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Herr der Ringe: Die Entscheidung",
     "language": "Deutsch",
     "slug": "herr-der-ringe-die-entscheidung",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Der Herr der Ringe: Die Entscheidung ist ein strategisches Brettspiel des deutschen Spieleautors Reiner Knizia für zwei Personen. Das Spiel erschien 2002 international bei verschiedenen Verlagen, in Deutschland wurde es in der Serie Spiele für Zwei beim Verlag Kosmos Spiele veröffentlicht. Im Jahr 2003 erhielt es den International Gamers Award in der Kategorie für 2-Spieler-Strategiespiele.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Der_Herr_der_Ringe%3A_Die_Entscheidung",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 2.2
   },
   {
     "name": "Inis",
     "language": "English",
     "slug": "inis",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "The International Nuclear Information System (INIS) hosts one of the world's largest collections of published information on the peaceful uses of nuclear science and technology.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/International_Nuclear_Information_System",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 3.2
   },
   {
     "name": "Jagd der Vampire",
     "language": "Deutsch",
     "slug": "jagd-der-vampire",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Jagd_der_Vampire_Folge_1_Die_gro%C3%9Fe_Tomate.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Jagd der Vampire ist ein Brettspiel von Ravensburger, das im Jahr 1991 von Alex Randolph, Walter Obert und Dario De Toffoli entwickelt wurde. Die Illustrationen des Spiels stammen von Karin Schliehe, Felix Seeberger und Gerhard Schmid.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Jagd_der_Vampire",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Jasskarten",
     "language": null,
+    "skip": true,
     "slug": "jasskarten",
     "bggId": null
   },
@@ -378,19 +626,36 @@
     "name": "Jenga",
     "language": null,
     "slug": "jenga",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/e7/Jenga_brand_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Jenga is a game of physical skill created by British board game designer and author Leslie Scott and marketed by Hasbro. The name comes from the Swahili word \"kujenga\" which means 'to build or construct'. Players take turns removing one block at a time from a tower constructed of 54 blocks. Each block removed is then placed on top of the tower, creating a progressively more unstable structure. The game ends when the tower falls over.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Jenga",
+    "minPlayers": 1,
+    "maxPlayers": 8,
+    "complexity": 1.2
   },
   {
     "name": "Jolly Roger",
     "language": "Deutsch",
     "slug": "jolly-roger",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/e/eb/%C3%85land_piratflagga_%28color_fix%29.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "The Jolly Roger was the ensign flown by a pirate ship preceding or during an attack, during the early 18th century. The vast majority of such flags flew the motif of a human skull, or \"Death's Head\", often accompanied by other elements, on a black field, sometimes called the \"Death's Head flag\" or just the \"black flag\".",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Jolly_Roger",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Kahuna",
     "language": "Deutsch",
     "slug": "kahuna",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/26/USMC-101120-M-2339L-009.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Kahuna is a Hawaiʻian word that refers to an expert in any field. Historically, it has been used to refer to doctors, surgeons, and dentists, as well as priests, ministers, and sorcerers.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Kahuna",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 2.1
   },
   {
     "name": "Kampf gegen das Bünzlitum",
@@ -402,19 +667,37 @@
     "name": "Keltis",
     "language": "Deutsch",
     "slug": "keltis",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/4/48/Keltis.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Keltis is a board game designed by Reiner Knizia that won the Spiel des Jahres for best game of the year in 2008. In the US, it has been marketed as Lost Cities: The Board Game, though there are some subtle rules differences.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Keltis",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.8
   },
   {
     "name": "Kingdom Builder",
     "language": "Deutsch",
     "slug": "kingdom-builder",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/0e/Kingdom_Builder_game.jpg/3840px-Kingdom_Builder_game.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Kingdom Builder is a strategy board game designed by Donald X. Vaccarino, published in 2011 by Queen Games with illustrations by Oliver Schlemmer in German, British and international versions.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Kingdom_Builder",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.9
   },
   {
     "name": "Kingdomino",
     "language": "Deutsch",
     "slug": "kingdomino",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/a/a3/Kingdomino_Box_Cover.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Kingdomino is a 2016 tile board game for 2-4 players designed by Bruno Cathala and published by Blue Orange Games. In this 15-20 minute, family-oriented game, players build a five by five kingdom of oversized domino-like tiles, making sure as they place each tile that one of its sides connects to a matching terrain type already in play. The game was critically successful and won the 2017 Spiel des Jahres award, and was followed by several spin-offs and expansions.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Kingdomino",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.2
   },
   {
     "name": "Klugscheisse 2. Ausgabe",
@@ -426,61 +709,114 @@
     "name": "Klugscheisser",
     "language": "Deutsch",
     "slug": "klugscheisser",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Als Besserwisser wird umgangssprachlich eine Person bezeichnet, die ihre Meinung in belehrend-aufdringlicher Art und Weise äußert und damit den Anschein erweckt, als ob sie in bestimmten Angelegenheiten mehr Wissen oder Bildung besäße oder dazu besser urteilen könne als andere. Die Umgebung nimmt am Verhalten solcher Personen Anstoß – nicht so sehr, weil man ihnen das Wissen neidet, sondern weil sie andere uneingeladen belehren, sich den Meinungen, den Argumenten und dem Wissen anderer Menschen aber verschließen. Dadurch entsteht ein Anschein von Überheblichkeit und mangelndem Taktgefühl. Als unangenehm wird auch ein überzogenes Wettbewerbsverhalten von Menschen empfunden, die weniger aus In",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Besserwisser",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "L.A.M.A",
     "language": "Deutsch, Italiano, Francais",
     "slug": "l-a-m-a",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Lama oder LAMA, Eigenschreibweise L.A.M.A. mit dem Untertitel „… nimm's lässig!“, ist ein einfaches Kartenspiel des deutschen Spieleautors Reiner Knizia, das im Jahr 2018 bei dem Verlag Amigo erschienen ist. Im Mai 2019 wurde Lama gemeinsam mit den Spielen Just One und Werwörter zum Spiel des Jahres nominiert.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Lama_(Kartenspiel)",
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "complexity": 1.1
   },
   {
     "name": "Das verrückte Labyrinth",
     "language": "Deutsch",
     "slug": "das-verruckte-labyrinth",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/80/Labyrinth-boardgame.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Das verrückte Labyrinth ist eine Mischung aus Brett- und Legespiel für vier Spieler, zu dessen Bewältigung räumliches Denken und Konzentration erforderlich sind. Es erschien erstmals 1986 bei Ravensburger. Erfunden und entwickelt wurde es von dem Wahrnehmungspsychologen und Spieleautor Max Kobbert. Das Spiel wurde laut Ravensburger bis 2011 in 60 Sprachen übersetzt und über 20 Millionen Mal verkauft.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Das_verr%C3%BCckte_Labyrinth",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.5
   },
   {
     "name": "Leo muss zum Friseur",
     "language": "Deutsch",
     "slug": "leo-muss-zum-friseur",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Leo muss zum Friseur ist ein kooperatives Kinderspiel des italienischen Spieleautors Leo Colovini. Das Spiel für zwei bis fünf Spieler ab sechs Jahren dauert etwa 30 Minuten pro Runde. Es ist im Jahr 2016 bei dem italienischen Verlag dV Giochi sowie auf Deutsch bei Abacusspiele erschienen. Im selben Jahr gewann das Spiel den Deutschen Kinderspiele Preis und wurde für das Kinderspiel des Jahres nominiert. Es erschien 2016 auch auf Polnisch und Chinesisch.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Leo_muss_zum_Friseur",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Ligretto",
     "language": "Deutsch",
     "slug": "ligretto",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/fa/Ligretto_card_game_box.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Ligretto is a card game for two to twelve players. The game in its current form was designed by Michael Michaels and published in 1988 by the German company Rosengarten Spiele. Since 2000 the game has been published by Schmidt-Spiele of Berlin, Germany. A blue version of the game has been published by Playroom Entertainment in North America and other English-speaking countries since 2009.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ligretto",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.2
   },
   {
     "name": "Looping Louie",
     "language": "Deutsch",
     "slug": "looping-louie",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c0/Loopinglouie_19.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Looping Louie ist ein von Milton Bradley seit 1994 produziertes Geschicklichkeitsspiel für Kinder. Es ist aus Kunststoff hergestellt und batteriebetrieben. Ziel ist es, als einziger Farmer die Angriffe seitens Looping Louie auf die Hühner zu überstehen. Das Spiel wurde 1994 mit dem Sonderpreis Kinderspiel beim Spiel des Jahres ausgezeichnet. 2006 erschien eine Neuauflage.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Looping_Louie",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.1
   },
   {
     "name": "Love Letter",
     "language": "English",
     "slug": "love-letter",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/e/e1/Love_Letter_box_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Love Letter is a card game introduced in May 2012 and designed by Seiji Kanai. Its first English-language edition was produced in the United States by Alderac Entertainment Group (AEG) until 2018, when Love Letter was acquired by Z-Man Games.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Love_Letter_(card_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.2
   },
   {
     "name": "Magic Maze",
     "language": "Deutsch",
     "slug": "magic-maze",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Magic%20Maze%20-%20Aae03e1e-b599-4c5a-942a-b73f3dbc8cc7~1.jpg",
+    "description": "Magic Maze ist ein kooperatives Brettspiel des Spieleautors Kasper Lapp für einen bis acht Spieler, das 2017 im Verlag Sit Down! erschien und über Pegasus Spiele vertrieben wird. Es handelt sich um ein Spiel im Stil eines Dungeon Crawlers. Während des Spiels muss also ein unbekanntes Terrain erkundet werden, in dem der Spielergruppe spezifische Aufgaben gestellt werden. Im gleichen Jahr wurde das Spiel neben Kingdomino und Wettlauf nach El Dorado für das Spiel des Jahres nominiert. Magic Maze gewann den innoSPIEL 2017 – verliehen vom Friedhelm Merz Verlag.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Magic_Maze",
+    "minPlayers": 1,
+    "maxPlayers": 8,
+    "complexity": 1.7
   },
   {
     "name": "Masters of the Renaissance",
     "language": "English",
     "slug": "masters-of-the-renaissance",
-    "bggId": null
+    "bggId": null,
+    "complexity": 2.4
   },
   {
     "name": "Maus und Mystik",
     "language": "Deutsch",
     "slug": "maus-und-mystik",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Maus und Mystik ist ein Dungeon Crawler und ein kooperatives Brettspiel im Fantasy Genre. Das Spiel wurde von Jerry Hawthorne entwickelt und von Plaid Hat Games 2012 veröffentlicht. Im Spiel stellen die Spieler Fantasy-Charakter dar, die in anthropomorphe Mäuse verwandelt wurden. Diese Charakter befinden sich auf einer Quest um die böse Hexe zu besiegen, die sie verwandelt hat und um das Königreich zu retten. Das Spiel wurde für sein originelles Thema gelobt, bei dem Charakter Knöpfe und Nadeln statt Schilden und Schwertern nutzen und die Charaktere gegen Rattenkrieger und Katzen anstelle von Goblins und Drachen kämpfen müssen.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Maus_und_Mystik",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 2.4
   },
   {
     "name": "Mäuse Würfeln",
@@ -492,19 +828,37 @@
     "name": "Memory",
     "language": null,
     "slug": "memory",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Memory.gif?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Memory is the faculty of the mind by which data or information is encoded, stored, and retrieved when needed. It is the retention of information over time for the purpose of influencing future action. If past events could not be remembered, it would be impossible for language, relationships, or personal identity to develop. Memory loss is usually described as forgetfulness or a disorder such as amnesia.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Memory",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1
   },
   {
     "name": "Mikado",
     "language": null,
     "slug": "mikado",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a6/Mikadospiel_W.jpg/3840px-Mikadospiel_W.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Mikado ist ein Geschicklichkeitsspiel, das in Europa entstand und angeblich schon unter den Römern bekannt gewesen sein soll. Sein aus dem Japanischen stammender Name deutet allerdings an, dass es möglicherweise von ostasiatischen Orakeltechniken inspiriert wurde. Gespielt wird mit mehreren bunten Holzstäbchen, unter denen das wichtigste Mikado genannt wird.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Mikado_(Spiel)",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1
   },
   {
     "name": "Monopoly",
     "language": "Deutsch",
     "slug": "monopoly",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/78/Monopoly_board_on_white_bg.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Monopoly is a multiplayer economics-themed board game. In the game, players roll two standard dice to move their token clockwise around the board, buying and trading properties and railroads and developing them with houses and hotels. Players collect rent from their opponents and aim to drive them into bankruptcy. Money can also be gained or lost through Chance and Community Chest cards and tax squares. Players receive a salary every time they pass \"Go\" and can end up in jail, from which they cannot move until they have met one of three conditions. House rules, hundreds of different editions, many spin-offs, and related media exist.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Monopoly_(game)",
+    "minPlayers": 2,
+    "maxPlayers": 8,
+    "complexity": 1.7
   },
   {
     "name": "Munchkin",
@@ -513,37 +867,62 @@
       "Abartige Axt"
     ],
     "slug": "munchkin",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/58/Munchkins.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "A Munchkin is a native of the fictional Munchkin Country in the Oz books by American author L. Frank Baum. Although a common fixture in Germanic fairy tales, they are introduced to modern audiences with the first appearance in the classic children's novel The Wonderful Wizard of Oz (1900) where they welcome Dorothy Gale to their city in Oz. The Munchkins are described as being the same height as Dorothy and they wear only shades of blue clothing, as blue is the Munchkins' favorite color. Blue is also the predominating color that officially represents the eastern quadrant in the Land of Oz. The Munchkins have appeared in various media, including the 1939 film The Wizard of Oz, as well as in v",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Munchkin",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1.9
   },
   {
     "name": "Munchkin Critical Role",
     "language": "English",
     "slug": "munchkin-critical-role",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.9
   },
   {
     "name": "Munchkin Panic",
     "language": "Deutsch",
     "slug": "munchkin-panic",
-    "bggId": null
+    "bggId": null,
+    "complexity": 2
   },
   {
     "name": "Nautilus",
     "language": "Deutsch",
     "slug": "nautilus",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Nautilus is a 2002 board game published by Mayfair Games.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Nautilus_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 2
   },
   {
     "name": "Nova Luna",
     "language": "Deutsch",
     "slug": "nova-luna",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Playing%20board%20game%20-%20Play%20619%201702150473571.jpg",
+    "description": "Nova Luna ist ein Brettspiel der Spieleautoren Uwe Rosenberg und Corné van Moorsel, das 2019 bei der Edition Spielwiese im Vertrieb von Pegasus Spiele erschien. Bei dem Spiel handelt es sich um ein weitgehend abstraktes Legespiel, bei dem die Mitspieler über die Kombination von farbigen Legeplättchen möglichst viele auf diesen abgebildete Aufgaben erfüllen müssen.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Nova_Luna",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 1.6
   },
   {
     "name": "Onitama",
     "language": "English",
     "slug": "onitama",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Playing%20board%20game%20-%20Play%20197%201680200755084.jpg",
+    "description": "Onitama is a strategy board game for two players created in 2014 by Japanese game designer Shimpei Sato and launched by Arcane Wonders. In Germany, the game was launched by Pegasus Games in 2017. It is thematically based on the different fighting styles of Japanese martial arts.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Onitama",
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "complexity": 1.6
   },
   {
     "name": "Paper Dungeons",
@@ -555,11 +934,18 @@
     "name": "Patchwork",
     "language": "Deutsch",
     "slug": "patchwork",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/Play%20303%201687690103040.jpg",
+    "description": "Patchwork is a two-player board game created by Uwe Rosenberg. It was released in 2014.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Patchwork_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "complexity": 1.6
   },
   {
     "name": "Pokerkarten",
     "language": null,
+    "skip": true,
     "slug": "pokerkarten",
     "bggId": null
   },
@@ -579,55 +965,109 @@
     "name": "Qwirkle",
     "language": "Deutsch",
     "slug": "qwirkle",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/97/Qwirkle_Box.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Qwirkle is a tile-based game for two to four players, designed by Susan McKinley Ross and published by MindWare in 2006. Qwirkle shares some characteristics with the games Rummikub and Scrabble. It is distributed in Canada by game and puzzle company Outset Media. Qwirkle is considered by MindWare to be its most awarded game of all time. In 2011, Qwirkle won the Spiel des Jahres. A sequel, Qwirkle Cubes, was released by Mindware in 2009.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Qwirkle",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.2
   },
   {
     "name": "Qwixx",
     "language": "Deutsch",
     "slug": "qwixx",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/160507%20Qwixx%20Spielmaterial%2006.jpg",
+    "description": "Qwixx ist ein Würfelspiel mit sechs Würfeln von Steffen Benndorf, das im Jahr 2012 im Nürnberger-Spielkarten-Verlag erschienen ist. Das Spiel wurde zum Spiel des Jahres 2013 als eines von drei Spielen nominiert, konnte sich jedoch nicht gegen das Spiel Hanabi durchsetzen. Im Jahr 2014 gewann Qwixx den Niederländischen Spielepreis.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Qwixx",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 1.2
   },
   {
     "name": "Risiko",
     "language": "Deutsch",
     "slug": "risiko",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/7/7e/RAF_Camora_und_Bonez_MC_%22Palmen_aus_Plastik_2%22_Cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Palmen aus Plastik 2 is the second collaborative studio album by German rapper Bonez MC and Austrian rapper RAF Camora, released on 5 October 2018 through Vertigo Berlin and Capitol. It was also made available as a limited edition box set on the same date. Prior to the album, the rappers collaborated on Palmen aus Plastik (2016). Palmen aus Plastik 2 debuted at number one on the German, Swiss and Austrian album charts. The album was certified Gold by Bundesverband Musikindustrie (BVMI) and IFPI Austria. As of November 2018, the record was certified for 107,500 album-equivalent units in German-speaking Europe.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Palmen_aus_Plastik_2",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 2.4
   },
   {
     "name": "Root",
     "language": "Deutsch",
     "slug": "root",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/9f/Turn_1_in_board_game_Root.jpg/3840px-Turn_1_in_board_game_Root.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Root: A Game of Woodland Might and Right is a 2018 asymmetric strategy wargame board game designed by Cole Wehrle, illustrated by Kyle Ferrin, and published by Leder Games. Players compete for the most victory points through moving and battling using various factions with unique abilities. Upon its release, Root received positive reviews, and was followed by four expansions. A digital version, developed by Dire Wolf Digital, was released in 2020.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Root_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 3.7
   },
   {
     "name": "Rummikub",
     "language": "Deutsch, Italiano, Francais",
     "slug": "rummikub",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Rummikub_Tiles.jpg/3840px-Rummikub_Tiles.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Rummikub is the proprietary board game that was developed and marketed by Ephraim Hertzano in the 1950s. It is a tile-based game for two to four players, combining elements of the card game rummy and mahjong. There are 106 tiles in the game, including 104 numbered tiles and two jokers. Players have 14 tiles initially and take turns putting down tiles from their racks into sets of at least three. Players have a time limit for one or two minutes for their turn, or draw a tile if they cannot play. In the Sabra version, the first player to use all their tiles scores a positive score based on the total of the other players' hands, while the losers get negative scores. Variations of the game conta",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Rummikub",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.3
   },
   {
     "name": "Rummy",
     "language": "Deutsch",
     "slug": "rummy",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/67/A_Game_of_Rummy.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Rummy is a group of games related by the feature of matching cards of the same rank or sequence and same suit. The basic goal in any form of rummy is to build melds which can be either sets or runs and either be first to go out or to amass more points than the opposition.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Rummy",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1.2
   },
   {
     "name": "Schach",
     "language": null,
     "slug": "schach",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/3/30/ChessStartingPosition.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Schach oder Schachspiel ist ein strategisches Brettspiel, bei dem zwei Spieler abwechselnd Spielsteine auf einem Spielbrett bewegen. Ziel des Spiels ist es, den Gegner schachmatt zu setzen, das heißt, dessen König so anzugreifen, dass diesem weder Abwehr noch Flucht möglich ist.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Schach",
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "complexity": 3.5
   },
   {
     "name": "Scotland Yard",
     "language": "Deutsch, English, Francais",
     "slug": "scotland-yard",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/56/Scotland_Yard_game_logo.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Scotland Yard is a board game in which a team of players controlling different detectives cooperate to track down a player controlling a criminal as they move around a board representing the streets of London. It was first published in 1983 by Ravensburger and is named after Scotland Yard which is the headquarters of London's Metropolitan Police Service in real-life. Scotland Yard is an asymmetric board game, during which the detective players cooperatively solve a variant of the pursuit–evasion problem.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Scotland_Yard_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "complexity": 1.8
   },
   {
     "name": "Scrabble",
     "language": "Deutsch",
     "slug": "scrabble",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5d/Scrabble_game_in_progress.jpg/3840px-Scrabble_game_in_progress.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Scrabble is a word game in which two to four players score points by placing tiles, each bearing a single letter, onto a game board divided into a 15×15 grid of squares. The tiles must form words that, in crossword fashion, read left to right in rows or downward in columns and are included in a standard dictionary or lexicon.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Scrabble",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.6
   },
   {
     "name": "Scrabble Karten",
@@ -639,115 +1079,212 @@
     "name": "Scythe",
     "language": "Deutsch",
     "slug": "scythe",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/1a/Scythe_boxart.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Scythe is a board game for one to five players designed by Jamey Stegmaier and published by Stonemaier Games in 2016. Set in an alternative history version of 1920s Europe, players control factions that produce resources, develop economic infrastructure, and use dieselpunk combat mechs to engage in combat and control territories. Players take up to two actions per turn using individual player boards, and the game proceeds until one player has earned six achievements. At this point, the players receive coins for the achievements they have attained and the territories they control, and the player with the most coins is declared the winner.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Scythe_(board_game)",
+    "minPlayers": 1,
+    "maxPlayers": 5,
+    "complexity": 3.4
   },
   {
     "name": "Sequence",
     "language": "Deutsch",
     "slug": "sequence",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Sequence_card_game.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Sequence is an abstract strategy tabletop party game. Sequence was invented by Douglas Reuter. He originally called the game Sequence Five. In 2017, Goliath Game Company bought Jax, and in early 2018 also bought all licensor rights and now owns 100% of the game Sequence. Doug Reuter is acknowledged as the inventor of Sequence on all newly produced copies of the game - both on the box and in the printed rules.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Sequence_(game)",
+    "minPlayers": 2,
+    "maxPlayers": 12,
+    "complexity": 1.2
   },
   {
     "name": "SET",
     "language": "Deutsch, Italiano, Francais",
     "slug": "set",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/8f/Set-game-cards.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Set is a real-time card game designed by Marsha Falco in 1974 and published by Set Enterprises in 1991. The deck consists of 81 cards, each varying across four features: number of shapes, shape, shading, and color. Each possible combination of features appears only once in the deck.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Set_(card_game)",
+    "minPlayers": 1,
+    "maxPlayers": 8,
+    "complexity": 1.2
   },
   {
     "name": "Skip-Bo",
     "language": null,
     "slug": "skip-bo",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/8d/Skip-Bo_cover.JPG?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Skip-Bo is a commercial version of the card game Spite and Malice, a derivative of Russian Bank, which in turn originates from Double Klondike. In 1967, Minnie Hazel \"Skip\" Bowman (1915–2001) of Brownfield, Texas, began producing a boxed edition of the game under the name SKIP-BO. In 1980 the game was purchased by International Games, which was subsequently bought by Mattel in 1992. A mobile version of the game for iOS was released by Magmic in September, 2013.\nThere is a new version called \"SKIP-BO” that comes in a green, white and yellow case.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Skip-Bo",
+    "minPlayers": 2,
+    "maxPlayers": 6,
+    "complexity": 1.2
   },
   {
     "name": "Skull King",
     "language": "Deutsch",
     "slug": "skull-king",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Skull King is a 2013 card game.",
+    "wikipediaUrl": "https://www.wikidata.org/wiki/Q136433686",
+    "minPlayers": 2,
+    "maxPlayers": 8,
+    "complexity": 1.7
   },
   {
     "name": "Skull King: Das Würfelspiel",
     "language": "Deutsch",
     "slug": "skull-king-das-wurfelspiel",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Skull King is a 2013 card game.",
+    "wikipediaUrl": "https://www.wikidata.org/wiki/Q136433686",
+    "minPlayers": 2,
+    "maxPlayers": 8,
+    "complexity": 1.5
   },
   {
     "name": "Sky Team",
     "language": "Deutsch",
     "slug": "sky-team",
-    "bggId": null
+    "bggId": null,
+    "image": "https://commons.wikimedia.org/wiki/Special:FilePath/SkyTeamLogo.png",
+    "description": "Sky Team is a two-player board game where participants act as pilot and co-pilot to safely land an airplane. It was designed by Luc Rémond and published by Le Scorpion Masqué in 2023.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Sky_Team_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "complexity": 1.8
   },
   {
     "name": "Small World of Warcraft",
     "language": "Deutsch",
     "slug": "small-world-of-warcraft",
-    "bggId": null
+    "bggId": null,
+    "complexity": 2.3
   },
   {
     "name": "Small World",
     "language": "English",
     "slug": "small-world",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/7/7f/Small_World_board_game_EN_box.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Small World is a board game designed by Philippe Keyaerts, Illustrated by Miguel Coimbra and Cyrille Daujean as graphic designer, and published by Days of Wonder in 2009. The game is a reworking of Keyaerts' 1999 game Vinci. Small World has won several awards, including Games magazine 2010 Game of the Year.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Small_World_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 2.3
   },
   {
     "name": "Spiel des Lebens",
     "language": "Deutsch",
     "slug": "spiel-des-lebens",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/88/Jinsei_Game_kodomo.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Das Spiel des Lebens ist ein Gesellschaftsspiel von Reuben Klamer, das seit 1960 in den USA und seit 1978 in Deutschland von Milton Bradley herausgegeben wird. Das Original wurde 1860 von Milton Bradley zum ersten Mal unter den Namen The Checkered Game of Life veröffentlicht. Es ist ein Brettspiel mit Würfelspiel-Elementen, bei dem ein Lebenslauf vom Abitur bis zum Altersruhestand in verschiedenen Stationen durchgespielt wird, wobei es auf die individuellen Entscheidungen eines jeden Spielers in Bezug auf Karriere, Familie und Finanzierungen ankommt. Das Ziel besteht darin, am Ende des Spiels möglichst viel Kapital angehäuft zu haben. Hierbei zählen auch im Laufe des Lebens angehäufte Status",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Spiel_des_Lebens_(Spiel)",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1.4
   },
   {
     "name": "Spirit Island",
     "language": "Deutsch",
     "slug": "spirit-island",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Game_in_progress%2C_Spirit_Island.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Spirit Island is a euro-style co-operative strategy board game designed by R. Eric Reuss and published by Greater than Games in 2017. Digital versions have been released for PC, iOS, and Android.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Spirit_Island_(board_game)",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 4
   },
   {
     "name": "Star Munchkin",
     "language": "Deutsch",
     "slug": "star-munchkin",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Star Munchkin is a 2002 expansion set published by Steve Jackson Games for Munchkin.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Star_Munchkin",
+    "minPlayers": 3,
+    "maxPlayers": 6,
+    "complexity": 1.9
   },
   {
     "name": "Steampunk Rally",
     "language": "English",
     "slug": "steampunk-rally",
-    "bggId": null
+    "bggId": null,
+    "complexity": 2.7
   },
   {
     "name": "Stone Age",
     "language": "Deutsch",
     "slug": "stone-age",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/5/50/Stone_Age_game.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Stone Age is a designer board game designed by Michael Tummelhofer and published by Hans im Glück in 2008. It is a development game with a Stone Age theme that involves taking control of a tribe to collect resources and build a village that has the most powerful chief.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Stone_Age_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 2.5
   },
   {
     "name": "Stone Age Junior",
     "language": "Deutsch",
     "slug": "stone-age-junior",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/00/17-10-27_SPIEL_Stoneage_junior.jpg/3840px-17-10-27_SPIEL_Stoneage_junior.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Stone Age Junior ist ein Kinder- und Familienspiel des Spieleautors Marco Teubner. Das Spiel für zwei bis vier Spieler ab fünf Jahren dauert etwa 15 Minuten pro Runde. Es ist im Jahr 2016 beim Hans im Glück Verlag erschienen und gewann im Jahr 2016 den Kritikerpreis Kinderspiel des Jahres sowie die Essener Feder.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Stone_Age_Junior",
+    "minPlayers": 2,
+    "maxPlayers": 4
   },
   {
     "name": "Stratego",
     "language": "Deutsch, English, Francais",
     "slug": "stratego",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Essen_2008_50016.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Stratego is a chess-like strategy board wargame for two players on a board of 10×10 squares. Each player controls an army of 40 pieces representing individual officer and soldier ranks through a numbering scheme. The pieces have Napoleonic insignia. The objective of the game is to either find and capture the opponent's Flag or to capture all movable enemy pieces so that the opponent cannot make any further moves. Stratego has simple rules but a depth of strategy.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Stratego",
+    "minPlayers": 2,
+    "maxPlayers": 2,
+    "complexity": 1.6
   },
   {
     "name": "Suburbia",
     "language": "Deutsch",
     "slug": "suburbia",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Borough_board_and_borough_development_in_board_game_Suburbia.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Suburbia is a city-building tile-laying board game designed by Ted Alspach and published in 2012 by Bézier Games.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Suburbia_(board_game)",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 2.8
   },
   {
     "name": "Tangram",
     "language": "Deutsch",
     "slug": "tangram",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/c/cb/Tangram_set_00.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "The tangram is a dissection puzzle consisting of seven flat polygons, called tans, which are put together to form shapes. The objective is to replicate a pattern generally found in a puzzle book using all seven pieces without overlap. Alternatively the tans can be used to create original minimalist designs that are either appreciated for their inherent aesthetic merits or as the basis for challenging others to replicate its outline. It is reputed to have been invented in China sometime around the late 18th century and then carried over to America and Europe by trading ships shortly after. It became very popular in Europe for a time, and then again during World War I. It is one of the most wi",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tangram",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Tanto Cuore",
     "language": "English",
     "slug": "tanto-cuore",
-    "bggId": null
+    "bggId": null,
+    "complexity": 2.2
   },
   {
     "name": "Terraforming Mars",
@@ -759,97 +1296,181 @@
       "Kolonien"
     ],
     "slug": "terraforming-mars",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/f/f0/Terraforming_Mars_board_game_box_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Terraforming Mars is a board game for 1 to 5 players designed by Jacob Fryxelius and published by FryxGames in 2016, and thereafter by 12 others, including Stronghold Games. In Terraforming Mars, players take the role of corporations working together to terraform the planet Mars by raising the temperature, adding oxygen to the atmosphere, covering the planet's surface with water and creating plant and animal life. The game incorporates elements of resource management, engine building, and strategic planning. Players compete to earn the most victory points, which are measured by their contribution to terraforming and to human infrastructure. These goals are achieved by collecting income and r",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Terraforming_Mars_(board_game)",
+    "minPlayers": 1,
+    "maxPlayers": 5,
+    "complexity": 3.2
   },
   {
     "name": "That's Not a Hat",
     "language": "Deutsch, Italiano, Francais",
     "slug": "that-s-not-a-hat",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/6/6d/Thats_not_a_hat.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "That’s Not a Hat ist ein Kartenspiel von Kasper Lapp aus dem Jahr 2023, das von der Spiel-des-Jahres-Jury im Jahr 2023 auf die Spiel des Jahres – Empfehlungsliste gesetzt wurde.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/That%E2%80%99s_Not_a_Hat",
+    "minPlayers": 3,
+    "maxPlayers": 8
   },
   {
     "name": "The 7th Continent",
     "language": "English",
     "slug": "the-7th-continent",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "The 7th Continent is a 2017 storytelling cooperative board game designed by Ludovic Roudy and Bruno Sautter.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/The_7th_Continent",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 3.4
   },
   {
     "name": "The Game",
     "language": "Deutsch",
     "slug": "the-game",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.1
   },
   {
     "name": "The Viking Game",
     "language": "Deutsch, English, Francais",
     "slug": "the-viking-game",
-    "bggId": null
+    "bggId": null,
+    "complexity": 2
   },
   {
     "name": "Therion",
     "language": "Deutsch, English, Francais",
     "slug": "therion",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Therion-Wacken-02-cropped.jpg?utm_source=de.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Therion ist eine schwedische Symphonic-Metal-Band, die 1987 von Christofer Johnsson aus seiner 1987er-Band Blitzkrieg heraus ursprünglich als Megatherion gegründet wurde. Der Name hat seinen Ursprung im Altgriechischen to mega therion, was etwa ‚das große Tier‘ heißt und der Offenbarung des Johannes entnommen ist. Der Name wurde ziemlich bald allerdings zu Therion gekürzt. Während sie als Death-Metal-Band begannen, wandten sie sich später dem Symphonic Metal zu – das Erscheinen von Theli wird hier als Wendepunkt angesehen.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Therion",
+    "minPlayers": null,
+    "maxPlayers": null
   },
   {
     "name": "Thunderstone Advance",
     "language": "Deutsch",
     "slug": "thunderstone-advance",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/8/8d/Thunderstone_box_cover.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Thunderstone is a fantasy deck-building card game series designed by Mike Elliott, with artwork by Jason Engle. It was first published by Alderac Entertainment Group in 2009. Each card has dimensions of 6.3 by 8.8 centimetres. It has been translated into several languages.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Thunderstone_(card_game)",
+    "minPlayers": 1,
+    "maxPlayers": 5,
+    "complexity": 2.7
   },
   {
     "name": "Tichu",
     "language": "Deutsch",
     "slug": "tichu",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/2/21/Tichu_cards.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Tichu is a proprietary card game primarily classified as a shedding game that includes elements of Bridge, Daihinmin, and Poker played between two teams of two players each. Teams work to accumulate points, and the first team to reach a predetermined score is the winner. Tichu is the trade name for what appears to be a variant of Dou di zhu, Choi Dai Di (Cantonese) or Da Lao Er (Mandarin), meaning \"big two\", combined with Zheng Fen. It is also marketed as Tai Pan in Dutch. Tichu was invented by Urs Hostettler and originally released in 1991.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tichu",
+    "minPlayers": 4,
+    "maxPlayers": 4,
+    "complexity": 2.6
   },
   {
     "name": "Ticket to Ride: Europe",
     "language": "Deutsch, Italiano, Francais",
     "slug": "ticket-to-ride-europe",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/9/92/Ticket_to_Ride_Board_Game_Box_EN.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Ticket to Ride is a series of turn-based strategy railway-themed Eurogames designed by Alan R. Moon, the first of which was released in 2004 by Days of Wonder. This game is the world's highest-selling train game. As of 2026, over 20 million copies of the game have been sold worldwide, and it has been translated into 33 languages. Days of Wonder has released digital versions of the board games, card games, puzzles, and a foreshadowed on-screen adaptation.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ticket_to_Ride_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 1.9
   },
   {
     "name": "Tokaido",
     "language": "Deutsch",
     "slug": "tokaido",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Tokaido ist ein Brettspiel aus dem Jahr 2012 für 2 bis 5 Spieler. Autor ist Antoine Bauza, die Gestaltung stammt von Xavier Gueniffey Durin. In Deutschland erschien es bei Funforge.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Tokaido_(Spiel)",
+    "minPlayers": 2,
+    "maxPlayers": 5,
+    "complexity": 1.7
   },
   {
     "name": "Torres",
     "language": "Deutsch",
     "slug": "torres",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/9/91/Torres_jeu_01.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Torres is a German-style board game designed by Wolfgang Kramer and Michael Kiesling and published in 1999 by FX Schmid in German and by Rio Grande Games in English. The game strongly influenced Kramer and Kiesling's Mask Trilogy of games, but is not considered to be a part of the trilogy. The game has since been reprinted.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Torres_(board_game)",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 2.6
   },
   {
     "name": "Trains",
     "language": "English",
     "slug": "trains",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/5/50/%D0%9F%D0%BE%D0%B5%D0%B7%D0%B4_%D0%BD%D0%B0_%D1%84%D0%BE%D0%BD%D0%B5_%D0%B3%D0%BE%D1%80%D1%8B_%D0%A8%D0%B0%D1%82%D1%80%D0%B8%D1%89%D0%B5._%D0%92%D0%BE%D1%80%D0%BE%D0%BD%D0%B5%D0%B6%D1%81%D0%BA%D0%B0%D1%8F_%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "A train is a series of connected vehicles that run along a railway track and transport people or freight. Trains are typically pulled or pushed by locomotives, though some are self-propelled, such as multiple units or railcars. Passengers and cargo are carried in railroad cars, also known as wagons or carriages. Trains are designed to a certain gauge, or distance between rails. Most trains operate on steel tracks with steel wheels, the low friction of which makes them more efficient than other forms of transport. Many countries use rail transport.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Train",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 2.2
   },
   {
     "name": "Rising Sun",
     "language": "English",
     "slug": "rising-sun",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/b/b6/Rising_Sun_game.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Rising Sun is a board game for 3 to 5 players designed by Eric M. Lang and published by CMON Limited in 2017. Rising Sun is a game about strategy, negotiation, and warfare in a feudal Japan where the ancient gods (Kami) have returned to rebuild the empire.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Rising_Sun_(board_game)",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 3.4
   },
   {
     "name": "Tsuro of the Seas",
     "language": "English",
     "slug": "tsuro-of-the-seas",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Tsuro is a tile-based board game designed by Tom McMurchie, originally published by WizKids and now published by Calliope Games.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Tsuro",
+    "minPlayers": 2,
+    "maxPlayers": 8,
+    "complexity": 1.2
   },
   {
     "name": "Ubongo! Classic",
     "language": "Deutsch",
     "slug": "ubongo-classic",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/85/Hry_a_hlavolamy_2008_-_Ubongo_2.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Ubongo is a board game developed by Polish-born Swedish game designer Grzegorz Rejchtman. It originally appeared as Pyramidens Portar by the Swedish publisher Kärnan and won the Swedish Årets spel prize in 2003. The game was later released in Germany in 2005 as Ubongo by the publisher Kosmos and got 4th place at the German board game competition and was among the finalists in the International Gamers Award.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Ubongo",
+    "minPlayers": 1,
+    "maxPlayers": 4,
+    "complexity": 1.4
   },
   {
     "name": "Uno",
     "language": null,
     "slug": "uno",
-    "bggId": null
+    "bggId": null,
+    "image": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/UNO_Logo.svg/960px-UNO_Logo.svg.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail",
+    "description": "Uno, stylized in all caps as UNO, is a proprietary American shedding-type card game originally developed in 1971 by Merle Robbins in Reading, Ohio, a suburb of Cincinnati, that housed International Inc., a gaming company acquired by Mattel on January 23, 1992.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Uno_(card_game)",
+    "minPlayers": 2,
+    "maxPlayers": 10,
+    "complexity": 1.1
   },
   {
     "name": "Unstable Unicorns",
@@ -860,7 +1481,13 @@
       "NSFW"
     ],
     "slug": "unstable-unicorns",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Unstable Unicorns is a dedicated deck card game designed and illustrated by Ramy Badie.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Unstable_Unicorns",
+    "minPlayers": 2,
+    "maxPlayers": 8,
+    "complexity": 1.4
   },
   {
     "name": "Untold",
@@ -872,25 +1499,39 @@
     "name": "Werwölfe von Düsterwald",
     "language": "Deutsch",
     "slug": "werwolfe-von-dusterwald",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.4
   },
   {
     "name": "Werwölfe: Vollmondnacht",
     "language": "Deutsch",
     "slug": "werwolfe-vollmondnacht",
-    "bggId": null
+    "bggId": null,
+    "complexity": 1.5
   },
   {
     "name": "Wettlauf nach El Dorado",
     "language": "Deutsch",
     "slug": "wettlauf-nach-el-dorado",
-    "bggId": null
+    "bggId": null,
+    "image": null,
+    "description": "Wettlauf nach El Dorado ist ein Brettspiel des deutschen Spieleautors Reiner Knizia, das 2017 im Verlag Ravensburger erschien. Im gleichen Jahr wurde das Spiel gemeinsam mit Kingdomino und Magic Maze für das Spiel des Jahres nominiert. Es gewann den spanischen Spielepreis Juego del Año 2019 und wurde zudem beim Niederländischen Spielepreis nominiert.",
+    "wikipediaUrl": "https://de.wikipedia.org/wiki/Wettlauf_nach_El_Dorado",
+    "minPlayers": 2,
+    "maxPlayers": 4,
+    "complexity": 1.9
   },
   {
     "name": "What Do You Meme?",
     "language": "English",
     "slug": "what-do-you-meme",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/1/18/What_Do_You_Meme%3F_card_game_box.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "What Do You Meme? is a humorous party card game from Jerry Media in which players propose caption cards as a match to a designated photo card. The judge of the round chooses the caption that they think is the best match to photo card, and whoever played that card gets a point. The name of the game refers to internet memes and is a play on the phrase what do you mean. The game has been compared to Cards Against Humanity. The game was created by Elliot Tebele, Elie Ballas and Ben Kaplan in 2016. It was launched on Kickstarter on June 14, 2016, and it exceeded its goal of $10,000. The following year, in 2017, it was the 9th best selling game on Amazon.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/What_Do_You_Meme%3F",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1.2
   },
   {
     "name": "Winter Tales",
@@ -902,12 +1543,24 @@
     "name": "Wizard",
     "language": "Deutsch, Italiano, Francais",
     "slug": "wizard",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/en/1/15/Cover_of_Wizard_Metagaming_1978.png?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Wizard is a board game system of medieval fantasy magical combat published by Metagaming in 1978 that was designed to complement the previously published Melee, a system of melee combat rules. In 2019, Wizard was republished by Steve Jackson Games.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Wizard_(board_game)",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1.8
   },
   {
     "name": "Yatzy",
     "language": null,
     "slug": "yatzy",
-    "bggId": null
+    "bggId": null,
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/fd/Yatzy_Score_card_with_dies.jpg?utm_source=en.wikipedia.org&utm_campaign=api&utm_content=thumbnail_unscaled",
+    "description": "Yatzy is a dice game similar to Yacht and Yahtzee. It is related to the Latin American game Generala and the English game of poker dice. Yatzy is most popular in the Nordic countries.",
+    "wikipediaUrl": "https://en.wikipedia.org/wiki/Yatzy",
+    "minPlayers": null,
+    "maxPlayers": null,
+    "complexity": 1.2
   }
 ]

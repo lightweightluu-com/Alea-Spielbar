@@ -16,6 +16,8 @@ import {
 } from './sections'
 import { contact, rooms } from './content'
 import { renderGameDetailPage, renderGamesGrid, renderGamesListPage } from './gamePages'
+import type { Difficulty } from './games'
+import { supabase } from './publicSupabaseClient'
 
 const THEME_KEY = 'alea-theme'
 
@@ -86,11 +88,22 @@ function renderHomePage(): void {
 
 function setupGamesSearch(): void {
   const input = document.querySelector<HTMLInputElement>('#games-search')
+  const playersSelect = document.querySelector<HTMLSelectElement>('#games-filter-players')
+  const difficultySelect = document.querySelector<HTMLSelectElement>('#games-filter-difficulty')
   const grid = document.querySelector<HTMLDivElement>('#games-grid')
-  if (!input || !grid) return
-  input.addEventListener('input', () => {
-    grid.innerHTML = renderGamesGrid(input.value)
-  })
+  if (!input || !playersSelect || !difficultySelect || !grid) return
+
+  const applyFilters = () => {
+    grid.innerHTML = renderGamesGrid({
+      query: input.value,
+      players: playersSelect.value ? Number(playersSelect.value) : null,
+      difficulty: (difficultySelect.value || null) as Difficulty | null,
+    })
+  }
+
+  input.addEventListener('input', applyFilters)
+  playersSelect.addEventListener('change', applyFilters)
+  difficultySelect.addEventListener('change', applyFilters)
 }
 
 function route(): void {
@@ -250,9 +263,10 @@ function setupDiceGreeting(): void {
 }
 
 /**
- * The reservation/contact form has no backend, so "submitting" it means opening the visitor's
- * own email client with a prefilled mailto: — the same no-backend pattern the form's helper text
- * promises. We still run real client-side validation first so the mailto only fires on valid input.
+ * The reservation form writes straight to Supabase (`reservations` table, insert-only for the
+ * anon key — see supabase/schema.sql) so the owner sees requests in the admin UI immediately,
+ * instead of the old mailto: that only opened the visitor's own email client and depended on
+ * them actually hitting send. Real client-side validation still runs first, same as before.
  */
 function setupReservationForm(): void {
   const form = document.querySelector<HTMLFormElement>('#reservation-form')
@@ -270,7 +284,7 @@ function setupReservationForm(): void {
   updateHint()
   anliegenSelect.addEventListener('change', updateHint)
 
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', async (event) => {
     event.preventDefault()
 
     if (!form.reportValidity()) {
@@ -288,25 +302,34 @@ function setupReservationForm(): void {
     const people = String(data.get('people') ?? '').trim()
     const message = String(data.get('message') ?? '').trim()
 
-    const bodyLines = [
-      `Anliegen: ${anliegenLabel}`,
-      date && `Datum: ${date}`,
-      time && `Uhrzeit: ${time}`,
-      people && `Personenzahl: ${people}`,
-      '',
+    const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]')
+    submitButton?.setAttribute('disabled', 'true')
+    status.textContent = 'Wird gesendet …'
+
+    const { error } = await supabase.from('reservations').insert({
+      name,
+      email,
+      anliegen_id: anliegenId,
+      anliegen_label: anliegenLabel,
+      date: date || null,
+      time: time || null,
+      people: people ? Number(people) : null,
       message,
-      '',
-      `— ${name} (${email})`,
-    ].filter((line): line is string => Boolean(line) || line === '')
+    })
 
-    const subject = `Anfrage über die Website: ${anliegenLabel}`
-    const mailto = `mailto:${contact.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join('\n'))}`
+    submitButton?.removeAttribute('disabled')
 
-    window.location.href = mailto
-    status.textContent = 'E-Mail-Programm geöffnet — bitte dort noch auf „Senden" tippen.'
+    if (error) {
+      status.textContent = `Etwas ist schiefgelaufen — bitte versucht es erneut oder schreibt uns direkt an ${contact.email}.`
+      return
+    }
+
+    status.textContent = 'Danke! Eure Anfrage ist bei uns eingegangen — wir melden uns per E-Mail.'
+    form.reset()
+    updateHint()
     window.setTimeout(() => {
       status.textContent = defaultStatus
-    }, 6000)
+    }, 8000)
   })
 }
 

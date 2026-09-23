@@ -354,7 +354,7 @@ function reservationForm(): string {
     <h3 class="font-display text-2xl font-semibold text-paper">Tisch reservieren oder kontaktieren</h3>
     <p class="mt-2 max-w-[54ch] text-sm leading-relaxed text-muted">
       Der Hauptbereich läuft meist ohne Reservation. Für die beiden Spielräume oder alles andere: einfach absenden —
-      das öffnet dein E-Mail-Programm mit einer vorausgefüllten Nachricht an uns.
+      eure Anfrage geht direkt bei uns ein.
     </p>
 
     <form id="reservation-form" novalidate class="mt-8">
@@ -402,7 +402,7 @@ function reservationForm(): string {
           ${icon('arrow-right', 'size-4')}
         </button>
         <p id="rf-status" role="status" aria-live="polite" class="text-sm text-muted">
-          Öffnet dein E-Mail-Programm mit vorausgefüllter Nachricht an ${contact.email}.
+          Eure Anfrage geht direkt an uns — wir melden uns per E-Mail zurück.
         </p>
       </div>
     </form>
