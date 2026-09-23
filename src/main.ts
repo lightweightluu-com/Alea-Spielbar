@@ -16,6 +16,7 @@ import {
 } from './sections'
 import { contact, rooms } from './content'
 import { renderGameDetailPage, renderGamesGrid, renderGamesListPage } from './gamePages'
+import type { Difficulty } from './games'
 
 const THEME_KEY = 'alea-theme'
 
@@ -86,11 +87,22 @@ function renderHomePage(): void {
 
 function setupGamesSearch(): void {
   const input = document.querySelector<HTMLInputElement>('#games-search')
+  const playersSelect = document.querySelector<HTMLSelectElement>('#games-filter-players')
+  const difficultySelect = document.querySelector<HTMLSelectElement>('#games-filter-difficulty')
   const grid = document.querySelector<HTMLDivElement>('#games-grid')
-  if (!input || !grid) return
-  input.addEventListener('input', () => {
-    grid.innerHTML = renderGamesGrid(input.value)
-  })
+  if (!input || !playersSelect || !difficultySelect || !grid) return
+
+  const applyFilters = () => {
+    grid.innerHTML = renderGamesGrid({
+      query: input.value,
+      players: playersSelect.value ? Number(playersSelect.value) : null,
+      difficulty: (difficultySelect.value || null) as Difficulty | null,
+    })
+  }
+
+  input.addEventListener('input', applyFilters)
+  playersSelect.addEventListener('change', applyFilters)
+  difficultySelect.addEventListener('change', applyFilters)
 }
 
 function route(): void {

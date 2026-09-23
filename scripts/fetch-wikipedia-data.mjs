@@ -60,18 +60,46 @@ function candidateTitles(name, disambiguator) {
   return [...new Set(titles)]
 }
 
+function quantityValue(claim) {
+  const amount = claim?.[0]?.mainsnak?.datavalue?.value?.amount
+  return amount ? Math.round(Number(amount)) : null
+}
+
+// Pulls the handful of structured facts Wikidata reliably carries for board games even when the
+// Wikipedia article's infobox has no usable image: a free (non-fair-use) photo (P18) and the
+// min/max player counts (P1872/P1873). BGG's own weight/complexity rating has no Wikidata
+// equivalent, so that field stays null here.
+async function wikidataFacts(wikibaseId) {
+  if (!wikibaseId) return {}
+  const doc = await wikidataGet(WIKIDATA_ENTITY_URL(wikibaseId))
+  await sleep(REQUEST_DELAY_MS)
+  const claims = doc.entities[wikibaseId]?.claims ?? {}
+  const imageFile = claims.P18?.[0]?.mainsnak?.datavalue?.value
+  return {
+    image: imageFile ? `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(imageFile)}` : null,
+    minPlayers: quantityValue(claims.P1872),
+    maxPlayers: quantityValue(claims.P1873),
+  }
+}
+
 async function trySummary(title, lang) {
   const summary = await fetchSummary(lang, title)
   await sleep(REQUEST_DELAY_MS)
   if (!summary) return null
   if (summary.type === 'disambiguation') return null
-  const image = summary.originalimage?.source ?? summary.thumbnail?.source ?? null
+  let image = summary.originalimage?.source ?? summary.thumbnail?.source ?? null
   const description = summary.extract ? summary.extract.slice(0, 700).trim() : null
   if (!image && !description) return null
+  // Some board-game articles have no lead image (non-free box art doesn't clear Wikipedia's
+  // fair-use bar for an infobox), but their Wikidata item still carries a free gameplay photo
+  // and structured player-count facts the article prose doesn't expose.
+  const facts = await wikidataFacts(summary.wikibase_item)
   return {
-    image,
+    image: image ?? facts.image ?? null,
     description,
     wikipediaUrl: summary.content_urls?.desktop?.page ?? null,
+    minPlayers: facts.minPlayers ?? null,
+    maxPlayers: facts.maxPlayers ?? null,
   }
 }
 
@@ -100,15 +128,85 @@ const NAME_OVERRIDES = {
   'Der Fuchs im Wald': 'Der Fuchs im Wald (Spiel)',
 }
 
+const WIKIDATA_SEARCH_URL = (q, lang = 'en') =>
+  `https://www.wikidata.org/w/api.php?action=wbsearchentities&search=${encodeURIComponent(q)}&language=${lang}&format=json&limit=5&type=item`
+const WIKIDATA_ENTITY_URL = (id) => `https://www.wikidata.org/wiki/Special:EntityData/${id}.json`
+const GAME_DESCRIPTION_RE = /\b(board|card|dice|tile|party|strategy|cooperative|deck-building|role-playing|tabletop)\b.*\bgame\b/i
+
+async function wikidataGet(url, attempt = 1) {
+  const res = await fetch(url, { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } })
+  if (res.status === 429 && attempt <= 4) {
+    await sleep(2000 * attempt)
+    return wikidataGet(url, attempt + 1)
+  }
+  if (!res.ok) {
+    if (attempt <= 3) {
+      await sleep(1000 * attempt)
+      return wikidataGet(url, attempt + 1)
+    }
+    throw new Error(`${url} -> HTTP ${res.status}`)
+  }
+  return res.json()
+}
+
+// Last-resort fallback: Wikidata's fuzzy label search often finds an item for a game with no
+// (findable) Wikipedia article at all. If the item links to a Wikipedia page, use that page's
+// summary as usual; otherwise fall back to the item's own short description and cover image
+// (P18), which many board-game items carry even without a full article.
+const GAME_DESCRIPTION_RE_DE = /\b(brett|karten|würfel|kartenspiel|brettspiel|würfelspiel|gesellschaftsspiel|partyspiel)/i
+
+async function resolveViaWikidata(name) {
+  const [enQuery, deQuery] = await Promise.all([wikidataGet(WIKIDATA_SEARCH_URL(name, 'en')), wikidataGet(WIKIDATA_SEARCH_URL(name, 'de'))])
+  await sleep(REQUEST_DELAY_MS)
+  const enCandidates = (enQuery.search ?? []).filter(
+    (c) => c.description && GAME_DESCRIPTION_RE.test(c.description) && !/video game/i.test(c.description),
+  )
+  const deCandidates = (deQuery.search ?? []).filter((c) => c.description && GAME_DESCRIPTION_RE_DE.test(c.description))
+  const seen = new Set()
+  const candidates = [...enCandidates, ...deCandidates].filter((c) => (seen.has(c.id) ? false : (seen.add(c.id), true)))
+
+  for (const candidate of candidates) {
+    const entityDoc = await wikidataGet(WIKIDATA_ENTITY_URL(candidate.id))
+    await sleep(REQUEST_DELAY_MS)
+    const entity = entityDoc.entities[candidate.id]
+    const sitelinks = entity.sitelinks ?? {}
+
+    const wikiSite = sitelinks.enwiki ? 'en' : sitelinks.dewiki ? 'de' : null
+    if (wikiSite) {
+      const title = sitelinks[`${wikiSite}wiki`].title
+      const hit = await trySummary(title, wikiSite)
+      if (hit) return hit
+    }
+
+    const imageFile = entity.claims?.P18?.[0]?.mainsnak?.datavalue?.value
+    const image = imageFile ? `https://commons.wikimedia.org/wiki/Special:FilePath/${encodeURIComponent(imageFile)}` : null
+    const isGerman = GAME_DESCRIPTION_RE_DE.test(candidate.description)
+    const description = isGerman ? `${candidate.label} ist ${candidate.description.startsWith('ein') ? '' : 'ein '}${candidate.description}.` : `${candidate.label} is a ${candidate.description}.`
+    if (image || description) {
+      return {
+        image,
+        description,
+        wikipediaUrl: `https://www.wikidata.org/wiki/${candidate.id}`,
+        minPlayers: quantityValue(entity.claims?.P1872),
+        maxPlayers: quantityValue(entity.claims?.P1873),
+      }
+    }
+  }
+  return null
+}
+
 // Tries the English article first (usually the richer, more complete summary), then falls back
-// to the German Wikipedia — many titles in this shelf are German editions with no English article.
+// to the German Wikipedia — many titles in this shelf are German editions with no English article
+// — and finally to a Wikidata item lookup for games with no Wikipedia coverage at all.
 async function resolveGame(name) {
   const override = NAME_OVERRIDES[name]
   if (override) {
     const hit = (await trySummary(override, 'en')) ?? (await trySummary(override, 'de'))
     if (hit) return hit
   }
-  return (await resolveInLang(name, 'en', 'board game')) ?? (await resolveInLang(name, 'de', 'Spiel'))
+  const wiki = (await resolveInLang(name, 'en', 'board game')) ?? (await resolveInLang(name, 'de', 'Spiel'))
+  if (wiki) return wiki
+  return resolveViaWikidata(name.split(':')[0].trim())
 }
 
 async function main() {

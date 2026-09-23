@@ -1,5 +1,17 @@
 import { icon } from './icons'
-import { findGameBySlug, games, playerRangeLabel, playtimeLabel, searchGames, type Game } from './games'
+import {
+  DIFFICULTY_LABELS,
+  filterGames,
+  findGameBySlug,
+  games,
+  playerRangeLabel,
+  playtimeLabel,
+  type Difficulty,
+  type Game,
+  type GameFilters,
+} from './games'
+
+const MAX_PLAYER_OPTION = 10
 
 function languageBadge(language: string | null): string {
   if (!language) return ''
@@ -39,11 +51,27 @@ function backToSiteLink(): string {
   </a>`
 }
 
-export function renderGamesGrid(query: string): string {
-  const results = searchGames(query)
+export function renderGamesGrid(filters: GameFilters): string {
+  const results = filterGames(filters)
   const cards = results.map(gameCard).join('')
   if (results.length) return cards
-  return `<p class="col-span-full py-16 text-center text-muted">Kein Spiel gefunden für „${query}". Versucht einen anderen Suchbegriff.</p>`
+  return `<p class="col-span-full py-16 text-center text-muted">Kein Spiel gefunden. Versucht andere Filter oder einen anderen Suchbegriff.</p>`
+}
+
+function playerCountOptions(): string {
+  const options = [`<option value="">Beliebig</option>`]
+  for (let n = 1; n <= MAX_PLAYER_OPTION; n++) {
+    options.push(`<option value="${n}">${n} Spieler</option>`)
+  }
+  return options.join('')
+}
+
+function difficultyOptions(): string {
+  const options = [`<option value="">Beliebig</option>`]
+  for (const [value, label] of Object.entries(DIFFICULTY_LABELS) as [Difficulty, string][]) {
+    options.push(`<option value="${value}">${label}</option>`)
+  }
+  return options.join('')
 }
 
 export function renderGamesListPage(query = ''): string {
@@ -61,25 +89,41 @@ export function renderGamesListPage(query = ''): string {
       </p>
     </div>
 
-    <div class="mt-8 max-w-md">
-      <label for="games-search" class="sr-only">Spiele durchsuchen</label>
-      <div class="relative">
-        <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-faint">
-          ${icon('magnifying-glass', 'size-4')}
-        </span>
-        <input
-          id="games-search"
-          type="search"
-          placeholder="Spiel suchen …"
-          value="${query.replace(/"/g, '&quot;')}"
-          class="form-input pl-11"
-          autocomplete="off"
-        />
+    <div class="mt-8 flex flex-wrap items-end gap-4">
+      <div class="max-w-md flex-1 basis-64">
+        <label for="games-search" class="sr-only">Spiele durchsuchen</label>
+        <div class="relative">
+          <span class="pointer-events-none absolute left-4 top-1/2 -translate-y-1/2 text-faint">
+            ${icon('magnifying-glass', 'size-4')}
+          </span>
+          <input
+            id="games-search"
+            type="search"
+            placeholder="Spiel suchen …"
+            value="${query.replace(/"/g, '&quot;')}"
+            class="form-input pl-11"
+            autocomplete="off"
+          />
+        </div>
+      </div>
+
+      <div>
+        <label for="games-filter-players" class="mb-1.5 block text-xs font-medium text-muted">Anzahl Spieler</label>
+        <select id="games-filter-players" class="form-input">
+          ${playerCountOptions()}
+        </select>
+      </div>
+
+      <div>
+        <label for="games-filter-difficulty" class="mb-1.5 block text-xs font-medium text-muted">Schwierigkeitsgrad</label>
+        <select id="games-filter-difficulty" class="form-input">
+          ${difficultyOptions()}
+        </select>
       </div>
     </div>
 
     <div id="games-grid" class="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      ${renderGamesGrid(query)}
+      ${renderGamesGrid({ query })}
     </div>
   </div>`
 }

@@ -31,6 +31,40 @@ export function searchGames(query: string): Game[] {
   return games.filter((game) => game.name.toLowerCase().includes(q))
 }
 
+export type Difficulty = 'einsteiger' | 'mittel' | 'erfahren'
+
+export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
+  einsteiger: 'Einsteiger',
+  mittel: 'Mittel',
+  erfahren: 'Erfahren',
+}
+
+export function difficultyOf(game: Game): Difficulty | null {
+  if (game.complexity == null) return null
+  if (game.complexity <= 2) return 'einsteiger'
+  if (game.complexity <= 3) return 'mittel'
+  return 'erfahren'
+}
+
+export interface GameFilters {
+  query?: string
+  players?: number | null
+  difficulty?: Difficulty | null
+}
+
+export function filterGames({ query = '', players = null, difficulty = null }: GameFilters): Game[] {
+  const q = query.trim().toLowerCase()
+  return games.filter((game) => {
+    if (q && !game.name.toLowerCase().includes(q)) return false
+    if (players != null) {
+      if (game.minPlayers == null || game.maxPlayers == null) return false
+      if (players < game.minPlayers || players > game.maxPlayers) return false
+    }
+    if (difficulty && difficultyOf(game) !== difficulty) return false
+    return true
+  })
+}
+
 export function playerRangeLabel(game: Game): string | null {
   if (!game.minPlayers && !game.maxPlayers) return null
   if (game.minPlayers && game.maxPlayers && game.minPlayers !== game.maxPlayers) {
