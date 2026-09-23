@@ -32,6 +32,10 @@ import arrowLeft from '@phosphor-icons/core/assets/regular/arrow-left.svg?raw'
 import arrowSquareOut from '@phosphor-icons/core/assets/regular/arrow-square-out.svg?raw'
 import gauge from '@phosphor-icons/core/assets/regular/gauge.svg?raw'
 import imageIcon from '@phosphor-icons/core/assets/regular/image.svg?raw'
+import trash from '@phosphor-icons/core/assets/regular/trash.svg?raw'
+import pencilSimple from '@phosphor-icons/core/assets/regular/pencil-simple.svg?raw'
+import signOut from '@phosphor-icons/core/assets/regular/sign-out.svg?raw'
+import plus from '@phosphor-icons/core/assets/regular/plus.svg?raw'
 
 const registry = {
   'map-pin': mapPin,
@@ -68,6 +72,10 @@ const registry = {
   'arrow-square-out': arrowSquareOut,
   gauge,
   image: imageIcon,
+  trash,
+  'pencil-simple': pencilSimple,
+  'sign-out': signOut,
+  plus,
 } as const
 
 export type IconName = keyof typeof registry

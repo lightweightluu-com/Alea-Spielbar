@@ -13,6 +13,7 @@
 // spoofing headers or fingerprints further.
 import { readFileSync, writeFileSync } from 'node:fs'
 import { XMLParser } from 'fast-xml-parser'
+import { slugify } from './lib/slugify.mjs'
 
 const SEARCH_URL = 'https://boardgamegeek.com/xmlapi2/search'
 const THING_URL = 'https://boardgamegeek.com/xmlapi2/thing'
@@ -26,15 +27,6 @@ const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
 function toArray(value) {
   if (value === undefined || value === null) return []
   return Array.isArray(value) ? value : [value]
-}
-
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
 }
 
 /** Fetches with a couple of retries — BGG's API occasionally 202s ("queued") or hiccups under load. */

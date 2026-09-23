@@ -1,0 +1,3 @@
+/* Reuses the public site's Tailwind setup, design tokens and fonts for visual consistency —
+   no separate admin theme, same source of truth for colors/spacing/typography. */
+@import '../style.css';

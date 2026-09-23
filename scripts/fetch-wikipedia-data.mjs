@@ -10,21 +10,13 @@
 //
 // Re-run manually with `node scripts/fetch-wikipedia-data.mjs` if the shelf list changes.
 import { readFileSync, writeFileSync } from 'node:fs'
+import { slugify } from './lib/slugify.mjs'
 
 const SUMMARY_URL = (lang, title) => `https://${lang}.wikipedia.org/api/rest_v1/page/summary/${encodeURIComponent(title)}`
 const REQUEST_DELAY_MS = 300
 const USER_AGENT = 'alea-spielbar-site/1.0 (games catalog build script; contact: lucienryter@gmail.com)'
 
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms))
-
-function slugify(name) {
-  return name
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-+|-+$/g, '')
-}
 
 async function fetchSummary(lang, title, attempt = 1) {
   const res = await fetch(SUMMARY_URL(lang, title), { headers: { 'User-Agent': USER_AGENT, Accept: 'application/json' } })
