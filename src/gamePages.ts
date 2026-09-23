@@ -188,6 +188,19 @@ export function renderGameDetailPage(slug: string): string {
             ${icon('arrow-square-out', 'size-4')}
             ${game.bggUrl ? 'Auf BoardGameGeek ansehen' : 'Auf BoardGameGeek suchen'}
           </a>
+          ${
+            game.wikipediaUrl
+              ? `<a
+                  href="${game.wikipediaUrl}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="pressable inline-flex items-center gap-2 rounded-pill border border-hairline px-6 py-3.5 font-semibold text-paper hover:border-paper/30 hover:bg-surface-2"
+                >
+                  ${icon('arrow-square-out', 'size-4')}
+                  Auf Wikipedia ansehen
+                </a>`
+              : ''
+          }
         </div>
       </div>
     </div>

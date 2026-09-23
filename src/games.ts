@@ -16,6 +16,7 @@ export interface Game {
   complexity?: number | null
   rating?: number | null
   bggUrl?: string | null
+  wikipediaUrl?: string | null
 }
 
 export const games: Game[] = gamesData as Game[]
