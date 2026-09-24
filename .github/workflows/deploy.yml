@@ -20,13 +20,14 @@ jobs:
         with:
           node-version: 22
 
-      - name: Sync games content from Supabase
+      - name: Sync games & menu content from Supabase
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
           npm ci
           npm run games:sync
+          npm run menu:sync
 
       - name: Install & Build
         env:

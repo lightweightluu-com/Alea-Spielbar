@@ -5,6 +5,8 @@ import { renderShell, setupShell } from './shell'
 import { renderLogin, setupLogin } from './views/login'
 import { renderGamesList, setupGamesList } from './views/gamesList'
 import { renderGameForm, setupGameForm } from './views/gameForm'
+import { renderMenuList, setupMenuList } from './views/menuList'
+import { renderMenuForm, setupMenuForm } from './views/menuForm'
 import { renderReservationsList, setupReservationsList } from './views/reservationsList'
 
 const root = document.querySelector<HTMLDivElement>('#admin-app')!
@@ -35,6 +37,9 @@ type AdminRoute =
   | { kind: 'games' }
   | { kind: 'game-new' }
   | { kind: 'game-edit'; id: string }
+  | { kind: 'menu' }
+  | { kind: 'menu-new' }
+  | { kind: 'menu-edit'; id: string }
   | { kind: 'reservations' }
 
 function parseRoute(): AdminRoute {
@@ -43,6 +48,10 @@ function parseRoute(): AdminRoute {
   if (hash === '#/games/new') return { kind: 'game-new' }
   const editMatch = hash.match(/^#\/games\/([^/]+)\/edit$/)
   if (editMatch) return { kind: 'game-edit', id: decodeURIComponent(editMatch[1]) }
+  if (hash === '#/menu/new') return { kind: 'menu-new' }
+  const menuEditMatch = hash.match(/^#\/menu\/([^/]+)\/edit$/)
+  if (menuEditMatch) return { kind: 'menu-edit', id: decodeURIComponent(menuEditMatch[1]) }
+  if (hash === '#/menu') return { kind: 'menu' }
   if (hash === '#/reservations') return { kind: 'reservations' }
   return { kind: 'games' }
 }
@@ -86,6 +95,27 @@ async function route(): Promise<void> {
     root.innerHTML = renderShell('games', renderGameForm('edit'))
     setupShell()
     setupGameForm('edit', current.id)
+    return
+  }
+
+  if (current.kind === 'menu') {
+    root.innerHTML = renderShell('menu', renderMenuList())
+    setupShell()
+    await setupMenuList()
+    return
+  }
+
+  if (current.kind === 'menu-new') {
+    root.innerHTML = renderShell('menu', renderMenuForm('new'))
+    setupShell()
+    setupMenuForm('new', null)
+    return
+  }
+
+  if (current.kind === 'menu-edit') {
+    root.innerHTML = renderShell('menu', renderMenuForm('edit'))
+    setupShell()
+    setupMenuForm('edit', current.id)
     return
   }
 

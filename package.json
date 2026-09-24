@@ -8,7 +8,9 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "games:fetch": "node scripts/fetch-bgg-data.mjs",
-    "games:sync": "node scripts/sync-games-from-supabase.mjs"
+    "games:sync": "node scripts/sync-games-from-supabase.mjs",
+    "menu:migrate": "node scripts/migrate-menu-to-supabase.mjs",
+    "menu:sync": "node scripts/sync-menu-from-supabase.mjs"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.3",

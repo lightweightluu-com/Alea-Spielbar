@@ -8,13 +8,17 @@ import {
   renderEvents,
   renderFactsStrip,
   renderFooter,
+  renderGutscheine,
   renderHero,
+  renderImpressumPage,
   renderKonzept,
   renderKontakt,
+  renderMedienberichte,
   renderNav,
+  renderSpeisekarte,
   renderSpiele,
 } from './sections'
-import { contact, rooms } from './content'
+import { contact, rooms, voucherValues } from './content'
 import { renderGameDetailPage, renderGamesGrid, renderGamesListPage } from './gamePages'
 import type { Difficulty } from './games'
 import { getSupabase } from './publicSupabaseClient'
@@ -37,12 +41,14 @@ app.innerHTML = [
   '<main>',
   '<div id="home-root"></div>',
   '<div id="games-root" class="hidden"></div>',
+  '<div id="legal-root" class="hidden"></div>',
   '</main>',
   renderFooter(),
 ].join('')
 
 const homeRoot = document.querySelector<HTMLDivElement>('#home-root')!
 const gamesRoot = document.querySelector<HTMLDivElement>('#games-root')!
+const legalRoot = document.querySelector<HTMLDivElement>('#legal-root')!
 
 setupThemeToggle()
 setupMobileNav()
@@ -53,11 +59,12 @@ setupHeaderScrollState()
  * Every other hash — including the marketing site's plain in-page anchors like #kontakt — falls
  * through to "home" and is left to the browser's native anchor scrolling.
  */
-type Route = { kind: 'home' } | { kind: 'games-list' } | { kind: 'game-detail'; slug: string }
+type Route = { kind: 'home' } | { kind: 'games-list' } | { kind: 'game-detail'; slug: string } | { kind: 'impressum' }
 
 function parseRoute(): Route {
   const hash = window.location.hash
   if (hash === '#/spiele-liste') return { kind: 'games-list' }
+  if (hash === '#/impressum') return { kind: 'impressum' }
   const detailMatch = hash.match(/^#\/spiele-liste\/(.+)$/)
   if (detailMatch) return { kind: 'game-detail', slug: decodeURIComponent(detailMatch[1]) }
   return { kind: 'home' }
@@ -72,13 +79,18 @@ function renderHomePage(): void {
     renderKonzept(),
     renderSpiele(),
     renderEssenTrinken(),
+    renderSpeisekarte(),
     renderEvents(),
+    renderGutscheine(),
+    renderMedienberichte(),
     renderKontakt(),
     renderBewertung(),
   ].join('')
 
   setupScrollReveal()
   setupReservationForm()
+  setupVoucherForm()
+  setupMenuTabs()
   setupRatingWidget()
   if (!prefersReducedMotion && hasFinePointer) {
     setupMagneticCta()
@@ -106,6 +118,30 @@ function setupGamesSearch(): void {
   difficultySelect.addEventListener('change', applyFilters)
 }
 
+function setupMenuTabs(): void {
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-menu-tab]'))
+  const panels = Array.from(document.querySelectorAll<HTMLDivElement>('[data-menu-panel]'))
+  if (!tabs.length || !panels.length) return
+
+  const activeClasses = ['border-brand', 'bg-brand', 'text-on-accent']
+  const inactiveClasses = ['border-hairline', 'text-paper', 'hover:bg-surface-2']
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.menuTab
+      tabs.forEach((t) => {
+        const active = t.dataset.menuTab === target
+        t.setAttribute('aria-selected', String(active))
+        activeClasses.forEach((c) => t.classList.toggle(c, active))
+        inactiveClasses.forEach((c) => t.classList.toggle(c, !active))
+      })
+      panels.forEach((panel) => {
+        panel.classList.toggle('hidden', panel.dataset.menuPanel !== target)
+      })
+    })
+  })
+}
+
 function route(): void {
   const current = parseRoute()
 
@@ -116,12 +152,23 @@ function route(): void {
     }
     homeRoot.classList.remove('hidden')
     gamesRoot.classList.add('hidden')
+    legalRoot.classList.add('hidden')
     const anchor = window.location.hash.slice(1)
     if (anchor) document.getElementById(anchor)?.scrollIntoView()
     return
   }
 
   homeRoot.classList.add('hidden')
+
+  if (current.kind === 'impressum') {
+    gamesRoot.classList.add('hidden')
+    legalRoot.classList.remove('hidden')
+    legalRoot.innerHTML = renderImpressumPage()
+    window.scrollTo(0, 0)
+    return
+  }
+
+  legalRoot.classList.add('hidden')
   gamesRoot.classList.remove('hidden')
   if (current.kind === 'games-list') {
     gamesRoot.innerHTML = renderGamesListPage()
@@ -333,6 +380,82 @@ function setupReservationForm(): void {
     status.textContent = 'Danke! Eure Anfrage ist bei uns eingegangen — wir melden uns per E-Mail.'
     form.reset()
     updateHint()
+    window.setTimeout(() => {
+      status.textContent = defaultStatus
+    }, 8000)
+  })
+}
+
+/**
+ * Gutschein-Bestellformular: schreibt, wie die Reservierung, direkt in die `reservations`-Tabelle
+ * (kein eigenes Schema nötig — Menge/Wert je Stückelung wird als lesbarer Text in `message`
+ * zusammengefasst, damit die Bestellung im Admin-UI wie jede andere Anfrage erscheint).
+ */
+function setupVoucherForm(): void {
+  const form = document.querySelector<HTMLFormElement>('#voucher-form')
+  const status = document.querySelector<HTMLParagraphElement>('#gf-status')
+  if (!form || !status) return
+
+  const defaultStatus = status.textContent ?? ''
+  const qtyInputs = voucherValues.map(
+    (value) => document.querySelector<HTMLInputElement>(`[data-voucher-value="${value}"]`),
+  )
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault()
+
+    const quantities = voucherValues
+      .map((value, index) => ({ value, qty: Number(qtyInputs[index]?.value ?? 0) || 0 }))
+      .filter((entry) => entry.qty > 0)
+
+    if (!form.reportValidity() || quantities.length === 0) {
+      status.textContent = quantities.length === 0
+        ? 'Bitte wählt mindestens einen Gutschein-Wert aus.'
+        : 'Bitte füllt Name und E-Mail-Adresse aus.'
+      return
+    }
+
+    const data = new FormData(form)
+    const name = String(data.get('name') ?? '').trim()
+    const email = String(data.get('email') ?? '').trim()
+    const note = String(data.get('message') ?? '').trim()
+
+    const orderLines = quantities.map((entry) => `${entry.qty} × CHF ${entry.value}`)
+    const total = quantities.reduce((sum, entry) => sum + entry.qty * entry.value, 0)
+    const message = [`Gutschein-Bestellung: ${orderLines.join(', ')} (Total CHF ${total})`, note]
+      .filter(Boolean)
+      .join('\n\n')
+
+    const supabase = getSupabase()
+    if (!supabase) {
+      status.textContent = `Gutscheine sind gerade technisch nicht bestellbar — bitte schreibt uns direkt an ${contact.email}.`
+      return
+    }
+
+    const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]')
+    submitButton?.setAttribute('disabled', 'true')
+    status.textContent = 'Wird gesendet …'
+
+    const { error } = await supabase.from('reservations').insert({
+      name,
+      email,
+      anliegen_id: 'gutschein',
+      anliegen_label: 'Gutschein bestellen',
+      date: null,
+      time: null,
+      people: null,
+      message,
+    })
+
+    submitButton?.removeAttribute('disabled')
+
+    if (error) {
+      status.textContent = `Etwas ist schiefgelaufen — bitte versucht es erneut oder schreibt uns direkt an ${contact.email}.`
+      return
+    }
+
+    status.textContent = 'Danke! Wir bestätigen eure Bestellung per E-Mail und schicken den PDF-Gutschein.'
+    form.reset()
     window.setTimeout(() => {
       status.textContent = defaultStatus
     }, 8000)
