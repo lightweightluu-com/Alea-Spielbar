@@ -28,7 +28,7 @@ function gameCardImage(game: Game): string {
     </div>`
 }
 
-function gameCard(game: Game): string {
+export function gameCard(game: Game): string {
   const stats = [playerRangeLabel(game), playtimeLabel(game)].filter(Boolean).join(' · ')
   return `
   <a

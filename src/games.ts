@@ -65,6 +65,16 @@ export function filterGames({ query = '', players = null, difficulty = null }: G
   })
 }
 
+export function previewGames(count: number): Game[] {
+  return [...games]
+    .sort((a, b) => {
+      const imageDiff = (a.image ? 0 : 1) - (b.image ? 0 : 1)
+      if (imageDiff !== 0) return imageDiff
+      return (b.rating ?? -1) - (a.rating ?? -1)
+    })
+    .slice(0, count)
+}
+
 export function playerRangeLabel(game: Game): string | null {
   if (!game.minPlayers && !game.maxPlayers) return null
   if (game.minPlayers && game.maxPlayers && game.minPlayers !== game.maxPlayers) {
