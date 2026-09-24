@@ -36,6 +36,8 @@ import trash from '@phosphor-icons/core/assets/regular/trash.svg?raw'
 import pencilSimple from '@phosphor-icons/core/assets/regular/pencil-simple.svg?raw'
 import signOut from '@phosphor-icons/core/assets/regular/sign-out.svg?raw'
 import plus from '@phosphor-icons/core/assets/regular/plus.svg?raw'
+import gift from '@phosphor-icons/core/assets/regular/gift.svg?raw'
+import newspaper from '@phosphor-icons/core/assets/regular/newspaper.svg?raw'
 
 const registry = {
   'map-pin': mapPin,
@@ -76,6 +78,8 @@ const registry = {
   'pencil-simple': pencilSimple,
   'sign-out': signOut,
   plus,
+  gift,
+  newspaper,
 } as const
 
 export type IconName = keyof typeof registry

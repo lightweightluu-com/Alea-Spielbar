@@ -5,6 +5,7 @@ export const nav = [
   { label: 'Spiele', href: '#spiele' },
   { label: 'Alle Spiele', href: '#/spiele-liste' },
   { label: 'Events', href: '#events' },
+  { label: 'Gutscheine', href: '#gutscheine' },
   { label: 'Kontakt', href: '#kontakt' },
 ] as const
 
@@ -135,7 +136,7 @@ export const rooms: { id: string; name: string; desc: string }[] = [
   {
     id: 'gutschein',
     name: 'Gutschein bestellen',
-    desc: 'Gutscheine zu CHF 20, 50 oder 100 — gültig für Spielmiete, Getränke, Essen und Raummiete. Menge und Werte einfach in der Nachricht angeben, ihr bekommt sie als PDF per Mail.',
+    desc: 'Für Gutscheine nutzt am besten das Bestellformular im Bereich „Gutscheine" weiter oben — dort wählt ihr Anzahl und Wert direkt aus.',
   },
   {
     id: 'allgemein',
@@ -144,12 +145,54 @@ export const rooms: { id: string; name: string; desc: string }[] = [
   },
 ]
 
+/** Press coverage (alea-spielbar.ch/medienberichte). */
+export const mediaReports: { outlet: string; title: string; date: string; summary: string; href?: string }[] = [
+  {
+    outlet: 'Wipkinger Zeitung',
+    title: 'Das Leben ist nur ein Spiel – besonders in Wipkingen',
+    date: '17. September 2025',
+    summary: 'Porträt der neuen Brettspiel-Bar im Quartier Wipkingen.',
+  },
+  {
+    outlet: '20 Minuten',
+    title: 'Alea: Junges Team eröffnet Café für Brettspiel-Fans in Zürich',
+    date: '19. August 2025',
+    summary: '„Wir wollen ein analoger Treffpunkt sein" — das Gründerteam im Interview.',
+  },
+  {
+    outlet: 'Tsüri',
+    title: 'Für Brettspielfans: Wipkingen bekommt neue Spielbar',
+    date: '15. August 2025',
+    summary: 'Von Klassikern bis Dungeons & Dragons — ein Blick in die neue Spielbar.',
+  },
+]
+
+/** Gift voucher denominations (alea-spielbar.ch/gutscheine) — same values feed the order form's quantity fields. */
+export const voucherValues = [20, 50, 100] as const
+
+export const vouchers = {
+  intro:
+    'Gutscheine gelten für Spielmiete, Getränke, Essen und Raummiete — auch teilweise einlösbar, das Restguthaben bleibt erhalten.',
+  delivery: 'Zustellung ausschliesslich als PDF mit QR-Code per E-Mail — eine Zustellung per Post ist nicht möglich.',
+  pickup: 'Alternativ auch direkt an der Bar erhältlich.',
+}
+
+/** Legal notice (alea-spielbar.ch/impressum). */
+export const impressum = {
+  company: 'Alea Spielbar AG',
+  address: 'Zschokkestrasse 1, 8037 Zürich',
+  email: 'info@alea-spielbar.ch',
+  uid: 'CHE-376.403.805',
+  vat: 'CHE-376.403.805 MWST',
+  representatives: ['Dominik Vagstad', 'Benjamin Peter', 'Benjamin Gaudenz', 'Angelina Schütz'],
+}
+
 export const contact = {
   company: 'Alea Spielbar AG',
   /** Public-facing name used in marketing copy — the legal name above stays reserved for the footer's copyright line. */
   brandName: 'Alea Brettspiel Café & Bar',
   address: 'Zschokkestrasse 1, 8037 Zürich',
-  hint: 'Bushaltestelle Rosengartenstrasse (33/72/83), 3 Min. ab Bahnhof Hardbrücke.',
+  hint: 'Bushaltestelle Rosengartenstrasse (Bus 33/72/83), 3 Min. ab Bahnhof Hardbrücke. Bus 46 ab Zürich HB: 8 Min. Zu Fuss ab Bahnhof Wipkingen: 6 Min.',
   email: 'info@alea-spielbar.ch',
   mailHref: 'mailto:info@alea-spielbar.ch',
   instagramHref: 'https://www.instagram.com/alea.spielbar/',

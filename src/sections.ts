@@ -1,5 +1,19 @@
 import { icon } from './icons'
-import { contact, events, gameCategories, hours, menuHighlights, nav, quickFacts, rooms, steps } from './content'
+import {
+  contact,
+  events,
+  gameCategories,
+  hours,
+  impressum,
+  mediaReports,
+  menuHighlights,
+  nav,
+  quickFacts,
+  rooms,
+  steps,
+  voucherValues,
+  vouchers,
+} from './content'
 import { games, previewGames } from './games'
 import { gameCard } from './gamePages'
 
@@ -48,9 +62,7 @@ export function renderNav(): string {
   <header id="site-header" data-reveal-skip class="fixed inset-x-0 top-0 z-50 transition-colors duration-300">
     <div class="mx-auto flex h-16 max-w-7xl items-center justify-between px-6">
       <a href="#home" class="flex items-center gap-2 font-display text-lg font-bold tracking-tight text-paper">
-        <span class="flex size-8 items-center justify-center rounded-card-sm bg-brand text-ink-deep">
-          ${icon('dice-five', 'size-4')}
-        </span>
+        <img src="/logo-mark.png" alt="Alea Spielbar" class="size-9" width="256" height="256" />
         Alea<span class="text-brand-text">.</span>
       </a>
       <nav class="hidden items-center gap-8 lg:flex">${links}</nav>
@@ -338,6 +350,117 @@ export function renderEvents(): string {
   </section>`
 }
 
+function voucherForm(): string {
+  const valueFields = voucherValues
+    .map(
+      (value) => `
+      <div class="flex flex-col gap-2">
+        <label for="gf-qty-${value}" class="text-sm font-medium text-paper">CHF ${value}</label>
+        <input
+          id="gf-qty-${value}"
+          name="qty-${value}"
+          type="number"
+          min="0"
+          max="20"
+          value="0"
+          inputmode="numeric"
+          data-voucher-value="${value}"
+          class="form-input"
+        />
+      </div>`,
+    )
+    .join('')
+
+  return `
+  <form id="voucher-form" novalidate class="mt-8">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div class="flex flex-col gap-2">
+        <label for="gf-name" class="text-sm font-medium text-paper">Dein Name</label>
+        <input id="gf-name" name="name" type="text" required autocomplete="name" class="form-input" />
+      </div>
+      <div class="flex flex-col gap-2">
+        <label for="gf-email" class="text-sm font-medium text-paper">Deine E-Mail-Adresse</label>
+        <input id="gf-email" name="email" type="email" required autocomplete="email" class="form-input" />
+      </div>
+      <div class="grid grid-cols-3 gap-4 sm:col-span-2">
+        ${valueFields}
+      </div>
+      <div class="flex flex-col gap-2 sm:col-span-2">
+        <label for="gf-message" class="text-sm font-medium text-paper">Nachricht <span class="text-faint">(optional)</span></label>
+        <textarea id="gf-message" name="message" rows="3" class="form-input resize-none"></textarea>
+      </div>
+    </div>
+
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <button
+        type="submit"
+        class="pressable inline-flex items-center gap-2 rounded-pill bg-brand px-6 py-3.5 font-semibold text-on-accent transition-colors hover:bg-brand-rich"
+      >
+        Gutschein anfragen
+        ${icon('arrow-right', 'size-4')}
+      </button>
+      <p id="gf-status" role="status" aria-live="polite" class="text-sm text-muted">
+        Wählt Anzahl &amp; Wert — wir bestätigen per E-Mail und schicken euch den Gutschein als PDF mit QR-Code.
+      </p>
+    </div>
+  </form>`
+}
+
+export function renderGutscheine(): string {
+  return `
+  <section id="gutscheine" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
+    <div data-reveal class="max-w-[54ch]">
+      <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-tan/15 text-tan-text">
+        ${icon('gift', 'size-5')}
+      </span>
+      <h2 class="mt-5 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
+        Gutscheine bestellen
+      </h2>
+      <p class="mt-4 max-w-[60ch] text-balance leading-relaxed text-muted">
+        ${vouchers.intro} ${vouchers.delivery} ${vouchers.pickup}
+      </p>
+    </div>
+
+    <div data-reveal class="mt-10 rounded-card border border-hairline bg-surface p-8 md:p-10">
+      ${voucherForm()}
+    </div>
+  </section>`
+}
+
+export function renderMedienberichte(): string {
+  const cards = mediaReports
+    .map(
+      (report) => `
+    <div class="flex flex-col gap-3 rounded-card border border-hairline bg-surface p-6">
+      <div class="flex items-center justify-between gap-3">
+        <span class="text-xs font-semibold uppercase tracking-[0.18em] text-tan-text">${report.outlet}</span>
+        <span class="text-xs text-faint">${report.date}</span>
+      </div>
+      <h3 class="font-display text-lg font-semibold text-paper">${report.title}</h3>
+      <p class="text-sm leading-relaxed text-muted">${report.summary}</p>
+    </div>`,
+    )
+    .join('')
+
+  return `
+  <section id="medienberichte" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
+    <div data-reveal class="max-w-[54ch]">
+      <span class="inline-flex size-10 items-center justify-center rounded-card-sm bg-sage/15 text-sage-text">
+        ${icon('newspaper', 'size-5')}
+      </span>
+      <h2 class="mt-5 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
+        Medienberichte
+      </h2>
+      <p class="mt-4 max-w-[54ch] text-balance leading-relaxed text-muted">
+        Das sagen andere über uns.
+      </p>
+    </div>
+    <div data-reveal class="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      ${cards}
+    </div>
+  </section>`
+}
+
 function reservationForm(): string {
   const options = rooms.map((r) => `<option value="${r.id}">${r.name}</option>`).join('')
   const hints = rooms.map((r) => `<span data-anliegen-hint="${r.id}" class="hidden">${r.desc}</span>`).join('')
@@ -584,9 +707,7 @@ export function renderFooter(): string {
     <div class="mx-auto grid max-w-7xl grid-cols-1 gap-10 px-6 py-16 sm:grid-cols-2 lg:grid-cols-4">
       <div>
         <a href="#home" class="flex items-center gap-2 font-display text-lg font-bold text-paper">
-          <span class="flex size-8 items-center justify-center rounded-card-sm bg-brand text-ink-deep">
-            ${icon('dice-five', 'size-4')}
-          </span>
+          <img src="/logo-mark.png" alt="Alea Spielbar" class="size-9" width="256" height="256" />
           Alea<span class="text-brand-text">.</span>
         </a>
         <p class="mt-4 max-w-[28ch] text-sm leading-relaxed text-muted">
@@ -618,6 +739,8 @@ export function renderFooter(): string {
         <ul class="mt-4 flex flex-col gap-3 text-sm text-muted">
           <li>${contact.address}</li>
           <li><a href="${contact.mailHref}" class="hover:text-paper">${contact.email}</a></li>
+          <li><a href="#medienberichte" class="hover:text-paper">Medienberichte</a></li>
+          <li><a href="#/impressum" class="hover:text-paper">Impressum</a></li>
         </ul>
       </div>
     </div>
@@ -625,4 +748,43 @@ export function renderFooter(): string {
       © ${year} ${contact.company} · Zürich
     </div>
   </footer>`
+}
+
+export function renderImpressumPage(): string {
+  return `
+  <section class="mx-auto max-w-3xl px-6 py-24 md:py-32">
+    <a href="#home" class="pressable inline-flex items-center gap-2 text-sm font-semibold text-brand-text hover:underline">
+      ${icon('arrow-left', 'size-4')} Zurück zur Startseite
+    </a>
+    <h1 class="mt-6 text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">Impressum</h1>
+
+    <div class="mt-10 flex flex-col gap-8">
+      <div>
+        <h2 class="font-display text-lg font-semibold text-paper">Firma</h2>
+        <p class="mt-2 text-sm leading-relaxed text-muted">
+          ${impressum.company}<br />
+          ${impressum.address}
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-paper">Kontakt</h2>
+        <p class="mt-2 text-sm leading-relaxed text-muted">
+          <a href="mailto:${impressum.email}" class="hover:text-paper">${impressum.email}</a>
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-paper">Handelsregister</h2>
+        <p class="mt-2 text-sm leading-relaxed text-muted">
+          UID: ${impressum.uid}<br />
+          MWST-Nr.: ${impressum.vat}
+        </p>
+      </div>
+      <div>
+        <h2 class="font-display text-lg font-semibold text-paper">Vertretungsberechtigte Personen</h2>
+        <ul class="mt-2 text-sm leading-relaxed text-muted">
+          ${impressum.representatives.map((name) => `<li>${name}</li>`).join('')}
+        </ul>
+      </div>
+    </div>
+  </section>`
 }
