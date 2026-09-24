@@ -15,6 +15,7 @@ import {
   renderKontakt,
   renderMedienberichte,
   renderNav,
+  renderSpeisekarte,
   renderSpiele,
 } from './sections'
 import { contact, rooms, voucherValues } from './content'
@@ -78,6 +79,7 @@ function renderHomePage(): void {
     renderKonzept(),
     renderSpiele(),
     renderEssenTrinken(),
+    renderSpeisekarte(),
     renderEvents(),
     renderGutscheine(),
     renderMedienberichte(),
@@ -88,6 +90,7 @@ function renderHomePage(): void {
   setupScrollReveal()
   setupReservationForm()
   setupVoucherForm()
+  setupMenuTabs()
   setupRatingWidget()
   if (!prefersReducedMotion && hasFinePointer) {
     setupMagneticCta()
@@ -113,6 +116,30 @@ function setupGamesSearch(): void {
   input.addEventListener('input', applyFilters)
   playersSelect.addEventListener('change', applyFilters)
   difficultySelect.addEventListener('change', applyFilters)
+}
+
+function setupMenuTabs(): void {
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[data-menu-tab]'))
+  const panels = Array.from(document.querySelectorAll<HTMLDivElement>('[data-menu-panel]'))
+  if (!tabs.length || !panels.length) return
+
+  const activeClasses = ['border-brand', 'bg-brand', 'text-on-accent']
+  const inactiveClasses = ['border-hairline', 'text-paper', 'hover:bg-surface-2']
+
+  tabs.forEach((tab) => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.menuTab
+      tabs.forEach((t) => {
+        const active = t.dataset.menuTab === target
+        t.setAttribute('aria-selected', String(active))
+        activeClasses.forEach((c) => t.classList.toggle(c, active))
+        inactiveClasses.forEach((c) => t.classList.toggle(c, !active))
+      })
+      panels.forEach((panel) => {
+        panel.classList.toggle('hidden', panel.dataset.menuPanel !== target)
+      })
+    })
+  })
 }
 
 function route(): void {

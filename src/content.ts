@@ -5,6 +5,7 @@ export const nav = [
   { label: 'Spiele', href: '#spiele' },
   { label: 'Alle Spiele', href: '#/spiele-liste' },
   { label: 'Events', href: '#events' },
+  { label: 'Speisekarte', href: '#speisekarte' },
   { label: 'Gutscheine', href: '#gutscheine' },
   { label: 'Kontakt', href: '#kontakt' },
 ] as const

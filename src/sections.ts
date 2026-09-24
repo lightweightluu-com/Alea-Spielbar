@@ -16,6 +16,7 @@ import {
 } from './content'
 import { games, previewGames } from './games'
 import { gameCard } from './gamePages'
+import { menuBySection, type MenuItem } from './menu'
 
 const tintStyles = {
   brand: {
@@ -221,8 +222,8 @@ export function renderKonzept(): string {
       </div>
       <div data-reveal class="lg:col-span-6">
         <img
-          src="https://picsum.photos/seed/alea-spielbar-konzept-tische/900/700"
-          alt="Gäste sitzen an Holztischen zwischen Spieleregalen in der Alea Spielbar"
+          src="/images/konzept-tische.jpg"
+          alt="Zwei Hände bewegen Spielsteine auf einem Spielbrett an einem Holztisch"
           width="900"
           height="700"
           loading="lazy"
@@ -283,8 +284,8 @@ export function renderEssenTrinken(): string {
     <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-12 lg:gap-8">
       <div data-reveal class="order-2 lg:order-1 lg:col-span-6">
         <img
-          src="https://picsum.photos/seed/alea-spielbar-drinks-bar/900/700"
-          alt="Bunte Cocktails und ein Bierglas auf der Theke der Alea Spielbar"
+          src="/images/drinks-bar.jpg"
+          alt="Zwei Cocktails mit Fruchtgarnitur auf einer Bartheke"
           width="900"
           height="700"
           loading="lazy"
@@ -310,7 +311,90 @@ export function renderEssenTrinken(): string {
             )
             .join('')}
         </ul>
+        <a
+          href="#speisekarte"
+          class="pressable mt-8 inline-flex items-center gap-2 text-sm font-semibold text-brand-text hover:underline"
+        >
+          Ganze Speise- &amp; Getränkekarte ansehen
+          ${icon('arrow-right', 'size-4')}
+        </a>
       </div>
+    </div>
+  </section>`
+}
+
+function menuItemRow(item: MenuItem): string {
+  return `
+  <div class="flex items-baseline justify-between gap-4 border-b border-hairline/60 py-2.5">
+    <div class="min-w-0">
+      <p class="flex flex-wrap items-center gap-2 font-medium text-paper">
+        ${item.name}
+        ${item.featured ? '<span class="rounded-pill bg-brand/15 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wide text-brand-text">Favorit</span>' : ''}
+      </p>
+      ${item.description ? `<p class="mt-0.5 text-xs leading-relaxed text-muted">${item.description}</p>` : ''}
+    </div>
+    <div class="shrink-0 whitespace-nowrap text-right">
+      ${item.unit ? `<p class="text-[11px] text-faint">${item.unit}</p>` : ''}
+      <p class="font-semibold text-paper">${item.price}</p>
+    </div>
+  </div>`
+}
+
+export function renderSpeisekarte(): string {
+  const sections = menuBySection()
+
+  const tabs = sections
+    .map(
+      (s, i) => `
+    <button
+      type="button"
+      data-menu-tab="${i}"
+      aria-selected="${i === 0}"
+      class="menu-tab pressable shrink-0 rounded-pill border px-5 py-2.5 text-sm font-semibold transition-colors ${
+        i === 0 ? 'border-brand bg-brand text-on-accent' : 'border-hairline text-paper hover:bg-surface-2'
+      }"
+    >
+      ${s.section}
+    </button>`,
+    )
+    .join('')
+
+  const panels = sections
+    .map(
+      (s, i) => `
+    <div data-menu-panel="${i}" class="${i === 0 ? '' : 'hidden'} grid grid-cols-1 gap-10 md:grid-cols-2">
+      ${s.categories
+        .map(
+          (cat) => `
+        <div>
+          <h3 class="font-display text-lg font-semibold text-paper">${cat.category}</h3>
+          <div class="mt-3 flex flex-col">
+            ${cat.items.map((item) => menuItemRow(item)).join('')}
+          </div>
+        </div>`,
+        )
+        .join('')}
+    </div>`,
+    )
+    .join('')
+
+  return `
+  <section id="speisekarte" class="mx-auto max-w-7xl px-6 py-24 md:py-32">
+    <div data-reveal class="max-w-[54ch]">
+      <h2 class="text-balance font-display text-3xl font-bold tracking-tight text-paper md:text-4xl">
+        Speise- &amp; Getränkekarte
+      </h2>
+      <p class="mt-4 max-w-[54ch] text-balance leading-relaxed text-muted">
+        Alle Preise in CHF, inkl. MwSt.
+      </p>
+    </div>
+
+    <div data-reveal class="mt-8 flex gap-2 overflow-x-auto pb-1">
+      ${tabs}
+    </div>
+
+    <div data-reveal id="menu-panels" class="mt-8">
+      ${panels}
     </div>
   </section>`
 }

@@ -63,6 +63,47 @@ create trigger games_set_updated_at
   execute function set_updated_at();
 
 -- ---------------------------------------------------------------------------------------------
+-- menu_items
+-- ---------------------------------------------------------------------------------------------
+-- The Speise- & Getränkekarte, editable from /admin instead of being a static PDF. Same
+-- build-time pattern as `games`: scripts/sync-menu-from-supabase.mjs -> src/menu-data.json,
+-- consumed by src/menu.ts. `section` is the top-level tab ("Getränke", "Cocktails",
+-- "Spirituosen", "Essen"), `category` the subheading within it ("Bier – Offen", "Wein", ...).
+-- `price` and `unit` are free text (not numeric) because the real menu mixes single prices,
+-- glass/bottle pairs ("9.5 | 62") and surcharges ("+0.5") — trying to model that as columns
+-- would only fight the actual data.
+
+create table menu_items (
+  id uuid primary key default gen_random_uuid(),
+  section text not null,
+  category text not null,
+  slug text unique not null,
+  name text not null,
+  description text,
+  price text not null,
+  unit text,
+  featured boolean not null default false,
+  sort_order int not null default 0,
+  created_at timestamptz not null default now(),
+  updated_at timestamptz not null default now()
+);
+
+alter table menu_items enable row level security;
+
+-- Same access shape as `games`: no public policies — the public site only ever reads menu items
+-- at build time via scripts/sync-menu-from-supabase.mjs, which uses the service-role key and so
+-- bypasses RLS entirely. Only the signed-in owner gets runtime access, via /admin.
+create policy menu_items_admin_all on menu_items
+  for all
+  using (auth.uid() is not null)
+  with check (auth.uid() is not null);
+
+create trigger menu_items_set_updated_at
+  before update on menu_items
+  for each row
+  execute function set_updated_at();
+
+-- ---------------------------------------------------------------------------------------------
 -- reservations
 -- ---------------------------------------------------------------------------------------------
 

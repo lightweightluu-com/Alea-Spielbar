@@ -1,7 +1,7 @@
 import { icon } from '../icons'
 import { signOut } from './auth'
 
-export type AdminTab = 'games' | 'reservations'
+export type AdminTab = 'games' | 'menu' | 'reservations'
 
 function navLink(href: string, label: string, active: boolean): string {
   const activeClasses = active ? 'bg-surface-2 text-paper' : 'text-muted hover:bg-surface-2 hover:text-paper'
@@ -19,6 +19,7 @@ export function renderShell(active: AdminTab, content: string): string {
         </div>
         <nav class="flex flex-wrap items-center gap-2">
           ${navLink('#/games', 'Spiele', active === 'games')}
+          ${navLink('#/menu', 'Speisekarte', active === 'menu')}
           ${navLink('#/reservations', 'Reservierungen', active === 'reservations')}
           <button
             id="admin-sign-out"

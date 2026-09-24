@@ -1,0 +1,97 @@
+[
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Espresso", "price": "4.5" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Espresso Doppio", "price": "5.5" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Café Crème / Americano", "price": "5.5" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Cappuccino", "price": "6" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Iced Latte", "price": "7" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Affogato", "description": "Vanilleglacé mit Espresso — mit Amaretto +4", "price": "8" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Schokolade / Ovomaltine", "description": "heiss oder kalt", "price": "6" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Chai Latte / Matcha Latte (Bio)", "description": "heiss oder kalt", "price": "7" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Hafermilch", "description": "Aufpreis für alle Kaffee- und Teegetränke", "price": "+0.5" },
+  { "section": "Getränke", "category": "Kaffee & Tee", "name": "Tee – Pure Tea (Bio)", "description": "Rooibos Vanille, Pfefferminze, Darjeeling, Earl Grey, siehe Auslage", "price": "5.5" },
+
+  { "section": "Getränke", "category": "Wein", "name": "Prosecco – L'Anima Di Vergani", "description": "11%", "price": "9.5 | 62", "unit": "Glas | Flasche" },
+  { "section": "Getränke", "category": "Wein", "name": "Weiss – Verdejo, Rueda", "description": "13%", "price": "8 | 52", "unit": "Glas | Flasche" },
+  { "section": "Getränke", "category": "Wein", "name": "Weiss – Mythos, Suisse", "description": "12.5%", "price": "9 | 58", "unit": "Glas | Flasche" },
+  { "section": "Getränke", "category": "Wein", "name": "Rosé – Mythos, Suisse", "description": "13%", "price": "9 | 58", "unit": "Glas | Flasche" },
+  { "section": "Getränke", "category": "Wein", "name": "Rot – Gran Sasso Primitivo", "description": "13.5%", "price": "8 | 52", "unit": "Glas | Flasche" },
+  { "section": "Getränke", "category": "Wein", "name": "Rot – Mythos, Suisse", "description": "13.5%", "price": "9 | 58", "unit": "Glas | Flasche" },
+  { "section": "Getränke", "category": "Wein", "name": "Met classic", "description": "11%", "price": "9", "unit": "2 dl" },
+
+  { "section": "Getränke", "category": "Bier – Offen", "name": "Bier Paul Lager", "description": "4.9%", "price": "5.5 | 8.5", "unit": "3 | 5 dl" },
+  { "section": "Getränke", "category": "Bier – Offen", "name": "Orion IPA", "description": "5.5%", "price": "6 | 9", "unit": "3 | 5 dl" },
+  { "section": "Getränke", "category": "Bier – Offen", "name": "Panaché", "price": "5.5 | 8.5", "unit": "3 | 5 dl" },
+  { "section": "Getränke", "category": "Bier – Offen", "name": "Monatsbier", "description": "Wechselt monatlich, siehe Tafel", "price": "siehe Tafel" },
+
+  { "section": "Getränke", "category": "Bier – Flasche", "name": "Rekord Amber", "description": "5%", "price": "7.5", "unit": "3.3 dl" },
+  { "section": "Getränke", "category": "Bier – Flasche", "name": "Bier Paul Weizen", "description": "5.2%", "price": "11", "unit": "5 dl" },
+  { "section": "Getränke", "category": "Bier – Flasche", "name": "Das Ohni", "description": "alkoholfrei", "price": "7", "unit": "3.3 dl" },
+  { "section": "Getränke", "category": "Bier – Flasche", "name": "Magners Cider", "description": "4.5%", "price": "9", "unit": "3.3 dl" },
+
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Sirup – Le Sirupier de Berne", "description": "mit oder ohne Kohlensäure", "price": "4 | 5.5" },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Eistee – Alp Tea Classic (Bio)", "price": "5 | 6.5" },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Hauslimonade", "description": "Health Potion, Mana Potion, siehe Tafel", "price": "6 | 8", "featured": true },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Süssgetränke", "description": "Coca Cola, Coca Cola Zero, Fanta, Sprite, Rivella, Apfelschorle", "price": "6.5", "unit": "3.3 dl" },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "El Tony Mate", "price": "7", "unit": "3.3 dl" },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Kinley", "description": "Bitter Lemon, Ginger Beer, Tonic Water", "price": "5", "unit": "2 dl" },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Saft Orange", "price": "5.5", "unit": "2 dl" },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Saft Apfel", "price": "6", "unit": "3.3 dl" },
+  { "section": "Getränke", "category": "Süssgetränke", "name": "Wasser", "description": "mit oder ohne Kohlensäure", "price": "2 | 3 | 4", "unit": "3 | 5 | 7.5 dl" },
+
+  { "section": "Cocktails", "category": "Spritz", "name": "Gespritzter Weisswein", "description": "süss/sauer", "price": "11" },
+  { "section": "Cocktails", "category": "Spritz", "name": "Aperol", "description": "Aperol, Prosecco, Orange", "price": "13" },
+  { "section": "Cocktails", "category": "Spritz", "name": "Campari", "description": "Campari, Prosecco, Orange", "price": "13" },
+  { "section": "Cocktails", "category": "Spritz", "name": "Hugo", "description": "Holunderblütensirup, Prosecco, Minze", "price": "13" },
+
+  { "section": "Cocktails", "category": "Classics", "name": "Gin and Tonic", "description": "Humbel Gin, Tonic, Limette", "price": "15" },
+  { "section": "Cocktails", "category": "Classics", "name": "Lillet Vive", "description": "Lillet, Tonic, Limette", "price": "13" },
+  { "section": "Cocktails", "category": "Classics", "name": "Old Fashioned", "description": "Wild Turkey Bourbon, Zucker, Bitters, Orange", "price": "16" },
+  { "section": "Cocktails", "category": "Classics", "name": "Gimlet", "description": "Humbel Gin, Limette", "price": "15" },
+  { "section": "Cocktails", "category": "Classics", "name": "Dark and Stormy", "description": "Dark Rum, Ginger Beer, Limette", "price": "15" },
+  { "section": "Cocktails", "category": "Classics", "name": "Negroni", "description": "Dolin Vermouth rouge, Campari, Humbel Gin", "price": "16" },
+  { "section": "Cocktails", "category": "Classics", "name": "Negroni Sbagliato", "description": "Dolin Vermouth rouge, Campari, Prosecco", "price": "16" },
+  { "section": "Cocktails", "category": "Classics", "name": "Sour", "description": "Whisky, Amaretto, oder mixed", "price": "15" },
+  { "section": "Cocktails", "category": "Classics", "name": "Mule", "description": "Humbel Vodka oder Gin, Ginger Beer, Limette", "price": "15" },
+
+  { "section": "Cocktails", "category": "Shots", "name": "Berliner Luft", "description": "18%", "price": "7", "unit": "2 cl" },
+  { "section": "Cocktails", "category": "Shots", "name": "Hierbas", "price": "8", "unit": "2 cl" },
+  { "section": "Cocktails", "category": "Shots", "name": "Ingwerer Liqueur BIO", "description": "24%", "price": "9", "unit": "2 cl" },
+
+  { "section": "Spirituosen", "category": "Whisky", "name": "Säntis Whisky Malt Edition Sigel", "description": "40%", "price": "11", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Whisky", "name": "Oban Single Malt Whisky 14 Years", "description": "43%", "price": "13", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Whisky", "name": "Lagavulin Whisky 16 Years", "description": "43%", "price": "15", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Whisky", "name": "Wild Turkey Bourbon Whisky 81 Proof", "description": "40.5%", "price": "10", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Whisky", "name": "Rittenhouse Straight Rye Whisky 100 Proof", "description": "50%", "price": "11", "unit": "2 cl" },
+
+  { "section": "Spirituosen", "category": "Gin", "name": "Humbel Gin White Socks BIO", "description": "40%", "price": "10", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Gin", "name": "Tanqueray London Dry Gin", "description": "43.1%", "price": "10", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Gin", "name": "Hendrick's Gin", "description": "41.4%", "price": "12", "unit": "2 cl" },
+
+  { "section": "Spirituosen", "category": "Vodka", "name": "Humbel Wodka Wodotschka BIO", "description": "40%", "price": "10", "unit": "2 cl" },
+
+  { "section": "Spirituosen", "category": "Rum", "name": "Humbel Rum Blanco De Marinero BIO", "description": "40%", "price": "10", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Rum", "name": "Havana Club Rum 3 Años", "description": "37.5%", "price": "10", "unit": "2 cl" },
+
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Aperol", "description": "11%", "price": "8", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Lillet Blanc", "description": "17%", "price": "8", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Campari Bitter", "description": "25%", "price": "8", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Amalfi Limoncello della Costa d'Amalfi", "description": "28%", "price": "9", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "DelFino Amaretto Liqueur", "description": "28%", "price": "8", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Dolin Vermouth De Chambéry AO Dry", "description": "17.5%", "price": "8", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Dolin Vermouth De Chambéry AO Rouge", "description": "16%", "price": "8", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Cointreau Liqueur", "description": "40%", "price": "10", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Berliner Luft Pfefferminzlikör", "description": "18%", "price": "7", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Hierbas Ibicencas Mari Mayans", "description": "26%", "price": "8", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Aperitif & Likör", "name": "Ingwerer Liqueur BIO", "description": "24%", "price": "9", "unit": "2 cl" },
+
+  { "section": "Spirituosen", "category": "Tequila", "name": "El Jimador Tequila Blanco", "description": "38%", "price": "11", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Tequila", "name": "El Jimador Tequila Reposado", "description": "38%", "price": "12", "unit": "2 cl" },
+  { "section": "Spirituosen", "category": "Tequila", "name": "San Cosme Mezcal Blanco", "description": "40%", "price": "13", "unit": "2 cl" },
+
+  { "section": "Essen", "category": "Snacks", "name": "Schale Snacks", "description": "Nüsse, Chips, Süssigkeiten, siehe Auslage", "price": "4" },
+
+  { "section": "Essen", "category": "Sandwiches, Wähen & Gebäck", "name": "Grilled Cheese Sandwich", "description": "Extra Topping je +1. Für aktuelle Angebote fragt uns oder schaut in unserer Auslage nach.", "price": "7.5", "featured": true },
+
+  { "section": "Essen", "category": "Glacé", "name": "Gasparini Zolli-Cornet", "description": "Schokolade, Vanille, Himbeer", "price": "6" },
+  { "section": "Essen", "category": "Glacé", "name": "Gasparini Glacé & Sorbet Becher", "description": "Vanille-Erdbeer, Haselnuss-Pistache, Citron-Mandarine (vegan)", "price": "5" }
+]
