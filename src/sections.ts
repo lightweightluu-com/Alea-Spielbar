@@ -1,6 +1,7 @@
 import { icon } from './icons'
 import { contact, events, gameCategories, hours, menuHighlights, nav, quickFacts, rooms, steps } from './content'
-import { games } from './games'
+import { games, previewGames } from './games'
+import { gameCard } from './gamePages'
 
 const tintStyles = {
   brand: {
@@ -221,23 +222,21 @@ export function renderKonzept(): string {
 }
 
 export function renderSpiele(): string {
-  const [featured, ...rest] = gameCategories
-  const featuredTint = tintStyles[featured.tint]
-
-  const restCards = rest
+  const categoryChips = gameCategories
     .map((cat) => {
       const t = tintStyles[cat.tint]
       return `
-      <div class="flex flex-col justify-between gap-6 rounded-card border p-6 ${t.card}">
-        <span class="inline-flex size-10 items-center justify-center rounded-card-sm ${t.chip}">
-          ${icon(cat.icon, 'size-5')}
+      <div class="inline-flex shrink-0 items-center gap-2.5 rounded-pill border p-2 pr-4 ${t.card}">
+        <span class="inline-flex size-7 shrink-0 items-center justify-center rounded-pill ${t.chip}">
+          ${icon(cat.icon, 'size-3.5')}
         </span>
-        <div>
-          <h3 class="font-display text-lg font-semibold text-paper">${cat.title}</h3>
-          <p class="mt-2 text-sm leading-relaxed text-muted">${cat.desc}</p>
-        </div>
+        <span class="text-sm font-medium text-paper">${cat.title}</span>
       </div>`
     })
+    .join('')
+
+  const previewCards = previewGames(10)
+    .map((game) => gameCard(game))
     .join('')
 
   return `
@@ -248,24 +247,18 @@ export function renderSpiele(): string {
         Für jede Laune ein Spiel
       </h2>
     </div>
-    <div data-reveal class="mt-10 grid grid-cols-1 gap-5 md:grid-cols-3 md:grid-rows-2">
-      <div class="flex flex-col justify-between gap-8 rounded-card border p-8 md:col-span-2 md:row-span-2 ${featuredTint.card}">
-        <span class="inline-flex size-12 items-center justify-center rounded-card-sm ${featuredTint.chip}">
-          ${icon(featured.icon, 'size-6')}
-        </span>
-        <div>
-          <h3 class="font-display text-2xl font-semibold text-paper">${featured.title}</h3>
-          <p class="mt-3 max-w-[38ch] leading-relaxed text-muted">${featured.desc}</p>
-        </div>
-      </div>
-      ${restCards}
+    <div data-reveal class="mt-8 flex gap-3 overflow-x-auto pb-1">
+      ${categoryChips}
+    </div>
+    <div data-reveal class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+      ${previewCards}
     </div>
     <div data-reveal class="mt-8">
       <a
         href="#/spiele-liste"
         class="pressable inline-flex items-center gap-2 rounded-pill border border-hairline px-6 py-3.5 font-semibold text-paper transition-colors hover:border-paper/30 hover:bg-surface-2"
       >
-        Alle ${games.length} Spiele durchsuchen
+        Alle ${games.length} Spiele anzeigen
         ${icon('arrow-right', 'size-4')}
       </a>
     </div>
