@@ -17,7 +17,7 @@ import {
 import { contact, rooms } from './content'
 import { renderGameDetailPage, renderGamesGrid, renderGamesListPage } from './gamePages'
 import type { Difficulty } from './games'
-import { supabase } from './publicSupabaseClient'
+import { getSupabase } from './publicSupabaseClient'
 
 const THEME_KEY = 'alea-theme'
 
@@ -301,6 +301,12 @@ function setupReservationForm(): void {
     const time = String(data.get('time') ?? '').trim()
     const people = String(data.get('people') ?? '').trim()
     const message = String(data.get('message') ?? '').trim()
+
+    const supabase = getSupabase()
+    if (!supabase) {
+      status.textContent = `Reservierungen sind gerade technisch nicht verfügbar — bitte schreibt uns direkt an ${contact.email}.`
+      return
+    }
 
     const submitButton = form.querySelector<HTMLButtonElement>('button[type="submit"]')
     submitButton?.setAttribute('disabled', 'true')
