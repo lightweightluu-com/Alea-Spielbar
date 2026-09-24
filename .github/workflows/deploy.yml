@@ -84,15 +84,18 @@ jobs:
           PROJECT_NAME: ${{ steps.meta.outputs.project_name }}
           DOMAIN_NAME: ${{ steps.meta.outputs.project_name }}.lightweightluu.com
         run: |
-          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" -X POST \
+          RESPONSE=$(curl -s -w "\n%{http_code}" -X POST \
             "https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/pages/projects/${PROJECT_NAME}/domains" \
             -H "Authorization: Bearer ${CLOUDFLARE_API_TOKEN}" \
             -H "Content-Type: application/json" \
             --data "{\"name\":\"${DOMAIN_NAME}\"}")
 
-          if [ "$RESPONSE" = "200" ] || [ "$RESPONSE" = "409" ]; then
-            echo "Domain $DOMAIN_NAME ist bereit (Status: $RESPONSE)."
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          if [ "$HTTP_CODE" = "200" ] || [ "$HTTP_CODE" = "409" ] || echo "$BODY" | grep -qi "already exists"; then
+            echo "Domain $DOMAIN_NAME ist bereit (Status: $HTTP_CODE)."
           else
-            echo "Fehler beim Verknüpfen der Domain. HTTP Status: $RESPONSE"
-            exit 1
+            echo "::warning::Domain-Verknüpfung für $DOMAIN_NAME fehlgeschlagen (Status: $HTTP_CODE): $BODY"
+            echo "Der eigentliche Deploy ist trotzdem erfolgt — nur die Custom-Domain-Verknüpfung muss geprüft werden (z.B. API-Token-Berechtigungen für die Zone)."
           fi
